@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 function LostFoundCard({
   title,
   description,
@@ -5,6 +6,7 @@ function LostFoundCard({
   image,
   reverse = false,
 }) {
+const navigate = useNavigate();
   return (
     <div
       className={`bg-white rounded-3xl overflow-hidden shadow-lg flex flex-col md:flex-row ${
@@ -29,8 +31,8 @@ function LostFoundCard({
         <p className="mt-4 text-lg">
           {description}
         </p>
-
-        <button className="mt-6 bg-[#88b62c] text-white px-6 py-3 rounded-lg w-fit cursor-pointer">
+        <button onClick={() => navigate("/report_")} 
+        className="mt-6 bg-[#88b62c] text-white px-6 py-3 rounded-lg w-fit cursor-pointer">
           {buttonText}
         </button>
       </div>

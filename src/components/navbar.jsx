@@ -1,8 +1,13 @@
 import logo from "../assets/images/logo/logo_nev.png";
 import userIcon from "../assets/images/icons/user_profile.svg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-function Navbar() {
+export default function Navbar() {
+    const linkStyle = ({ isActive }) =>
+    isActive
+      ? "text-[#88b62c] border-b-2 border-[#88b62c] pb-1"
+      : "text-black hover:text-[#88b62c]";
+
   return (
     
     <header className="bg-white">
@@ -18,16 +23,26 @@ function Navbar() {
         {/* Navigation */}
         <nav className="hidden md:flex absolute left-1/2 -translate-x-1/3 gap-10 lg:gap-20 text-sm lg:text-m font-semibold">
 
-          <Link to="/"
-            className="text-[#88b62c] border-b-2 border-[#88b62c] pb-1"
-          >
+          <NavLink to="/" className={linkStyle}>
             Home
-          </Link>
-          <Link to="/adopt-pets">Adopt Pets</Link>
-          <Link to="/vet-booking">Veterinarian</Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/contact">Contact Us</Link>
+          </NavLink>
 
+          <NavLink to="/adopt" className={linkStyle}>
+            Adopt Pets
+          </NavLink>
+          
+          <NavLink to="/vet-booking" className={linkStyle}>
+            Veterinarian
+          </NavLink>
+          
+          <NavLink to="/about" className={linkStyle}>
+            About Us
+          </NavLink>
+
+
+          <NavLink to="/contact" className={linkStyle}>
+            Contact
+          </NavLink>
         </nav>
 
         {/* User Icon */}
@@ -40,8 +55,7 @@ function Navbar() {
         </div>
 
       </div>
+      
     </header>
   );
 }
-
-export default Navbar;

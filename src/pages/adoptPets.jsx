@@ -1,5 +1,9 @@
-function AdoptPet() {
-  return <h1>Adopt Pet Page</h1>;
-}
-
-export default AdoptPet;
+import Navbar from "../components/navbar.jsx";
+import Footer from"../components/footer.jsx";
+export default function Adopt() {
+  return (<>
+  <Navbar />
+  <Footer/>
+  </>
+   );
+  }

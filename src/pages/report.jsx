@@ -1,5 +1,9 @@
-function Report_L_F() {
-  return <h1>Report Lost Found Pet Page</h1>;
-}
-
-export default Report_L_F;
+import Navbar from "../components/navbar.jsx";
+import Footer from"../components/footer.jsx";
+export default function Report_L_F() {
+  return (<>
+  <Navbar />
+  <Footer/>
+  </>
+   );
+  }

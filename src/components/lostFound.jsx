@@ -1,9 +1,10 @@
 import LostFoundCard from "./lostFoundCard";
-
 import foundPet from "../assets/images/banners/found_pet.png";
 import lostPet from "../assets/images/banners/lost_pet.png";
+import { useNavigate } from "react-router-dom";
 
 function LostFound() {
+  const navigate = useNavigate();
   return (
     
     <section className="max-w-[1440px] mx-auto px-6 py-20">
@@ -37,7 +38,8 @@ function LostFound() {
       </div>
 
       <div className="text-center mt-10">
-        <button className="bg-[#144a36] text-white px-8 py-3 rounded-lg font-semibold cursor-pointer">
+        <button onClick={() => navigate("/lostfound")} 
+        className="bg-[#144a36] text-white px-8 py-3 rounded-lg font-semibold cursor-pointer">
           View Lost & Found Pets
         </button>
       </div>
