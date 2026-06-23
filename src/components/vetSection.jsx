@@ -6,7 +6,7 @@ export default function VetSection() {
   const navigate = useNavigate();
   return (
     <section className="max-w-[1440px] mx-auto px-6 py-20">
-      <h2 className="text-[#144a36] text-4xl md:text-5xl font-bold text-center">
+      <h2 className="playpen text-[#144a36] text-4xl md:text-5xl font-bold text-center">
         Our Trusted Veterinarians
       </h2>
 

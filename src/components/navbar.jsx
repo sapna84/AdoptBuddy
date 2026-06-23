@@ -10,8 +10,8 @@ export default function Navbar() {
 
   return (
     
-    <header className="bg-white">
-      <div className="max-w-[1440px] mx-auto px-7 h-25 flex items-center relative">
+    <header className="bg-white/90">
+      <div className="max-w-[1440px] mx-auto px-2 h-25 flex items-center relative">
 
         {/* Logo */}
         <img
@@ -21,7 +21,7 @@ export default function Navbar() {
         />
 
         {/* Navigation */}
-        <nav className="hidden md:flex absolute left-1/2 -translate-x-1/3 gap-10 lg:gap-20 text-sm lg:text-m font-semibold">
+        <nav className="flex absolute left-1/2 -translate-x-1/3 gap-8 lg:gap-20 text-sm lg:text-m font-semibold">
 
           <NavLink to="/" className={linkStyle}>
             Home
