@@ -6,6 +6,8 @@ import Ourstory from "../assets/images/banners/ourstory.png";
 import OurMission from "../assets/images/icons/ourmission.svg";
 import ourvision from "../assets/images/icons/ourvision.svg"
 import AboutStats from "../components/aboutstats";
+import TeamCard from "../components/TeamCard";
+import Team from "../data/team";
 export default function About() {
      return (
       <>
@@ -47,12 +49,13 @@ export default function About() {
         <img
           src={Ourstory}
           alt="Our Story"
-          className="w-full h-[400px] opacity-60 object-cover rounded-2xl"
+          className="w-full h-[400px] opacity-80 object-cover rounded-2xl"
         />
 
         <div className="absolute inset-0 flex justify-end">
           <div className="max-w-xl mr-10 lg:mr-6">
-           <h2 className="text-4xl font-extrabold text-center text-[#144a36]"> Our Story 
+           <h2 className="playpen text-4xl font-extrabold text-center text-[#144a36]">
+             Our Story 
             </h2> 
             <p className="mt-3 mr-10 lg:mr-1 text-black text-lg font-medium leading-relaxed">
                AdoptBuddy was created from a love for animals and a mission to help every pet find safety, care, and a loving home. From pet adoption and lost & found support to veterinary appointments and pet health management, our platform brings everything pet parents need into one place.
@@ -73,7 +76,7 @@ export default function About() {
             src={OurMission} 
             alt="Mission Icon"
              className="md:w-30 md:h-30 lg:-mt-5 flex-shrink-0" /> 
-       <h3 className="text-4xl lg:text-5xl lg:mt-4 font-bold lg:pl-10 md:pl-5 pl-30 text-[#144a36]">
+       <h3 className="playpen text-4xl lg:text-5xl lg:mt-4 font-bold lg:pl-10 md:pl-5 pl-30 text-[#144a36]">
         Our Mission
         </h3> 
         </div>
@@ -88,7 +91,7 @@ export default function About() {
             src={ourvision}
              alt="Vision Icon" 
              className="md:w-30 md:h-30 lg:-mt-5 flex-shrink-0" /> 
-             <h3 className="text-4xl lg:text-5xl lg:mt-4 font-bold lg:pl-10 pl-30 md:pl-5 text-[#144a36]">
+             <h3 className=" playpen text-4xl lg:text-5xl lg:mt-4 font-bold lg:pl-10 pl-30 md:pl-5 text-[#144a36]">
               Our Vision
               </h3>
                </div>
@@ -113,26 +116,29 @@ export default function About() {
 
       {/* TEAM */}
       <section className="bg-[#f7f1e6] py-20 px-6">
-        <div className="max-w-[1440px] mx-auto">
-          
-          <h2 className="text-4xl font-bold text-center text-[#144a36]">
-            Our Team
-          </h2>
+  <div className="max-w-auto lg:mx-20">
 
-          <div className="grid md:grid-cols-4 gap-6 mt-10">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="bg-white p-6 rounded-xl text-center shadow">
-                <div className="w-24 h-24 bg-gray-300 rounded-full mx-auto"></div>
-                <h3 className="mt-4 font-semibold">meena</h3>
-                <p className="text-sm text-black">Role</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+    <h2 className="playpen text-4xl font-extrabold text-center text-[#144a36]">
+      Our Team
+    </h2>
 
-       {/* TESTIMONIAL */}
-      <section className="max-w-[1440px] mx-auto px-6 py-16">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+      {Team.map((member) => (
+        <TeamCard
+          key={member.id}
+          image={member.image}
+          name={member.name}
+          role={member.role}
+          motivation={member.motivation}
+        />
+      ))}
+    </div>
+
+  </div>
+</section>
+
+       {/* reviews */}
+      <section className="max-w-[1440px] mx-auto px-6 py-16 ">
         <h2 className="text-3xl font-bold text-center text-[#144a36]">
           Happy Pet Parents
         </h2>

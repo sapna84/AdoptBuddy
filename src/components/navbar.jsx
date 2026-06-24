@@ -11,17 +11,17 @@ export default function Navbar() {
   return (
     
     <header className="bg-white/90">
-      <div className="max-w-[1440px] mx-auto px-2 h-25 flex items-center relative">
+      <div className="max-w-auto mx-auto px-2 lg:px-16 h-25 flex items-center relative shadow-2xl">
 
         {/* Logo */}
         <img
           src={logo}
           alt="AdoptBuddy Logo"
-          className="h-10 md:h-15 lg:h-25 w-auto"
+          className="h-10 md:h-15 lg:h-25 w-auto lg:"
         />
 
         {/* Navigation */}
-        <nav className="flex absolute left-1/2 -translate-x-1/3 gap-8 lg:gap-20 text-sm lg:text-m font-semibold">
+        <nav className="flex absolute left-1/2 -translate-x-1/3 gap-8 lg:gap-24 text-sm lg:text-lg font-semibold">
 
           <NavLink to="/" className={linkStyle}>
             Home
@@ -31,7 +31,7 @@ export default function Navbar() {
             Adopt Pets
           </NavLink>
           
-          <NavLink to="/vet-booking" className={linkStyle}>
+          <NavLink to="/Vets-list" className={linkStyle}>
             Veterinarian
           </NavLink>
           
@@ -41,7 +41,7 @@ export default function Navbar() {
 
 
           <NavLink to="/contact" className={linkStyle}>
-            Contact
+            Contact Us
           </NavLink>
         </nav>
 

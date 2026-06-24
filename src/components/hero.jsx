@@ -12,13 +12,15 @@ function Hero() {
       />
 
       <div className="absolute top-20 md:top-15 left-2 md:left-10 lg:left-18">
-        <h1 className="playpen text-[#144a36] font-extrabold text-6xl md:text-6xl lg:text-9xl text-center leading-tight ">
+        <h1 className="playpen text-[#144a36] font-extrabold text-6xl md:text-6xl lg:text-8xl text-center leading-loose ">
           Open Your Heart,
           <br />
-          Adopt a Friend
+          <span className="text-[#88b62c]"> Adopt a Friend
+
+          </span>
         </h1>
 
-        <p className="mt-10 lg:mt-20 lg:max-w-3xl md:max-w-md text-3xl md:text-xl lg:text-5xl font-bold text-center lg:[word-spacing:6px]  leading-medium">
+        <p className="mt-10 lg:mt-20 lg:max-w-3xl md:max-w-md text-3xl md:text-xl lg:text-4xl font-medium text-center lg:[word-spacing:6px]  leading-loose">
           Give a loving pet the chance to be part of your family and create unforgettable memories filled with joy and love.
         </p>
 

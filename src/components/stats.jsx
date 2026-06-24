@@ -28,8 +28,8 @@ function Stats() {
   ];
 
   return (
-    <section className="max-w-[1440px] mx-auto px-6 py-10">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <section className="max-w-auto mx-auto lg:px-20 lg:py-6 px-6 py-10">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-2 text-center">
         {stats.map((stat) => (
           <div key={stat.label}>
             <img
@@ -42,7 +42,7 @@ function Stats() {
               {stat.value}
             </h3>
 
-            <p className="text-lg md:text-xl">
+            <p className="text-lg md:text-2xl">
               {stat.label}
             </p>
           </div>

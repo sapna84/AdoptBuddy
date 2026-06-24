@@ -9,7 +9,7 @@ function Footer() {
   return (
     <footer className="bg-[#144a36] text-white">
 
-      <div className="max-w-[1440px] mx-auto px-8 py-16 grid md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-25">
+      <div className="max-w-auto mx-auto lg:mx-20 px-8 py-16 grid md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-25">
 
         {/* Logo Section */}
         <div className="md:max-w-md">
@@ -33,11 +33,11 @@ function Footer() {
           </h4>
 
           <ul className="space-y-2">
-            <li>Home</li>
-            <li>Browse Pets</li>
-            <li>Veterinarians</li>
-            <li>Lost & Found</li>
-            <li>About Us</li>
+            <li>&gt; Home</li>
+            <li>&gt; Browse Pets</li>
+            <li>&gt; Veterinarians</li>
+            <li>&gt; Lost & Found</li>
+            <li>&gt; About Us</li>
           </ul>
         </div>
 
@@ -48,10 +48,10 @@ function Footer() {
           </h4>
 
           <ul className="space-y-2">
-            <li>Contact Us</li>
-            <li>FAQs</li>
-            <li>Privacy Policy</li>
-            <li>Terms & Conditions</li>
+            <li>&gt; Contact Us</li>
+            <li>&gt; FAQs</li>
+            <li>&gt; Privacy Policy</li>
+            <li>&gt; Terms & Conditions</li>
           </ul>
         </div>
 
@@ -62,9 +62,9 @@ function Footer() {
           </h4>
 
           <ul className="space-y-2">
-            <li>connect@adoptbuddy.com</li>
-            <li>+91 XXXXX XXXXX</li>
-            <li>Jaipur, Rajasthan</li>
+            <li>&gt; connect@adoptbuddy.com</li>
+            <li>&gt; +91 XXXXX XXXXX</li>
+            <li>&gt; Jaipur, Rajasthan</li>
           </ul>
         </div>
 
