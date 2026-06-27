@@ -1,5 +1,6 @@
 import { useState } from "react";
-export default function Appointmentform (){
+import petbreeds from "../data/petBreeds.js";
+export default function Reportform (){
   const [fileName, setFileName] = useState("");
 
 const handleDrop = (e) => {
@@ -15,6 +16,7 @@ const handleDrop = (e) => {
 const handleDragOver = (e) => {
   e.preventDefault();
 };
+const [category, setCategory] = useState("");
 return(
 <div className="bg-white rounded-2xl shadow-lg p-8">
 
@@ -26,22 +28,6 @@ return(
 
 <div className="grid md:grid-cols-2 gap-6">
 
-          {/*pet name*/}
-<div>
-            <label className="block font-medium text-[#144a36]">
-              Pet Name
-              <span className="text-red-500">
-              *
-              </span>
-              </label>
-          <input
-            type="text"
-            required
-            placeholder="Enter your pet's name"
-            className="w-full border rounded-lg p-3"
-          />
-</div>
-
           {/*category*/}
 <div>
              <label className="block font-medium text-[#144a36]">
@@ -50,43 +36,126 @@ return(
               *
               </span>
               </label>
-          <select className="w-full border rounded-lg p-3"
-          required>
-            <option>Select your pet's category</option>
-            <option>Dog</option>
-            <option>Cat</option>
-            <option>Bird</option>
-            <option>Rabbit</option>
-            <option>Hamster</option>
+          <select 
+          className="w-full border rounded-lg p-3"
+          required
+          value={category}
+          onChange={(e)=> setCategory(e.target.value)}
+          >
+             <option value="">Select Pet Category</option>
+  <option value="Dog">Dog</option>
+  <option value="Cat">Cat</option>
+  <option value="Rabbit">Rabbit</option>
+  <option value="Bird">Bird</option>
+</select>
+</div>
+
+{category && category!== "Bird" && (
+  <div>
+    <label className="block font-medium text-[#144a36]">
+      Pet Breed 
+       <span className="text-gray-500">
+              (if known)
+              </span>
+    </label>
+
+ <select className="w-full border rounded-lg p-3">
+      <option>Select Breed</option>
+
+      {petbreeds[category].map((breed) => (
+        <option key={breed} value={breed}>
+          {breed}
+        </option>
+      ))}
+    </select>
+  </div>
+)}
+
+{category === "Bird" && (
+  <div>
+    <label className="block font-medium text-[#144a36]">
+      Bird Type
+       <span className="text-red-500">
+              *
+              </span>
+    </label>
+
+    <select className="w-full border rounded-lg p-3"
+    required>
+      <option>Select Bird Type</option>
+
+      {petbreeds.Bird.map((bird) => (
+        <option key={bird} value={bird}>
+          {bird}
+        </option>
+      ))}
+    </select>
+  </div>
+)}
+</div>
+
+
+
+<div className="grid md:grid-cols-2 gap-6">
+
+          {/*Gender*/}
+<div>
+             <label className="block font-medium text-[#144a36]">
+              Pet Gender
+              <span className="text-red-500">
+              *
+              </span>
+              </label>
+          <select className="w-full border rounded-lg p-3
+          required"
+          >
+            <option>Select gender of your pet</option>
+            <option>Male</option>
+            <option>Female</option>
           </select>
+</div>
+
+
+{/*pet name*/}
+<div>
+            <label className="block font-medium text-[#144a36]">
+              Pet Name
+              <span className="text-gray-500">
+              (if known)
+              </span>
+              </label>
+          <input
+            type="text"
+            placeholder="Enter your pet's name"
+            className="w-full border rounded-lg p-3"
+          />
 </div>
 </div>
 
 <div className="grid md:grid-cols-2 gap-6">
 
-          {/*category*/}
-<div>
-             <label className="block font-medium text-[#144a36]">
-              Pet Category
-              <span className="text-red-500">
-              *
-              </span>
-              </label>
-          <select className="w-full border rounded-lg p-3"
-          required>
-            <option>Select gender of your pet</option>
-            <option>Male</option>
-            <option>Female</option>
-            <option>Bird</option>
-            <option>Rabbit</option>
-            <option>Hamster</option>
-          </select>
-</div>
-
-{/*pet name*/}
+{/*pet age*/}
 <div>
             <label className="block font-medium text-[#144a36]">
               Pet Age
+              <span className="text-red-500">
+              *
+              </span>
+              <span className="text-gray-500 text-md">
+              (approx.)
+              </span>
+              
+              </label>
+          <input
+            type="number"
+            required
+            placeholder="Enter your pet's age"
+            className="w-full border rounded-lg p-3"
+          />
+</div>
+<div>
+            <label className="block font-medium text-[#144a36]">
+              color/Marking
               <span className="text-red-500">
               *
               </span>
@@ -98,12 +167,98 @@ return(
             className="w-full border rounded-lg p-3"
           />
 </div>
+
+
 </div>
 
+        {/*discription*/}
+        <div>
+          <label className="block font-medium text-[#144a36]">Discription
+             <span className="text-red-500">
+              *
+              </span>
+            </label>
+        <textarea
+          rows="4"
+          required
+          placeholder="Type any other details..."
+          className="w-full border rounded-lg p-3"
+        />
+        </div>
 
-<div className="grid md:grid-cols-2 gap-6">
 
-          {/*appointment date*/}
+        {/*upload pet image*/}
+        <div>
+  <label className="block mb-2 font-medium text-[#144a36]">
+    Upload Pet Image
+     <span className="text-red-500">
+              *
+              </span>
+  </label>
+
+  <label className="flex flex-col items-center justify-center w-full h-36 border-2 border-dashed rounded-xl bg-gray-200 cursor-pointer border-gray-500 hover:bg-gray-300"
+           onDrop={handleDrop}
+      onDragOver={handleDragOver}>
+    <div className="flex item-center gap-4">
+      <div>
+      <p className="font-medium">
+        Drag & Drop file here &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span className="text-black text-3xl">
+          or
+          </span>
+      </p>
+
+      <p className="text-sm text-gray-500">
+        PDF, JPG, PNG (Max. 5MB)
+      </p>
+    </div>
+ <span className="px-4 py-3 border-2 border-[#144a36] rounded-lg text-[#144a36] font-medium bg-white hover:bg-[#144a36] hover:text-white transition">
+      Choose File
+    </span>
+</div>
+{fileName && (
+      <p className="mt-3 text-sm text-[#144a36] font-medium">
+        Selected: {fileName}
+      </p>
+    )}
+
+    <input
+      type="file"
+      required
+      accept=".pdf,.jpg,.jpeg,.png"
+      className="hidden"
+       onChange={(e) =>
+        setFileName(e.target.files?.[0]?.name || "")}
+    />
+
+  </label>
+  
+</div>
+
+{/*lost/found location, date, time*/}
+
+
+        <h3 className="text-xl font-semibold text-[#144a36]">
+          Location & Time
+        </h3>
+
+<div className="grid md:grid-cols-3 gap-3">
+
+<div>
+<label className="block font-medium text-[#144a36]">
+  Location <span class="text-red-500">*</span>
+</label>
+
+<input
+  type="text"
+  placeholder="Enter location"
+  class="border rounded-lg p-3 w-full"
+  required
+/>
+
+</div>
+
+          {/*date*/}
 <div>
             <label className="block font-medium text-[#144a36]">
               Date
@@ -135,67 +290,6 @@ return(
 
         </div>
 
-        {/*discribe condition*/}
-        <div>
-          <label className="block font-medium text-[#144a36]">Discribe The Issue 
-            <span className="text-gray-500 text-sm">
-              (optional)
-              </span>
-            </label>
-        <textarea
-          rows="4"
-          placeholder="Describe your pet's condition..."
-          className="w-full border rounded-lg p-3"
-        />
-        </div>
-
-
-        {/*upload pet reports*/}
-        <div>
-  <label className="block mb-2 font-medium text-[#144a36]">
-    Upload Reports
-    <span className="text-gray-500 text-sm">
-      {" "}(Optional)
-    </span>
-  </label>
-
-  <label className="flex flex-col items-center justify-center w-full h-36 border-2 border-dashed rounded-xl bg-gray-200 cursor-pointer border-gray-500 hover:bg-gray-300"
-           onDrop={handleDrop}
-      onDragOver={handleDragOver}>
-    <div className="flex item-center gap-4">
-      <div>
-      <p className="font-medium">
-        Drag & Drop file here &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span className="text-black text-3xl">
-          or
-          </span>
-      </p>
-
-      <p className="text-sm text-gray-500">
-        PDF, JPG, PNG (Max. 5MB)
-      </p>
-    </div>
- <span className="px-4 py-3 border-2 border-[#144a36] rounded-lg text-[#144a36] font-medium bg-white hover:bg-[#144a36] hover:text-white transition">
-      Choose File
-    </span>
-</div>
-{fileName && (
-      <p className="mt-3 text-sm text-[#144a36] font-medium">
-        Selected: {fileName}
-      </p>
-    )}
-
-    <input
-      type="file"
-      accept=".pdf,.jpg,.jpeg,.png"
-      className="hidden"
-       onChange={(e) =>
-        setFileName(e.target.files?.[0]?.name || "")}
-    />
-
-  </label>
-  
-</div>
 
 
         {/*owner contact info*/}
@@ -252,13 +346,14 @@ return(
         />
         </div>
          </div>
- {/*submit button*/}
+
+         {/*submit button*/}
          <div className="flex justify-center">
         <button
           type="submit"
           className="w-[200px] bg-[#144a36] text-white py-4 rounded-xl text-lg font-semibold"
         >
-          Book Appointment 
+          Submit Report
         </button>
         </div>
 

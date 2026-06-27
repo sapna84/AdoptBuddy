@@ -15,7 +15,7 @@ export default function VetSection() {
       </p>
 
       <div className="grid md:grid-cols-3 gap-8 mt-12 ">
-        {vets.map((vet) => (
+        {vets.slice(0,3).map((vet) => (
   <VetCard key={vet.id} vet={vet} />
 ))}
       </div>
@@ -23,7 +23,7 @@ export default function VetSection() {
       <div className="text-center mt-10">
         <button onClick={() => navigate("/book-appointment")} 
         className="bg-[#144a36] text-white px-8 py-3 lg:px-10 lg:py-4 lg:text-2xl rounded-xl hover:opacity-90 cursor-pointer">
-          Book Appointment
+          Book Appointment Directly
         </button>
       </div>
     </section>

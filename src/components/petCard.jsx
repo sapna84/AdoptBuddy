@@ -1,7 +1,7 @@
 export default function PetCard({pet}) {
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 transition duration-300">
-      <div className="h-64 bg-gray-200 flex items-center justify-center">
+      <div className="h-120 bg-gray-200 flex items-center justify-center">
         <img
           src={pet.image}
           alt={pet.name}

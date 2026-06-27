@@ -25,12 +25,14 @@ function LostFound() {
           buttonText="Report Now"
           image={foundPet}
           reverse
+          reportType="found"
         />
         <LostFoundCard
           title="Lost Your Pet?"
           description="Report instantly and connect with people in your area."
           buttonText="Report Now"
           image={lostPet}
+          reportType="lost"
         />
 
       </div>

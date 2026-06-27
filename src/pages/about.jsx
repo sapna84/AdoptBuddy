@@ -37,7 +37,8 @@ export default function About() {
         </div>
         </div>
       </section>
-
+      
+{/*content*/}
        <section className="px-6 py-20">
 
   <div className="grid lg:grid-cols-[4fr_1fr] gap-8 items-stretch">

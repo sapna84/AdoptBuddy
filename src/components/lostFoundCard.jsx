@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router-dom";
-function LostFoundCard({
+export default function LostFoundCard({
   title,
   description,
   buttonText,
   image,
   reverse = false,
+  reportType,
 }) {
 const navigate = useNavigate();
   return (
@@ -31,7 +32,13 @@ const navigate = useNavigate();
         <p className="mt-4 text-xl">
           {description}
         </p>
-        <button onClick={() => navigate("/report_")} 
+        <button onClick={() => navigate("/report_",{
+          state:{
+            reportType,
+          },
+          }
+        )
+      }
         className="mt-6 bg-[#88b62c] text-white px-6 py-3 rounded-lg w-fit cursor-pointer hover:opacity-90">
           {buttonText}
         </button>
@@ -39,5 +46,3 @@ const navigate = useNavigate();
     </div>
   );
 }
-
-export default LostFoundCard;

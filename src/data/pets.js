@@ -2,6 +2,7 @@ import pet1mimiImg from "../assets/images/pets/pet1mimi.png";
 import pet2maxImg from "../assets/images/pets/pet2max.png";
 import pet3binkyImg from "../assets/images/pets/pet3binky.png";
 import pet4stellaImg from "../assets/images/pets/pet4stella.png";
+import pet5mochiImg from "../assets/images/pets/pet5mochi.png";
 
 const pets = [
   {
@@ -12,6 +13,7 @@ const pets = [
     gender:"Female",
     location:"Goa",
     image: pet1mimiImg,
+    featured: true,
   },
   {
     id: 2,
@@ -21,6 +23,7 @@ const pets = [
     gender:"Male",
     location:"Jaipur",
     image: pet2maxImg,
+    featured: true,
   },
   {
     id: 3,
@@ -30,6 +33,7 @@ const pets = [
     gender:"Female",
     location:"Delhi NCR",
     image: pet3binkyImg,
+    featured: false,
   },
   {
     id: 4,
@@ -39,6 +43,17 @@ const pets = [
     gender:"Female",
     location:"Mumbai",
     image: pet4stellaImg,
+    featured: true,
+  },
+   {
+    id: 5,
+    name: "Mochi",
+    breed: "Netherland Dwarf",
+    age: "1.5 Years old",
+    gender:"Female (Deo)",
+    location:"Bengaluru",
+    image: pet5mochiImg,
+    featured: true,
   },
 ];
 

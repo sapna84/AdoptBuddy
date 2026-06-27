@@ -13,7 +13,7 @@ export default function PetSection() {
       </p>
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap- mt-12">
-        {pets.map((pet) => (
+        {pets.filter((pet) => pet.featured).map((pet) => (
           <PetCard key={pet.id} pet={pet} />
         ))}
       </div>
