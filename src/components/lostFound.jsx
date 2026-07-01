@@ -1,23 +1,24 @@
 import LostFoundCard from "./lostFoundCard";
 import foundPet from "../assets/images/banners/found_pet.png";
 import lostPet from "../assets/images/banners/lost_pet.png";
+import PointingArrow from "../assets/images/icons/pointing_left.svg";
 import { useNavigate } from "react-router-dom";
 
-function LostFound() {
+export default function LostFound() {
   const navigate = useNavigate();
-  return (
-    
-    <section className="max-w-auto mx-auto lg:px-20 py-20">
 
-      <h2 className="playpen text-[#144a36] text-4xl md:text-5xl font-bold text-center">
+  return (
+    <section className="max-w-full mx-auto bg-white/50 px-5 md:px-8 lg:px-[250px] py-16 lg:py-30">
+      <h2 className="playpen text-[#144a36] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
         Reunite Pets With Their Families
       </h2>
-      <p className="text-center text-lg md:text-xl mt-4 max-w-3xl mx-auto">
+
+      <p className="inter text-center text-base sm:text-xl md:text-3xl lg:text-3xl mt-4 mx-auto leading-relaxed">
         Help lost pets find their way home or report a missing companion
         to connect with people in your area.
       </p>
 
-      <div className="grid lg:grid-cols-2 gap-10 mt-12 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-18 mt-15">
 
         <LostFoundCard
           title="Found Pet?"
@@ -27,6 +28,7 @@ function LostFound() {
           reverse
           reportType="found"
         />
+
         <LostFoundCard
           title="Lost Your Pet?"
           description="Report instantly and connect with people in your area."
@@ -37,15 +39,27 @@ function LostFound() {
 
       </div>
 
-      <div className="text-center mt-10">
-        <button onClick={() => navigate("/lostfound")} 
-        className="bg-[#144a36] text-white px-8 py-3 lg:px-10 lg:py-4 lg:text-2xl rounded-xl hover:opacity-90 cursor-pointer">
+     <div className="flex items-center justify-center gap-6 lg:gap-10 mt-20 lg:mt-30">
+<img
+  src={PointingArrow}
+  alt="Left Arrow"
+  className="w-12 md:w-40 lg:w-58 h-full float-arrow scale-x-[-1]"
+/>
+        <button
+          onClick={() => navigate("/lostfound")}
+          className="px-10 py-4 lg:px-14 lg:py-5 text-lg md:text-xl lg:text-3xl font-bold rounded-2xl cursor-pointer border-4 bg-[#144a36] text-white border-[#144a36] shadow-lg transition-all duration-300 hover:-translate-x-2 hover:bg-[#88b62c] hover:text-[#144a36] hover:scale-105" 
+        >
           View Lost & Found Pets
         </button>
+
+<img
+  src={PointingArrow}
+  alt="Right Arrow"
+  className="w-12 md:w-40 lg:w-58 h-full float-arrow "
+/>
       </div>
+
 
     </section>
   );
 }
-
-export default LostFound;

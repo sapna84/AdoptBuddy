@@ -5,7 +5,7 @@ import Footer from"../components/footer.jsx";
 import LostFound from "../components/lostFound";
 import PetSection from "../components/petSection";
 import VetSection from "../components/vetSection";
-import Community from "../components/Community.jsx";
+import Community from "../components/Feedbacks.jsx";
 function Home() {
   return (
     <>

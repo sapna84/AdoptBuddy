@@ -1,31 +1,47 @@
 import VetCard from "./vetCard";
 import vets from "../data/vets";
 import { useNavigate } from "react-router-dom";
+import PointingArrow from "../assets/images/icons/pointing_left.svg";
 
 export default function VetSection() {
   const navigate = useNavigate();
   return (
-    <section className="max-w-auto mx-auto lg:mx-20 px-6 py-20">
-      <h2 className="playpen text-[#144a36] text-4xl md:text-5xl font-bold text-center">
+    <section className="w-full bg-white/50 px-5 sm:px-8 lg:px-16 py-16 lg:py-20">
+      <h2 className="playpen text-[#144a36] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
         Our Trusted Veterinarians
       </h2>
 
-      <p className="text-center lg:text-2xl mt-4 lg:mt-6 text-black">
-        Regular veterinary care ensures a healthier future.
-      </p>
-
-      <div className="grid md:grid-cols-3 gap-8 mt-12 ">
+      <p className="inter text-center text-base sm:text-lg md:text-xl lg:text-3xl mt-4 lg:mt-6 text-black max-w-lg sm:max-w-xl md:max-w-3xl lg:max-w-6xl mx-auto leading-relaxed">
+  Regular veterinary care ensures a healthier future for your loyal companion,
+  so you can create more happy and healthy moments together.
+</p>
+      <div
+  className=" mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mt-12 justify-items-center">
         {vets.slice(0,3).map((vet) => (
   <VetCard key={vet.id} vet={vet} />
 ))}
       </div>
 
-      <div className="text-center mt-10">
-        <button onClick={() => navigate("/book-appointment")} 
-        className="bg-[#144a36] text-white px-8 py-3 lg:px-10 lg:py-4 lg:text-2xl rounded-xl hover:opacity-90 cursor-pointer">
-          Book Appointment Directly
-        </button>
-      </div>
+      
+           <div className="flex items-center justify-center gap-6 lg:gap-10 mt-20 lg:mt-30">
+      <img
+        src={PointingArrow}
+        alt="Left Arrow"
+        className="w-12 md:w-40 lg:w-58 h-full float-arrow scale-x-[-1]"
+      />
+              <button
+                onClick={() => navigate("/book-appointment")}
+                className="interpx-10 py-4 lg:px-14 lg:py-5 text-lg md:text-xl lg:text-3xl font-bold rounded-2xl cursor-pointer border-4 bg-[#144a36] text-white border-[#144a36] shadow-lg transition-all duration-300 hover:-translate-x-2 hover:bg-[#88b62c] hover:text-[#144a36] hover:scale-105" 
+              >
+                Book an Appointment
+              </button>
+      
+      <img
+        src={PointingArrow}
+        alt="Right Arrow"
+        className="w-12 md:w-40 lg:w-58 h-full float-arrow "
+      />
+            </div>
     </section>
   );
 }

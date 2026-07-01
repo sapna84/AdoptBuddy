@@ -1,55 +1,112 @@
 import happyAdoptions from "../assets/images/icons/happy_adoptions.svg";
-import petAvailable from "../assets/images/icons/pet_available.svg";
-import veterinarians from "../assets/images/icons/veterinarians.svg";
-import communityMembers from "../assets/images/icons/community_members.svg";
+import petAvailable from "../assets/images/icons/paw_lightgreen.svg";
+import veterinarians from "../assets/images/icons/vet_lightgreen.svg";
+import communityMembers from "../assets/images/icons/group_lightgrren.svg";
+import { useEffect, useRef, useState } from "react";
+export default function Stats() {
 
-function Stats() {
   const stats = [
-    {
-      icon: happyAdoptions,
-      value: "10K+",
-      label: "Happy Adoptions",
+  {
+    icon: happyAdoptions,
+    value: 100,
+    suffix: "+",
+    label: "Happy Adoptions",
+  },
+  {
+    icon: petAvailable,
+    value: 300,
+    suffix: "",
+    label: "Pets Available",
+  },
+  {
+    icon: veterinarians,
+    value: 100,
+    suffix: "+",
+    label: "Veterinarians",
+  },
+  {
+    icon: communityMembers,
+    value: 300,
+    suffix: "+",
+    label: "Community Members",
+  },
+];
+const [counts, setCounts] = useState(stats.map(() => 0));
+const sectionRef = useRef(null);
+useEffect(() => {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry.isIntersecting) return;
+
+      stats.forEach((stat, index) => {
+        let start = 0;
+
+        const increment = Math.ceil(stat.value / 40);
+
+        const timer = setInterval(() => {
+          start += increment;
+
+          if (start >= stat.value) {
+            start = stat.value;
+            clearInterval(timer);
+          }
+
+          setCounts((prev) => {
+            const updated = [...prev];
+            updated[index] = start;
+            return updated;
+          });
+        }, 25);
+      });
+
+      observer.disconnect();
     },
     {
-      icon: petAvailable,
-      value: "5K",
-      label: "Pets Available",
-    },
-    {
-      icon: veterinarians,
-      value: "120+",
-      label: "Veterinarians",
-    },
-    {
-      icon: communityMembers,
-      value: "50K",
-      label: "Community Members",
-    },
-  ];
+      threshold: 0.4,
+    }
+  );
+
+  if (sectionRef.current) {
+    observer.observe(sectionRef.current);
+  }
+
+  return () => observer.disconnect();
+}, []);
 
   return (
-    <section className="max-w-auto mx-auto lg:px-20 lg:py-6 px-6 py-10">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-2 text-center">
-        {stats.map((stat) => (
-          <div key={stat.label}>
-            <img
-              src={stat.icon}
-              alt={stat.label}
-              className="h-10 w-10 md:h-12 md:w-12 mx-auto mb-3"
-            />
+    <section
+  ref={sectionRef}
+  className="max-w-full bg-[#f7f2e8] py-8 shadow-lg"
+>
+      <div className="max-w-full mx-auto px-20">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 lg:gap-x-8 xl:gap-x-10">
+        {stats.map((stat, index) => (
+          <div
+  key={stat.label}
+  className="flex flex-col items-center text-center"
+>
+  {/* Icon + Number */}
+  <div className="flex items-center justify-center gap-5">
+    <img
+      src={stat.icon}
+      alt={stat.label}
+      className="w-12 h-12 md:w-18 md:h-18"
+    />
 
-            <h3 className="font-bold text-3xl md:text-4xl">
-              {stat.value}
-            </h3>
+    <h3 className="text-[#144A36] font-bold text-[36px] md:text-[48px] leading-none">
+      {counts[index]}
+      {stat.suffix}
+    </h3>
+  </div>
 
-            <p className="text-lg md:text-2xl">
-              {stat.label}
-            </p>
-          </div>
+  {/* Label */}
+  <p className="mt-3 text-[#144A36] text-[20px] md:text-[24px] font-medium">
+    {stat.label}
+  </p>
+</div>
         ))}
+        </div>
       </div>
     </section>
   );
 }
-
-export default Stats;

@@ -18,7 +18,7 @@ const handleDragOver = (e) => {
 };
 const [category, setCategory] = useState("");
 return(
-<div className="bg-white rounded-2xl shadow-lg p-8">
+<div className="bg-white/50 rounded-2xl shadow-lg p-8">
 
       <h2 className="text-3xl font-bold text-[#144a36] mb-8">
         Appointment Details
@@ -37,7 +37,7 @@ return(
               </span>
               </label>
           <select 
-          className="w-full border rounded-lg p-3"
+          className="w-full border bg-white rounded-lg p-3"
           required
           value={category}
           onChange={(e)=> setCategory(e.target.value)}
@@ -59,7 +59,7 @@ return(
               </span>
     </label>
 
- <select className="w-full border rounded-lg p-3">
+ <select className="w-full border rounded-lg p-3 bg-white">
       <option>Select Breed</option>
 
       {petbreeds[category].map((breed) => (
@@ -80,7 +80,7 @@ return(
               </span>
     </label>
 
-    <select className="w-full border rounded-lg p-3"
+    <select className="w-full border rounded-lg p-3 bg-white"
     required>
       <option>Select Bird Type</option>
 
@@ -106,12 +106,14 @@ return(
               *
               </span>
               </label>
-          <select className="w-full border rounded-lg p-3
-          required"
+          <select className="w-full border rounded-lg p-3 bg-white
+          required
+          "
           >
-            <option>Select gender of your pet</option>
+            <option >Select gender of your pet</option>
             <option>Male</option>
             <option>Female</option>
+            <option>Unknown</option>
           </select>
 </div>
 
@@ -127,7 +129,7 @@ return(
           <input
             type="text"
             placeholder="Enter your pet's name"
-            className="w-full border rounded-lg p-3"
+            className="w-full border rounded-lg p-3 bg-white"
           />
 </div>
 </div>
@@ -150,7 +152,7 @@ return(
             type="number"
             required
             placeholder="Enter your pet's age"
-            className="w-full border rounded-lg p-3"
+            className="w-full border rounded-lg p-3 bg-white"
           />
 </div>
 <div>
@@ -163,8 +165,8 @@ return(
           <input
             type="number"
             required
-            placeholder="Enter your pet's age"
-            className="w-full border rounded-lg p-3"
+            placeholder="Enter color or any markings"
+            className="w-full border rounded-lg p-3 bg-white"
           />
 </div>
 
@@ -182,7 +184,7 @@ return(
           rows="4"
           required
           placeholder="Type any other details..."
-          className="w-full border rounded-lg p-3"
+          className="w-full border rounded-lg p-3 bg-white"
         />
         </div>
 
@@ -203,7 +205,7 @@ return(
       <div>
       <p className="font-medium">
         Drag & Drop file here &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <span className="text-black text-3xl">
+        <span className="text-3xl">
           or
           </span>
       </p>
@@ -226,7 +228,7 @@ return(
       type="file"
       required
       accept=".pdf,.jpg,.jpeg,.png"
-      className="hidden"
+      className="hidden "
        onChange={(e) =>
         setFileName(e.target.files?.[0]?.name || "")}
     />
@@ -252,7 +254,7 @@ return(
 <input
   type="text"
   placeholder="Enter location"
-  class="border rounded-lg p-3 w-full"
+  class="border rounded-lg p-3 w-full bg-white"
   required
 />
 
@@ -269,7 +271,7 @@ return(
           <input
             type="date"
             required
-            className="w-full border rounded-lg p-3"
+            className="w-full border rounded-lg p-3 bg-white"
           />
 </div>
 
@@ -284,7 +286,7 @@ return(
           <input
             type="time"
             required
-            className="w-full border rounded-lg p-3"
+            className="w-full border rounded-lg p-3 bg-white"
           />
           </div>
 
@@ -310,7 +312,7 @@ return(
             type="text"
             required
             placeholder="Enter your name"
-            className="w-full border rounded-lg p-3"
+            className="w-full border rounded-lg p-3 bg-white"
           />
           </div>
 
@@ -325,7 +327,7 @@ return(
             type="tel"
             required
             placeholder="Enter your phone number"
-            className="w-full border rounded-lg p-3"
+            className="w-full border rounded-lg p-3 bg-white"
           />
           </div>
 
@@ -342,7 +344,7 @@ return(
           type="email"
           required
           placeholder="Enter your email address"
-          className="w-full border rounded-lg p-3"
+          className="w-full border rounded-lg p-3 bg-white"
         />
         </div>
          </div>
@@ -351,7 +353,7 @@ return(
          <div className="flex justify-center">
         <button
           type="submit"
-          className="w-[200px] bg-[#144a36] text-white py-4 rounded-xl text-lg font-semibold"
+          className="w-[200px]  py-4 rounded-xl text-lg font-semibold cursor-pointer border-2 bg-[#144a36] text-white border-[#144a36] hover:bg-[#144a36]/80 hover:text-white transition"
         >
           Submit Report
         </button>

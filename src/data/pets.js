@@ -14,6 +14,7 @@ const pets = [
     location:"Goa",
     image: pet1mimiImg,
     featured: true,
+    isNew: true,
   },
   {
     id: 2,
@@ -24,6 +25,7 @@ const pets = [
     location:"Jaipur",
     image: pet2maxImg,
     featured: true,
+    isNew: false,
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ const pets = [
     location:"Delhi NCR",
     image: pet3binkyImg,
     featured: false,
+    isNew: true,
   },
   {
     id: 4,
@@ -44,6 +47,7 @@ const pets = [
     location:"Mumbai",
     image: pet4stellaImg,
     featured: true,
+    isNew: false,
   },
    {
     id: 5,
@@ -54,6 +58,7 @@ const pets = [
     location:"Bengaluru",
     image: pet5mochiImg,
     featured: true,
+    isNew: true,
   },
 ];
 

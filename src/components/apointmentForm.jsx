@@ -16,7 +16,7 @@ const handleDragOver = (e) => {
   e.preventDefault();
 };
 return(
-<div className="bg-white rounded-2xl shadow-lg p-8">
+<div className="bg-white/50 rounded-2xl shadow-lg p-8">
 
       <h2 className="text-3xl font-bold text-[#144a36] mb-8">
         Appointment Details
@@ -38,7 +38,7 @@ return(
             type="text"
             required
             placeholder="Enter your pet's name"
-            className="w-full border rounded-lg p-3"
+            className="w-full border rounded-lg p-3 bg-white"
           />
 </div>
 
@@ -50,7 +50,7 @@ return(
               *
               </span>
               </label>
-          <select className="w-full border rounded-lg p-3"
+          <select className="w-full border rounded-lg p-3 bg-white"
           required>
             <option>Select your pet's category</option>
             <option>Dog</option>
@@ -67,19 +67,17 @@ return(
           {/*category*/}
 <div>
              <label className="block font-medium text-[#144a36]">
-              Pet Category
+              Pet Gender
               <span className="text-red-500">
               *
               </span>
               </label>
-          <select className="w-full border rounded-lg p-3"
+          <select className="w-full border rounded-lg p-3 bg-white"
           required>
             <option>Select gender of your pet</option>
             <option>Male</option>
             <option>Female</option>
-            <option>Bird</option>
-            <option>Rabbit</option>
-            <option>Hamster</option>
+            <option>Unknown</option>
           </select>
 </div>
 
@@ -95,7 +93,7 @@ return(
             type="number"
             required
             placeholder="Enter your pet's age"
-            className="w-full border rounded-lg p-3"
+            className="w-full border rounded-lg p-3 bg-white"
           />
 </div>
 </div>
@@ -114,7 +112,7 @@ return(
           <input
             type="date"
             required
-            className="w-full border rounded-lg p-3"
+            className="w-full border rounded-lg p-3 bg-white"
           />
 </div>
 
@@ -129,7 +127,7 @@ return(
           <input
             type="time"
             required
-            className="w-full border rounded-lg p-3"
+            className="w-full border rounded-lg p-3 bg-white"
           />
           </div>
 
@@ -145,7 +143,7 @@ return(
         <textarea
           rows="4"
           placeholder="Describe your pet's condition..."
-          className="w-full border rounded-lg p-3"
+          className="w-full border rounded-lg p-3 bg-white"
         />
         </div>
 
@@ -216,7 +214,7 @@ return(
             type="text"
             required
             placeholder="Enter your name"
-            className="w-full border rounded-lg p-3"
+            className="w-full border rounded-lg p-3 bg-white "
           />
           </div>
 
@@ -231,7 +229,7 @@ return(
             type="tel"
             required
             placeholder="Enter your phone number"
-            className="w-full border rounded-lg p-3"
+            className="w-full border rounded-lg p-3 bg-white"
           />
           </div>
 
@@ -248,7 +246,7 @@ return(
           type="email"
           required
           placeholder="Enter your email address"
-          className="w-full border rounded-lg p-3"
+          className="w-full border rounded-lg p-3 bg-white"
         />
         </div>
          </div>
@@ -256,7 +254,7 @@ return(
          <div className="flex justify-center">
         <button
           type="submit"
-          className="w-[200px] bg-[#144a36] text-white py-4 rounded-xl text-lg font-semibold"
+          className="w-[200px] py-4 rounded-xl text-lg font-semibold cursor-pointer border-2 bg-[#144a36] text-white border-[#144a36] hover:bg-[#144a36]/80 hover:text-white transition"
         >
           Book Appointment 
         </button>

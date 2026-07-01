@@ -1,5 +1,5 @@
 import logo from "../assets/images/logo/logo_footer.png";
-
+import { NavLink } from "react-router-dom";
 import facebook from "../assets/images/icons/facebook.svg";
 import instagram from "../assets/images/icons/insta.svg";
 import twitter from "../assets/images/icons/twitter.svg";
@@ -33,11 +33,59 @@ function Footer() {
           </h4>
 
           <ul className="space-y-2">
-            <li>&gt; Home</li>
-            <li>&gt; Browse Pets</li>
-            <li>&gt; Veterinarians</li>
-            <li>&gt; Lost & Found</li>
-            <li>&gt; About Us</li>
+            <li>
+  <NavLink
+    to="/"
+    className={({ isActive }) =>
+      isActive ? "text-[#88b62c]" : "hover:text-[#88b62c]"
+    }
+  >
+    &gt; Home
+  </NavLink>
+</li>
+           <li>
+  <NavLink
+    to="/adopt"
+    className={({ isActive }) =>
+      isActive ? "text-[#88b62c]" : "hover:text-[#88b62c]"
+    }
+  >
+    &gt; Browse Pets
+  </NavLink>
+</li>
+
+<li>
+  <NavLink
+    to="/Vets-list"
+    className={({ isActive }) =>
+      isActive ? "text-[#88b62c]" : "hover:text-[#88b62c]"
+    }
+  >
+    &gt; Veterinarians
+  </NavLink>
+</li>
+
+<li>
+  <NavLink
+    to="/lostfound"
+    className={({ isActive }) =>
+      isActive ? "text-[#88b62c]" : "hover:text-[#88b62c]"
+    }
+  >
+    &gt; Lost & Found
+  </NavLink>
+</li>
+
+<li>
+  <NavLink
+    to="/about"
+    className={({ isActive }) =>
+      isActive ? "text-[#88b62c]" : "hover:text-[#88b62c]"
+    }
+  >
+    &gt; About Us
+  </NavLink>
+</li>
           </ul>
         </div>
 

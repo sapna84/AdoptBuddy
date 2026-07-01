@@ -1,7 +1,7 @@
 import Navbar from "../components/navbar.jsx";
 import Footer from"../components/footer.jsx";
 import vets from "../data/vets";
-import VetCard from "../components/VetCard";
+import VetCard from "../components/vetCard";
 import Banner from "../components/listBanner.jsx";
 import bannerImg from "../assets/images/banners/listBanner.png";
 export default function VetBooking() {
@@ -16,7 +16,7 @@ export default function VetBooking() {
       />
       {/*vet cards*/}
   
-  <section className="max-w-[1440px] mx-auto py-20">
+  <section className="max-w p-20 mx-auto py-20">
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
         {vets.map((vet) => (

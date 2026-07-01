@@ -18,7 +18,7 @@ export default function Contact() {
                 <img
                   src={Contactbanner}
                   alt="About Hero"
-                  className="w-full h-[300px] py:20 md:h-[400px] lg:h-[500px] object-cover"
+                  className="w-full h-[350px] py:20 md:h-[500px] lg:h-[500px] object-cover"
                 />
             
              
@@ -31,8 +31,7 @@ export default function Contact() {
                  Contact Us
                 </p>
                 <h1 className=" playpen lg:mt-6 text-4xl md:text-6xl font-bold text-white leading-tight lg:leading-tight">
-                  Because Every Pet Deserves
-                  With <span className="text-[#88b62c]">a Way Home </span>
+                  Because Every Pet Deserves <br /><span className="text-[#88b62c]">a Way Home </span>
                 </h1>
       
                 <p className="mt-6 lg:mt-12 text-lg lg:text-xl text-white lg:leading-tight">
@@ -70,7 +69,7 @@ export default function Contact() {
   <img
     src={MsgIcon}
     alt="Message"
-    className="absolute left-[20px] top-1/2 -translate-y-1/2 w-20 lg:w-80"
+    className="absolute lg:left-[20px] top-50 lg:top-1/2 -translate-y-1/2 w-full lg:w-80"
   />
 </div>
 

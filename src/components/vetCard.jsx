@@ -1,10 +1,15 @@
-import { useNavigate } from "react-router-dom";
-export default function VetCard({vet}){
-   console.log(vet);
-  const navigate = useNavigate();
-   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 transition">
-      <div className="h-72 bg-gray-200">
+import {
+  faLocationDot,
+  faStar,
+  faGraduationCap,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+export default function VetCard({ vet }) {
+  return (
+    <div className="bg-white rounded-[24px] overflow-hidden shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 w-full max-w-[280px] sm:max-w-[330px] lg:max-w-[380px]">
+      {/* Doctor Image */}
+      <div className="h-[220px] sm:h-[260px] lg:h-[320px]">
         <img
           src={vet.image}
           alt={vet.name}
@@ -12,29 +17,73 @@ export default function VetCard({vet}){
         />
       </div>
 
-      <div className="p-5">
-        <h3 className="text-[#88b62c] text-2xl font-bold">
-          {vet.name}</h3>
+      {/* Details */}
+      <div className="p-4 lg:p-5">
 
-        <p className="mt-2 text-black lg:text-m text-sm leading-relaxed">
+        {/* Name */}
+        <h3 className="playpen text-[#88b62c] font-extrabold text-2xl sm:text-3xl lg:text-4xl">
+          {vet.name}
+        </h3>
+
+        {/* Rating */}
+        <p className="mt-4 flex items-center text-lg lg:text-2xl">
+
+          <span className="text-yellow-400 mr-3">
+            ★★★★☆
+          </span>
+
           {vet.reviews}
-          <br />
-          {vet.experience}
-          <br />
-          {vet.qualification} • {vet.location}
+
         </p>
+
+        {/* Experience */}
+        <div className="flex items-center gap-4 mt-4">
+
+          <FontAwesomeIcon
+            icon={faStar}
+            className="text-xl lg:text-2xl"
+          />
+
+          <span className="text-lg lg:text-2xl">
+            {vet.experience}
+          </span>
+
+        </div>
+
+        {/* Qualification + Location */}
+
+        <div className="flex justify-between items-center mt-4">
+
+          <div className="flex items-center gap-4">
+
+            <FontAwesomeIcon
+              icon={faGraduationCap}
+              className="text-xl lg:text-2xl"
+            />
+
+            <span className="text-lg lg:text-2xl">
+              {vet.qualification}
+            </span>
+
+          </div>
+
+          <div className="flex items-center gap-2">
+
+            <FontAwesomeIcon
+              icon={faLocationDot}
+              className="text-[#88b62c] text-xl lg:text-2xl"
+            />
+
+            <span className="text-lg lg:text-2xl">
+              {vet.location}
+            </span>
+
+          </div>
+
+        </div>
+
       </div>
-      
-      <button
-  onClick={() =>
-    navigate("/book-appointment", {
-      state: { vet },
-    })
-  }
-  className="w-full mt-4 bg-[#144a36] text-white rounded-full py-3 font-medium"
->
-  Book Appointment
-</button>
+
     </div>
   );
 }

@@ -1,9 +1,9 @@
-import FormBanner from "../assets/images/banners/formBanner.png";
+import BannerImg from "../assets/images/banners/formBanner.png";
 export default function formbanner({title, description}){
     return(
         <section className="relative overflow-hidden">
                   <img
-                    src={FormBanner}
+                    src={BannerImg}
                     alt="Banner"
                     className="w-full h-full py:20 object-cover"
                   />
@@ -17,9 +17,10 @@ export default function formbanner({title, description}){
                     {title}
                  </h1>
         
-                  <p className=" text-lg lg:text-2xl lg:mt-4 text-white lg:leading-tight">
+                  <p className=" text-m w-[100%] lg:text-2xl mt-2 text-white lg:leading-tight">
                     {description}
                 </p>
+                
                 </div>
                 </div>
                 </div>

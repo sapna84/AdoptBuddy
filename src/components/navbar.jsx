@@ -1,28 +1,32 @@
-import logo from "../assets/images/logo/logo_nev.png";
-import userIcon from "../assets/images/icons/user_profile.svg";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import logo from "../assets/images/logo/logo_nev.png";
 
 export default function Navbar() {
-    const linkStyle = ({ isActive }) =>
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const linkStyle = ({ isActive }) =>
     isActive
-      ? "text-[#88b62c] border-b-2 border-[#88b62c] pb-1"
-      : "text-black hover:text-[#88b62c]";
+      ? "playpen text-[#88b62c] border-b-6 border-[#88b62c] pb-2"
+      : "inter text-black hover:text-[#88b62c] transition";
 
   return (
-    
-    <header className="bg-white/90">
-      <div className="max-w-auto mx-auto px-2 lg:px-16 h-25 flex items-center relative shadow-2xl">
-
+    <header className="fixed top-0 left-0 w-full z-50 h-35 bg-white/80 backdrop-blur-md shadow-lg">
+      <div className="w-full px-5 lg:mt-4 md:px-8 lg:px-10 h-20 md:h-24 lg:h-28 flex items-center justify-between">
         {/* Logo */}
-        <img
-          src={logo}
-          alt="AdoptBuddy Logo"
-          className="h-10 md:h-15 lg:h-25 w-auto lg:"
-        />
+        <NavLink to="/">
+          <img
+            src={logo}
+            alt="AdoptBuddy Logo"
+            className="h-12 md:h-16 lg:h-16 w-auto lg:ml-10 transition-transform"
+          />
+        </NavLink>
 
-        {/* Navigation */}
-        <nav className="flex absolute left-1/2 -translate-x-1/3 gap-8 lg:gap-24 text-sm lg:text-lg font-semibold">
-
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-12 xl:gap-24 text-3xl font-bold">
           <NavLink to="/" className={linkStyle}>
             Home
           </NavLink>
@@ -30,32 +34,107 @@ export default function Navbar() {
           <NavLink to="/adopt" className={linkStyle}>
             Adopt Pets
           </NavLink>
-          
+
           <NavLink to="/Vets-list" className={linkStyle}>
             Veterinarian
           </NavLink>
-          
+
           <NavLink to="/about" className={linkStyle}>
             About Us
           </NavLink>
-
 
           <NavLink to="/contact" className={linkStyle}>
             Contact Us
           </NavLink>
         </nav>
 
-        {/* User Icon */}
-        <div className="ml-auto">
-          <img
-            src={userIcon}
-            alt="User Profile"
-            className="h-8 w-8 md:h-10 md:w-10 cursor-pointer"
-          />
-        </div>
+        {/* Right Side */}
+        <div className="flex items-center gap-4">
 
+          {/* User */}
+          <FontAwesomeIcon
+  icon={faUserPlus}
+  className="hidden lg:block text-[#144a36] text-5xl mr-12 cursor-pointer transition-transform hover:scale-105"
+/>
+
+          {/* Mobile Menu Button */}
+         <button className="lg:hidden text-black"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            {menuOpen ? (
+              <X size={40} />
+            ) : (
+              <Menu size={40} />
+            )}
+          </button>
+
+        </div>
       </div>
-      
+
+{/* Mobile Menu */}
+<div
+  className={`lg:hidden bg-white shadow-md overflow-hidden transition-all duration-300 ${
+    menuOpen ? "max-h-150 py-4" : "max-h-0"
+  }`}
+>
+  <div className="relative flex flex-col px-8 py-10">
+
+    {/* Menu Items */}
+    <nav className="flex flex-col items-center gap-8 text-xl font-medium py-2">
+
+      <NavLink
+        to="/"
+        onClick={() => setMenuOpen(false)}
+        className={({ isActive }) =>
+          `${linkStyle({ isActive })} w-full text-center py-5 border-b border-gray-200`
+        }
+      >
+        Home
+      </NavLink>
+
+      <NavLink
+        to="/adopt"
+        onClick={() => setMenuOpen(false)}
+        className={({ isActive }) =>
+          `${linkStyle({ isActive })} w-full text-center py-5 border-b border-gray-200`
+        }
+      >
+        Adopt Pets
+      </NavLink>
+
+      <NavLink
+        to="/Vets-list"
+        onClick={() => setMenuOpen(false)}
+        className={({ isActive }) =>
+          `${linkStyle({ isActive })} w-full text-center py-5 border-b border-gray-200`
+        }
+      >
+        Veterinarian
+      </NavLink>
+
+      <NavLink
+        to="/about"
+        onClick={() => setMenuOpen(false)}
+        className={({ isActive }) =>
+          `${linkStyle({ isActive })} w-full text-center py-5 border-b border-gray-200`
+        }
+      >
+        About Us
+      </NavLink>
+
+      <NavLink
+        to="/contact"
+        onClick={() => setMenuOpen(false)}
+        className={({ isActive }) =>
+          `${linkStyle({ isActive })} w-full text-center py-5`
+        }
+      >
+        Contact Us
+      </NavLink>
+
+    </nav>
+  </div>
+</div>
     </header>
   );
 }

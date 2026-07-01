@@ -1,7 +1,36 @@
-export default function PetCard({pet}) {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import newBow from "../assets/images/icons/newbow.svg";
+import { useState } from "react";
+import {
+  faLocationDot,
+  faHeart,
+} from "@fortawesome/free-solid-svg-icons";
+export default function PetCard({ pet }) {
+const [liked, setLiked] = useState(false);
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:-translate-y-2 transition duration-300">
-      <div className="h-120 bg-gray-200 flex items-center justify-center">
+    
+    <div className="relative bg-white rounded-3xl overflow-visible shadow-md shadow-[#88b62c] hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
+
+      {/* NEW Ribbon */}
+      {pet.isNew && (
+       <img
+  src={newBow}
+  alt="New"
+  className="absolute top-2 -left-7 w-35 z-30 pointer-events-none"
+/>
+      )}
+      {/* Favourite Icon */}
+     <button
+  onClick={() => setLiked(!liked)}
+  className={`absolute top-5 right-5 z-20 p-1 text-4xl rounded-full shadow-md
+    transition-all duration-300 hover:scale-110 active:scale-95
+    ${liked ? "text-[#88b62c]" : "text-white/60"}`}
+>
+  <FontAwesomeIcon icon={faHeart} />
+</button>
+
+      {/* Pet Image */}
+      <div className="relative rounded-t-3xl h-[300px] overflow-hidden">
         <img
           src={pet.image}
           alt={pet.name}
@@ -9,21 +38,45 @@ export default function PetCard({pet}) {
         />
       </div>
 
-      <div className="p-4">
-        <h3 className="text-[#88b62c] font-bold text-2xl md:text-3xl">
+      {/* Content */}
+      <div className="p-5">
+
+        <h3 className="playpen text-[#88b62c] pl-4 text-4xl font-extrabold">
           {pet.name}
         </h3>
 
-        <p className="text-lg mt-2 text-black">
-          {pet.breed}<br />
-           {pet.age}<br />
-          {pet.gender} • {pet.location}
+        <p className="mt-3 pl-4 text-2xl">
+          {pet.breed}
         </p>
-        <button
-        className="md:px-6 lg:px-8 lg:ml-20 mt-4 bg-[#144a36] text-white rounded-xl py-4 hover:opacity-90 cursor-pointer">
-          Contact Owner &gt;
-        </button>
+
+        <p className="text-2xl pl-4">
+          {pet.age}
+        </p>
+
+        <div className="flex pl-4 justify-between items-center mt-1">
+
+          <span className="text-2xl">
+            {pet.gender}
+          </span>
+
+          <span className="flex items-center pr-4 gap-2 text-2xl">
+            <FontAwesomeIcon icon={faLocationDot} />
+            {pet.location}
+          </span>
+
+        </div>
+
+        <div className="flex justify-center mt-7">
+
+          <button className="bg-[#144a36] text-white text-3xl px-4 py-4 rounded-2xl shadow-lg hover:bg-[#0f3b2c] transition cursor-pointer flex items-center gap-3">
+            Contact Owner
+            <span className="text-3xl">›</span>
+          </button>
+
+        </div>
+
       </div>
+
     </div>
   );
 }

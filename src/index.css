@@ -9,3 +9,15 @@ body {
 .playpen {
   font-family: "Playpen Sans", cursive;
 }
+@keyframes floatArrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-arrow {
+  animation: floatArrow 1.2s ease-in-out infinite;
+}

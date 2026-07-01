@@ -4,7 +4,7 @@ export default function formbanner({BannerImage, title, description}){
                   <img
                     src={BannerImage}
                     alt="Banner"
-                    className="w-full h-[255px] py:20 object-cover"
+                    className="w-full lg:h-[255px]  object-cover"
                   />
               
                
@@ -16,7 +16,7 @@ export default function formbanner({BannerImage, title, description}){
                     {title}
                  </h1>
         
-                  <p className=" text-lg lg:text-2xl lg:mt- text-[#88b62c] font-semibold lg:leading-tight">
+                  <p className=" text-lg lg:text-2xl lg:mt-2 text-[#88b62c] font-semibold lg:leading-tight">
                     {description}
                 </p>
                 </div>
