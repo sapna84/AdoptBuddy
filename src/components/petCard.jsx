@@ -16,15 +16,15 @@ const [liked, setLiked] = useState(false);
        <img
   src={newBow}
   alt="New"
-  className="absolute top-2 -left-7 w-35 z-30 pointer-events-none"
+  className="absolute top-2 -left-6 w-30 z-30 pointer-events-none"
 />
       )}
       {/* Favourite Icon */}
      <button
   onClick={() => setLiked(!liked)}
-  className={`absolute top-5 right-5 z-20 p-1 text-4xl rounded-full shadow-md
-    transition-all duration-300 hover:scale-110 active:scale-95
-    ${liked ? "text-[#88b62c]" : "text-white/60"}`}
+  className={`absolute top-5 right-5 z-20 p-1 text-4xl rounded-full
+    transition-all duration-300 hover:scale-110 active:scale-150
+    ${liked ? "text-red-500" : "text-white/50"}`}
 >
   <FontAwesomeIcon icon={faHeart} />
 </button>
