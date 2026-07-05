@@ -16,9 +16,9 @@ const handleDragOver = (e) => {
   e.preventDefault();
 };
 return(
-<div className="bg-white/50 rounded-2xl shadow-lg p-8">
+<div className="bg-white/60 rounded-xl shadow-lg p-8">
 
-      <h2 className="text-3xl font-bold text-[#144a36] mb-8">
+      <h2 className="playpen text-4xl font-bold text-[#144a36] mb-9">
         Appointment Details
       </h2>
 
@@ -28,7 +28,7 @@ return(
 
           {/*pet name*/}
 <div>
-            <label className="block font-medium text-[#144a36]">
+            <label className="block font-bold text-xl mb-2 text-[#144a36]">
               Pet Name
               <span className="text-red-500">
               *
@@ -44,7 +44,7 @@ return(
 
           {/*category*/}
 <div>
-             <label className="block font-medium text-[#144a36]">
+             <label className="block font-bold text-xl mb-2 text-[#144a36]">
               Pet Category
               <span className="text-red-500">
               *
@@ -66,7 +66,7 @@ return(
 
           {/*category*/}
 <div>
-             <label className="block font-medium text-[#144a36]">
+             <label className="block font-bold text-xl mb-2 text-[#144a36]">
               Pet Gender
               <span className="text-red-500">
               *
@@ -83,7 +83,7 @@ return(
 
 {/*pet name*/}
 <div>
-            <label className="block font-medium text-[#144a36]">
+            <label className="block font-bold text-xl mb-2 text-[#144a36]">
               Pet Age
               <span className="text-red-500">
               *
@@ -103,7 +103,7 @@ return(
 
           {/*appointment date*/}
 <div>
-            <label className="block font-medium text-[#144a36]">
+            <label className="block font-bold text-xl mb-2 text-[#144a36]">
               Date
               <span className="text-red-500">
               *
@@ -118,7 +118,7 @@ return(
 
           {/*time*/}
 <div>
-            <label className="block font-medium text-[#144a36]">
+            <label className="block font-bold text-xl mb-2 text-[#144a36]">
               Time
               <span className="text-red-500">
               *
@@ -135,7 +135,7 @@ return(
 
         {/*discribe condition*/}
         <div>
-          <label className="block font-medium text-[#144a36]">Discribe The Issue 
+          <label className="block font-bold text-xl mb-2 text-[#144a36]">Discribe The Issue 
             <span className="text-gray-500 text-sm">
               (optional)
               </span>
@@ -150,7 +150,7 @@ return(
 
         {/*upload pet reports*/}
         <div>
-  <label className="block mb-2 font-medium text-[#144a36]">
+  <label className="block font-bold text-xl mb-2 text-[#144a36]">
     Upload Reports
     <span className="text-gray-500 text-sm">
       {" "}(Optional)
@@ -198,14 +198,14 @@ return(
 
         {/*owner contact info*/}
 
-        <h3 className="text-xl font-semibold text-[#144a36]">
+        <h3 className="block font-bold text-2xl mt-10 mb-6 text-[#144a36]">
           Your Contact Information
         </h3>
 
 {/*name*/}
         <div className="grid md:grid-cols-3 gap-4">
           <div>
-            <label className="block font-medium text-[#144a36]">Your Name
+            <label className="block font-bold text-xl mb-2 text-[#144a36]">Your Name
               <span className="text-red-500">
               *
               </span>
@@ -220,7 +220,7 @@ return(
 
           {/*phone no.*/}
           <div>
-          <label className="block font-medium text-[#144a36]">
+          <label className="block font-bold text-xl mb-2 text-[#144a36]">
             Phone Number
             <span className="text-red-500">
               *</span>
@@ -236,7 +236,7 @@ return(
        {/*email*/}
 
         <div>
-          <label className="block font-medium text-[#144a36]">
+          <label className="block font-bold text-xl mb-2 text-[#144a36]">
             Email Address
             <span className="text-red-500">
               *
@@ -253,13 +253,14 @@ return(
  {/*submit button*/}
          <div className="flex justify-center">
         <button
-          type="submit"
-          className="w-[200px] py-4 rounded-xl text-lg font-semibold cursor-pointer border-2 bg-[#144a36] text-white border-[#144a36] hover:bg-[#144a36]/80 hover:text-white transition"
+        type="submit"
+          className="inter mt-10 px-10 py-4 text-2xl font-bold rounded-xl cursor-pointer border-4
+          bg-[#144a36] border-[#144a36] text-white
+          hover:bg-[#88b62c] hover:text-[#144a36] transition"
         >
-          Book Appointment 
+          Book Appointment
         </button>
-        </div>
-
+</div>
       </form>
     </div>
 );

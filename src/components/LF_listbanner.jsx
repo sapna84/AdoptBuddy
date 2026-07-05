@@ -11,19 +11,19 @@ export default function Banner() {
     alt=""
     className="w-full h-auto block"
   />
-      <div className="mb-40 absolute inset-0 flex flex-col items-center justify-center">
+      <div className="lg:mb-40 md:mb-20 absolute inset-0 flex flex-col items-center justify-center">
 
       <div className=" relative">
         <h1 className="playpen text-center text-white font-extrabold text-3xl sm:text-5xl lg:text-8xl">
           Lost <span className="text-[#88b62c]">&amp;</span> Found Pet
         </h1>
 
-        <p className="inter mt-8 text-center lg:w-7xl w-2xl  text-white text-base sm:text-lg md:text-xl lg:text-3xl font-medium leading-loose">
+        <p className="inter mt-8 text-center lg:w-7xl w-2xl  text-white text-base sm:text-lg md:text-xl lg:text-3xl font-medium lg:leading-loose">
           Help reunite lost pets with their families or report a pet you've
           found. Together we can bring them home.
         </p>
 </div>
-        <div className="mt-20 inter font-medium flex flex-wrap items-center justify-center gap-6">
+        <div className="lg:mt-20 md:mt-10 inter font-medium flex flex-wrap items-center justify-center gap-6">
           <button
             onClick={() =>
               navigate("/report_", {

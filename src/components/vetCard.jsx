@@ -11,7 +11,7 @@ export default function VetCard({ vet, showButton=false }) {
    const navigate = useNavigate();
 
   return (
-    <div className="bg-white rounded-[24px] overflow-hidden shadow-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[460px]">
+    <div className="bg-white rounded-[24px] overflow-hidden shadow-md shadow-[#88b62c] hover:-translate-y-2 hover:shadow-lg transition-all duration-300 w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[460px]">
       {/* Doctor Image */}
       <div className="h-[220px] sm:h-[260px] lg:h-[320px]">
         <img

@@ -11,7 +11,7 @@ const foundPets = [
     breed: "Netherland Dwarf",
     gender: "Female",
     age: "1.5 Years",
-    name: "",
+    name: "NA",
     color: "Light Brown",
     description:
       "Found wandering near a public park. Calm and friendly. Seems well cared for.",
@@ -34,7 +34,7 @@ const foundPets = [
     gender: "Unknown",
     age: "Unknown",
     weight: "",
-    name: "",
+    name: "NA",
     color: "Green",
     description:
       "Found sitting outside a house. Appears tame and comfortable around people.",

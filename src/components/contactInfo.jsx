@@ -15,13 +15,13 @@ const contactInform = [
   {
     icon: PhoneIcon,
     title: "Phone",
-    line1: "+91 9*** *****",
+    line1: "+91 8397828079",
     line2: "Mon-Sat, 9AM - 6PM",
   },
   {
     icon: EmailIcon,
     title: "Email",
-    line1: "connect@adoptbuddy.com",
+    line1: "conn@adoptbuddy.com",
     line2: "Response within 24 hrs",
   },
   {
