@@ -61,27 +61,27 @@ export default function ReportedPetCard({ pet, type }) {
           <h4 className="text-2xl font-semibold text-[#144a36] mb-3">
             Pet Details
           </h4>
-          <dl className="text-xl space-y-2 text-gray-700">
+          <dl className="text-xl space-y-2 text-black">
             {pet.name && (
               <div className="flex gap-2">
-                <dt className="font-medium text-[#88b62c]">Name:</dt>
+                <dt className="font-semibold text-[#88b62c]">Name:</dt>
                 <dd>{pet.name}</dd>
               </div>
             )}
             <div className="flex gap-2">
-              <dt className="font-medium text-[#88b62c]">Gender:</dt>
+              <dt className="font-semibold text-[#88b62c]">Gender:</dt>
               <dd>{pet.gender}</dd>
             </div>
             <div className="flex gap-2">
-              <dt className="font-medium text-[#88b62c]">Breed:</dt>
+              <dt className="font-semibold text-[#88b62c]">Breed:</dt>
               <dd>{pet.breed}</dd>
             </div>
             <div className="flex gap-2">
-              <dt className="font-medium text-[#88b62c]">Age:</dt>
+              <dt className="font-semibold text-[#88b62c]">Age:</dt>
               <dd>{pet.age}</dd>
             </div>
             <div className="flex gap-2">
-              <dt className="font-medium text-[#88b62c]">Colour/Marking:</dt>
+              <dt className="font-semibold text-[#88b62c]">Colour/Marking:</dt>
               <dd>{pet.color}</dd>
             </div>
           </dl>
@@ -95,17 +95,17 @@ export default function ReportedPetCard({ pet, type }) {
           <h4 className="text-2xl font-semibold text-[#144a36] mb-3">
             Location &amp; Time
           </h4>
-          <dl className="text-xl space-y-2 text-gray-700">
+          <dl className="text-xl space-y-2 text-black">
             <div className="flex gap-2">
-              <dt className="font-medium text-[#88b62c]">Location:</dt>
+              <dt className="font-semibold text-[#88b62c]">Location:</dt>
               <dd>{pet.location}</dd>
             </div>
             <div className="flex gap-2">
-              <dt className="font-medium text-[#88b62c]">Date:</dt>
+              <dt className="font-semibold text-[#88b62c]">Date:</dt>
               <dd>{pet.date}</dd>
             </div>
             <div className="flex gap-2">
-              <dt className="font-medium text-[#88b62c]">Time:</dt>
+              <dt className="font-semibold text-[#88b62c]">Time:</dt>
               <dd>{pet.time}</dd>
             </div>
           </dl>
@@ -116,7 +116,7 @@ export default function ReportedPetCard({ pet, type }) {
     Description
   </h4>
 
-  <p className="text-gray-700 text-xl leading-relaxed">
+  <p className="text-black text-xl leading-relaxed">
     {pet.description}
   </p>
 </div>

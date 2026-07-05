@@ -7,6 +7,7 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import Report from "./pages/report";
 import BookingAppointment from "./pages/bookAppointment";
+import Wishlist from "./pages/Wishlist.jsx";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/book-appointment" element={<BookingAppointment />}/>
+       <Route path="/wishlist" element={<Wishlist />}/>
     </Routes>
     )
 }

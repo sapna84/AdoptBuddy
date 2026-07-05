@@ -1,12 +1,26 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import newBow from "../assets/images/icons/newbow.svg";
 import { useState } from "react";
+import LoginPopup from "./LoginPopup";
+import ContactOwnerPopup from "../components/contactadoptPopup.jsx";
+
+import {
+  addToWishlist,
+  removeFromWishlist,
+  isWishlisted,
+} from "../data/wishlistStorage";
+
+import { getLoggedInUser } from "../data/loginUser";
 import {
   faLocationDot,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
-export default function PetCard({ pet }) {
-const [liked, setLiked] = useState(false);
+export default function PetCard({ 
+  pet,
+ }) {
+const [liked, setLiked] = useState(isWishlisted(pet.id));
+const [showLogin, setShowLogin] = useState(false);
+const [showContact, setShowContact] = useState(false);
   return (
     
     <div className="relative bg-white rounded-3xl overflow-visible shadow-md shadow-[#88b62c] hover:-translate-y-2 hover:shadow-lg transition-all duration-300">
@@ -20,8 +34,21 @@ const [liked, setLiked] = useState(false);
 />
       )}
       {/* Favourite Icon */}
-     <button
-  onClick={() => setLiked(!liked)}
+    <button
+  onClick={() => {
+    if (!getLoggedInUser()) {
+      setShowLogin(true);
+      return;
+    }
+
+    if (liked) {
+      removeFromWishlist(pet.id);
+    } else {
+      addToWishlist(pet);
+    }
+
+    setLiked(!liked);
+  }}
   className={`absolute top-5 right-5 z-20 p-1 text-4xl rounded-full
     transition-all duration-300 hover:scale-110 active:scale-150
     ${liked ? "text-red-500" : "text-white/50"}`}
@@ -68,14 +95,39 @@ const [liked, setLiked] = useState(false);
 
         <div className="flex justify-center mt-7">
 
-          <button className="bg-[#144a36] text-white text-3xl px-4 py-4 rounded-2xl shadow-lg hover:bg-[#0f3b2c] transition cursor-pointer flex items-center gap-3">
-            Contact Owner
-            <span className="text-3xl">›</span>
-          </button>
+          <button
+  onClick={() => {
+    if (!getLoggedInUser()) {
+      setShowLogin(true);
+      return;
+    }
 
+    setShowContact(true);
+  }}
+  className="bg-[#144a36] text-white text-3xl px-4 py-4 rounded-2xl shadow-lg hover:bg-[#0f3b2c] transition cursor-pointer flex items-center gap-3"
+>
+  Contact Owner
+  <span className="text-3xl">›</span>
+</button>
         </div>
-
       </div>
+      {showLogin && (
+  <LoginPopup
+    message="Please login or registor first."
+    onClose={() => setShowLogin(false)}
+    onRegister={() => {}}
+  />
+)}
+{showContact && (
+  <ContactOwnerPopup
+    owner={{
+      name: pet.ownerName,
+      phone: pet.ownerPhone,
+      email: pet.ownerEmail,
+    }}
+    onClose={() => setShowContact(false)}
+  />
+)}
 
     </div>
   );

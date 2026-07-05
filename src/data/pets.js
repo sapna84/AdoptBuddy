@@ -15,6 +15,10 @@ const pets = [
     image: pet1mimiImg,
     featured: true,
     isNew: true,
+
+      ownerName: "Rahul Sharma",
+  ownerPhone: "9876543210",
+  ownerEmail: "rahul@gmail.com",
   },
   {
     id: 2,
@@ -26,6 +30,10 @@ const pets = [
     image: pet2maxImg,
     featured: true,
     isNew: false,
+
+      ownerName: "Rahul Sharma",
+  ownerPhone: "9876543210",
+  ownerEmail: "rahul@gmail.com",
   },
   {
     id: 3,
@@ -37,6 +45,10 @@ const pets = [
     image: pet3binkyImg,
     featured: false,
     isNew: true,
+
+  ownerName: "Rahul Sharma",
+  ownerPhone: "9876543210",
+  ownerEmail: "rahul@gmail.com",
   },
   {
     id: 4,
@@ -48,6 +60,10 @@ const pets = [
     image: pet4stellaImg,
     featured: true,
     isNew: false,
+
+      ownerName: "Rahul Sharma",
+  ownerPhone: "9876543210",
+  ownerEmail: "rahul@gmail.com",
   },
    {
     id: 5,
@@ -59,7 +75,12 @@ const pets = [
     image: pet5mochiImg,
     featured: true,
     isNew: true,
+
+      ownerName: "Rahul Sharma",
+  ownerPhone: "9876543210",
+  ownerEmail: "rahul@gmail.com",
   },
+
 ];
 
 export default pets;
