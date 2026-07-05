@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/navbar.jsx";
 import Footer from"../components/footer.jsx";
-import Banner from "../components/formBanner.jsx";
+//import Banner from "../components/formBanner.jsx";
 import Reportform from"../components/reportForm.jsx";
 export default function Report_L_F() {
  const location = useLocation();
@@ -13,11 +13,12 @@ const [reportType, setReportType] = useState(location.state?.reportType);
   const navigate = useNavigate();
   return (<>
   <Navbar />
-  {/*banner*/}
+  {/*banner
     <Banner
      title="Report Lost or Found Pet"
   description="Help reunite pets with their families by providing accurate information."
 />
+*/}
 
 
  <section className="max-w-auto lg:p-20 mx-auto px-6 py-10">

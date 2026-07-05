@@ -1,4 +1,5 @@
-import logo from "../assets/images/logo/logo_footer.png";
+import logo from "../assets/images/logo/logo.png";
+import background from "../assets/images/banners/footer.png";
 import { NavLink } from "react-router-dom";
 import facebook from "../assets/images/icons/facebook.svg";
 import instagram from "../assets/images/icons/insta.svg";
@@ -7,37 +8,78 @@ import youtube from "../assets/images/icons/yt.svg";
 
 function Footer() {
   return (
-    <footer className="bg-[#144a36] text-white">
+   <footer
+  className="text-white bg-cover bg-no-repeat"
+  style={{
+    backgroundImage: `url(${background})`,
+  }}
+>
 
-      <div className="max-w-auto mx-auto lg:mx-20 px-8 py-16 grid md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-25">
+      <div className="max-w-full px-20 lg:py-20 grid md:grid-cols-2 lg:grid-cols-4 gap-20 lg:gap-15">
 
         {/* Logo Section */}
-        <div className="md:max-w-md">
+        <div className="md:max-w-md mt-48">
           <img
             src={logo}
             alt="AdoptBuddy Logo"
-            className="h-14 w-auto"
+            className="h-20 w-auto"
           />
 
-          <p className="mt-3">
+          <p className="inter text-2xl mt-10">
             Bringing pets and people together.
             <br />
             Create happy homes.
           </p>
+          
+        {/* Social Icons */}
+        <div className="inter mt-15 text-2xl">
+          <h4 className="playpen text-3xl font-semibold mb-10">
+            Follow Us
+          </h4>
+
+          <div className="flex gap-8">
+
+            <img
+              src={facebook}
+              alt="Facebook"
+              className="h-8 w-8 cursor-pointer"
+            />
+
+            <img
+              src={instagram}
+              alt="Instagram"
+              className="h-8 w-8 cursor-pointer"
+            />
+
+            <img
+              src={twitter}
+              alt="Twitter"
+              className="h-8 w-8 cursor-pointer"
+            />
+
+            <img
+              src={youtube}
+              alt="YouTube"
+              className="h-10 w-10 cursor-pointer"
+            />
+
+          </div>
         </div>
+        </div>
+        
 
         {/* Quick Links */}
-        <div>
-          <h4 className="font-semibold mb-4">
+        <div className="inter mt-55 text-2xl">
+          <h4 className="playpen text-3xl font-semibold mb-15">
             Quick Links
           </h4>
 
-          <ul className="space-y-2">
+          <ul className="space-y-10">
             <li>
   <NavLink
     to="/"
     className={({ isActive }) =>
-      isActive ? "text-[#88b62c]" : "hover:text-[#88b62c]"
+      isActive ? " text-[#88b62c] font-bold" : "hover:text-[#88b62c]"
     }
   >
     &gt; Home
@@ -47,10 +89,10 @@ function Footer() {
   <NavLink
     to="/adopt"
     className={({ isActive }) =>
-      isActive ? "text-[#88b62c]" : "hover:text-[#88b62c]"
+      isActive ? "text-[#88b62c] font-bold" : "hover:text-[#88b62c]"
     }
   >
-    &gt; Browse Pets
+    &gt; Adopt Pets
   </NavLink>
 </li>
 
@@ -58,7 +100,7 @@ function Footer() {
   <NavLink
     to="/Vets-list"
     className={({ isActive }) =>
-      isActive ? "text-[#88b62c]" : "hover:text-[#88b62c]"
+      isActive ? " text-[#88b62c] font-bold " : "hover:text-[#88b62c]"
     }
   >
     &gt; Veterinarians
@@ -69,7 +111,7 @@ function Footer() {
   <NavLink
     to="/lostfound"
     className={({ isActive }) =>
-      isActive ? "text-[#88b62c]" : "hover:text-[#88b62c]"
+      isActive ? " text-[#88b62c] font-bold" : "hover:text-[#88b62c]"
     }
   >
     &gt; Lost & Found
@@ -80,7 +122,7 @@ function Footer() {
   <NavLink
     to="/about"
     className={({ isActive }) =>
-      isActive ? "text-[#88b62c]" : "hover:text-[#88b62c]"
+      isActive ? " text-[#88b62c] font-bold" : "hover:text-[#88b62c]"
     }
   >
     &gt; About Us
@@ -90,70 +132,51 @@ function Footer() {
         </div>
 
         {/* Support */}
-        <div>
-          <h4 className="font-semibold mb-4">
+        <div className="inter lg:mt-55 text-2xl">
+          <h4 className="playpen text-3xl font-semibold mb-15">
             Support
           </h4>
 
-          <ul className="space-y-2">
-            <li>&gt; Contact Us</li>
-            <li>&gt; FAQs</li>
+          <ul className="space-y-10">
+            <li>
+              <NavLink
+              to="/contact"
+              className={({isActive})=>
+              isActive ? " text-[#88b62c] font-bold" : "hover:text-[#88b62c]"
+            }>
+              &gt; Contact Us
+              </NavLink>
+              </li>
+           <li>
+  <NavLink
+    to="/contact#faq"
+   className={({isActive})=>
+              isActive ? " text-[#88b62c] font-bold" : "hover:text-[#88b62c]"
+            }>
+    &gt; FAQs
+  </NavLink>
+</li>
             <li>&gt; Privacy Policy</li>
             <li>&gt; Terms & Conditions</li>
           </ul>
         </div>
 
         {/* Contact */}
-        <div>
-          <h4 className="font-semibold mb-4">
+        <div className="inter lg:mt-55 text-2xl">
+          <h4 className=" text-3xl font-semibold mb-15">
             Contact
           </h4>
 
-          <ul className="space-y-2">
-            <li>&gt; connect@adoptbuddy.com</li>
-            <li>&gt; +91 XXXXX XXXXX</li>
+          <ul className="space-y-10">
+            <li>&gt; conn@adoptbuddy.com</li>
+            <li>&gt; +91 8397828070</li>
             <li>&gt; Jaipur, Rajasthan</li>
           </ul>
         </div>
 
-        {/* Social Icons */}
-        <div>
-          <h4 className="font-semibold mb-4">
-            Follow Us
-          </h4>
-
-          <div className="flex gap-4">
-
-            <img
-              src={facebook}
-              alt="Facebook"
-              className="h-6 w-6 cursor-pointer"
-            />
-
-            <img
-              src={instagram}
-              alt="Instagram"
-              className="h-6 w-6 cursor-pointer"
-            />
-
-            <img
-              src={twitter}
-              alt="Twitter"
-              className="h-6 w-6 cursor-pointer"
-            />
-
-            <img
-              src={youtube}
-              alt="YouTube"
-              className="h-7 w-7 cursor-pointer"
-            />
-
-          </div>
-        </div>
-
       </div>
 
-      <div className="border-t border-white/20 py-5 text-center">
+      <div className="border-t text-2xl border-white/20 py-5 text-center">
         © 2026 AdoptBuddy. All rights reserved.
       </div>
 

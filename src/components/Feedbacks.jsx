@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import smile from "../assets/images/icons/smile.svg";
 import paw from "../assets/images/icons/pawfeed.svg";
-
+import background from "../assets/images/background/background1.png";
 import feedback1 from "../assets/images/feedback/feedback1.jpg";
 import feedback2 from "../assets/images/feedback/feedback2.jpg";
 import feedback3 from "../assets/images/feedback/feedback3.jpg";
@@ -58,7 +58,12 @@ export default function Feedbacks() {
   const item = feedbacks[current];
 
   return (
-    <section className="bg-[#F7F1E6] py-20 px-5">
+    <section
+  className="py-20 px-5 bg-cover bg-center bg-no-repeat"
+  style={{
+    backgroundImage: `url(${background})`,
+  }}
+>
       <div className="max-w-7xl mx-auto">
 
         {/* Heading */}

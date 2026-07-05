@@ -8,7 +8,8 @@ export default function LostFound() {
   const navigate = useNavigate();
 
   return (
-    <section className="max-w-full mx-auto bg-white/50 px-5 md:px-8 lg:px-[250px] py-16 lg:py-30">
+    <section className="max-w-full mx-auto bg-white/50 px-5 md:px-8 lg:px-[250px] py-16 lg:py-30"
+   >
       <h2 className="playpen text-[#144a36] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
         Reunite Pets With Their Families
       </h2>
