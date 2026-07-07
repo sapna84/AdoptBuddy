@@ -90,7 +90,7 @@ const handleLogout = () => {
            {/* Wishlist */}
   <FontAwesomeIcon
     icon={faHeart}
-    className="hidden lg:block text-red-400 text-4xl cursor-pointer  hover:scale-105 transition"
+    className="hidden lg:block text-[#144a36] text-4xl cursor-pointer  hover:scale-105 transition"
     onClick={() => {
       if (isLoggedIn) {
         navigate("/wishlist");

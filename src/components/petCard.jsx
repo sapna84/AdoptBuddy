@@ -104,13 +104,17 @@ const [showContact, setShowContact] = useState(false);
 
     setShowContact(true);
   }}
-  className="bg-[#144a36] text-white text-3xl px-4 py-4 rounded-2xl shadow-lg hover:bg-[#0f3b2c] transition cursor-pointer flex items-center gap-3"
+  className="bg-[#144a36] text-white text-3xl font-bold px-4 py-3 rounded-2xl cursor-pointer border-4
+          bg-[#144a36] border-[#144a36] text-white
+          hover:bg-[#88b62c] hover:text-[#144a36] transition flex items-center gap-2"
 >
   Contact Owner
   <span className="text-3xl">›</span>
 </button>
         </div>
       </div>
+      
+      
       {showLogin && (
   <LoginPopup
     message="Please login or registor first."
@@ -128,7 +132,9 @@ const [showContact, setShowContact] = useState(false);
     onClose={() => setShowContact(false)}
   />
 )}
+</div>
 
-    </div>
+
+    
   );
 }

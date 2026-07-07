@@ -1,8 +1,9 @@
+import { createPortal } from "react-dom";
 export default function ContactOwnerPopup({
   owner,
   onClose,
 }) {
-  return (
+  return createPortal(
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-[9999]">
 
       <div className="relative bg-white rounded-3xl shadow-2xl w-[90%] max-w-md p-8">
@@ -47,6 +48,7 @@ export default function ContactOwnerPopup({
 
       </div>
 
-    </div>
+    </div>,
+     document.body
   );
 }

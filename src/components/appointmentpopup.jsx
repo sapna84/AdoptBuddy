@@ -1,9 +1,5 @@
-//import successIcon from "../assets/images/icons/check_circle.svg"; // optional
-
-import { createPortal } from "react-dom";
-
-export default function MsgSentSuccess({ onClose }) {
-  return createPortal(
+export default function AppointmentSuccess({ onClose }) {
+  return (
     <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
 
       <div className="bg-white rounded-3xl shadow-2xl w-[90%] max-w-md p-8 text-center relative">
@@ -24,13 +20,13 @@ export default function MsgSentSuccess({ onClose }) {
         </div>
 
         <h2 className="playpen text-4xl font-bold text-[#144a36]">
-          Message Sent!
+          Appointment Booked!
         </h2>
 
         <p className="inter mt-5 text-lg text-gray-600 leading-relaxed">
           Thank you for contacting <span className="font-semibold">AdoptBuddy</span>.
           <br />
-          We have received your message and will get back to you as soon as possible.
+          We have received your request and will get back to you as soon as possible.
         </p>
 
         <button
@@ -42,7 +38,6 @@ export default function MsgSentSuccess({ onClose }) {
 
       </div>
 
-    </div>,
-    document.body
+    </div>
   );
 }

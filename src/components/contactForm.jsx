@@ -26,16 +26,18 @@ const validateName = (value) => {
 };
 
 const validatePhone = (value) => {
-  setPhone(value);
+  const hasInvalidChars = /[^0-9]/.test(value);
+  const digitsOnly = value.replace(/\D/g, "").slice(0, 10);
 
-  const regex = /^[0-9]{0,10}$/;
+  setPhone(digitsOnly);
 
   setErrors((prev) => ({
     ...prev,
-    phone:
-      value === "" || regex.test(value)
-        ? ""
-        : "Enter valid Phone no.",
+    phone: hasInvalidChars
+      ? "enter valid digits only"
+      : digitsOnly === "" || digitsOnly.length === 10
+      ? ""
+      : "Phone number must be exactly 10 digits.",
   }));
 };
 
@@ -128,7 +130,7 @@ setShowSuccess(true);
   value={name}
   onChange={(e) => validateName(e.target.value)}
   placeholder="Enter your full name"
-  className="inter w-full rounded-lg border-3 border-gray-400 bg-white p-3 transition
+  className="inter w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
   hover:border-[#88b62c]
   focus:border-[#88b62c]
   focus:ring-2 focus:ring-[#88b62c]/30
@@ -147,11 +149,13 @@ setShowSuccess(true);
               Phone Number
             </label>
 <input
-  type="text"
+  type="tel"
   value={phone}
   onChange={(e) => validatePhone(e.target.value)}
+  maxLength={10}
+  required
   placeholder="Enter your phone number"
-  className="inter w-full rounded-lg border-3 border-gray-400 bg-white p-3 transition
+  className="inter w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
   hover:border-[#88b62c]
   focus:border-[#88b62c]
   focus:ring-2 focus:ring-[#88b62c]/30
@@ -178,7 +182,7 @@ setShowSuccess(true);
             value={Email}
             onChange={(e) => validateEmail(e.target.value)}
             placeholder="Enter your email"
-            className="inter w-full rounded-lg border-3 border-gray-400 bg-white p-3 transition
+            className="inter w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
             hover:border-[#88b62c]
             focus:border-[#88b62c]
             focus:ring-2 focus:ring-[#88b62c]/30
@@ -202,7 +206,7 @@ setShowSuccess(true);
   value={description}
   onChange={(e) => validateDescription(e.target.value)}
   placeholder="Type a message here..."
-  className="inter w-full rounded-lg border-3 border-gray-400 bg-white p-3 transition
+  className="inter w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
   hover:border-[#88b62c]
   focus:border-[#88b62c]
   focus:ring-2 focus:ring-[#88b62c]/30

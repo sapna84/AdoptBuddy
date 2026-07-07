@@ -28,21 +28,21 @@ export default function LostFoundList() {
             <p className="text-4xl font-bold text-[#144a36]">
               {lostPets.length}
             </p>
-            <p className="mt-1 text-gray-600 text-xl">Lost Pets Reported</p>
+            <p className="mt-1 text-black text-xl">Lost Pets Reported</p>
           </div>
 
           <div className="rounded-xl bg-white p-6 shadow-lg hover:-translate-y-2 transition-all duration-300">
             <p className="text-4xl font-bold text-[#88b62c]">
               {REUNITED_COUNT}
             </p>
-            <p className="mt-1 text-gray-600 text-xl">Pets Reunited</p>
+            <p className="mt-1 text-black text-xl">Pets Reunited</p>
           </div>
 
           <div className="rounded-xl bg-white p-6 shadow-lg hover:-translate-y-2 transition-all duration-300">
             <p className="text-4xl font-bold text-[#144a36]">
               {foundPets.length}
             </p>
-            <p className="mt-1 text-gray-600 text-xl">Active Found Reports</p>
+            <p className="mt-1 text-black text-xl">Active Found Reports</p>
           </div>
         </div>
       </section>

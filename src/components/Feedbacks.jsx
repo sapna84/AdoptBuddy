@@ -225,13 +225,12 @@ export default function Feedbacks() {
             className="
               w-full
               h-full
-              object-cover
-              transition-all
-              duration-500
-              ease-in-out
-              group-hover:scale-90
-              group-hover:object-contain
+             
               cursor-pointer
+              object-cover
+hover:scale-110
+transition
+duration-700
             "
           />
         </div>
