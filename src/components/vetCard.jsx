@@ -95,7 +95,7 @@ export default function VetCard({ vet, showButton=false }) {
           state: { vet },
         })
       }
-      className="w-full bg-[#144a36] text-white text-lg lg:text-xl font-semibold py-3 rounded-xl border-4 border-[#144a36] transition-all duration-300 hover:bg-[#88b62c] hover:text-[#144a36]"
+      className="w-full bg-[#144a36] text-white text-lg lg:text-xl font-semibold py-3 rounded-xl cursor-pointer border-4 border-[#144a36] transition-all duration-300 hover:bg-[#88b62c] hover:text-[#144a36]"
     >
       Book Appointment
     </button>

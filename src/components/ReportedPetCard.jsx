@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ContactPopup from "./ContactPopup";
+import ContactPopup from "../components/lostfoundcontactPopup";
 
 export default function ReportedPetCard({ pet, type }) {
   const [activeImage, setActiveImage] = useState(0);

@@ -449,7 +449,6 @@ export default function Reportform() {
             <input
               id="petImage"
               type="file"
-              required
               accept=".pdf,.jpg,.jpeg,.png"
               className="hidden"
               onChange={(e) => {

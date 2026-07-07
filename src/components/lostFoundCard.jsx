@@ -95,7 +95,7 @@ export default function LostFoundCard({
                 },
               })
             }
-            className="inter mt-8 px-10 py-4 text-xl font-semibold rounded-xl border-4 border-[#2D9216] bg-[#2D9216] text-white transition-all duration-300 hover:bg-[#7ca628] hover:scale-105 hover:shadow-lg"
+            className="inter mt-8 px-10 py-4 text-xl font-semibold rounded-xl cursor-pointer border-4 border-[#2D9216] bg-[#2D9216] text-white transition-all duration-300 hover:bg-[#7ca628] hover:scale-105 hover:shadow-lg"
           >
             {buttonText}
           </button>

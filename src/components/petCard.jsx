@@ -49,9 +49,9 @@ const [showContact, setShowContact] = useState(false);
 
     setLiked(!liked);
   }}
-  className={`absolute top-5 right-5 z-20 p-1 text-4xl rounded-full
+  className={`absolute top-5 right-5 cursor-pointer z-20 p-1 text-4xl rounded-full
     transition-all duration-300 hover:scale-110 active:scale-150
-    ${liked ? "text-red-500" : "text-white/50"}`}
+    ${liked ? "text-red-500" : "text-white/60"}`}
 >
   <FontAwesomeIcon icon={faHeart} />
 </button>
