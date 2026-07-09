@@ -1,11 +1,10 @@
-
 import Navbar from "../components/navbar.jsx";
 import Footer from"../components/footer.jsx";
 import AboutBanner from "../assets/images/banners/aboutUs_banner.png";
 import background from "../assets/images/background/background5.png";
 import background2 from "../assets/images/background/background6.png";
-import OurMission from "../assets/images/icons/ourmission.svg";
-import ourvision from "../assets/images/icons/ourvision.svg"
+import dogImg from "../assets/images/pets/dog.png";
+import catImg from "../assets/images/pets/cat.png";
 import TeamCard from "../components/teamcard.jsx";
 import Team from "../data/team";
 export default function About() {
@@ -52,52 +51,53 @@ export default function About() {
             <span className="text-[#88b62c]">-----</span>AdoptBuddy<span className="text-[#88b62c]">-----</span>
             </h2> 
             <p className="inter mt-16 mr-20 lg:ml-20 text-black text-2xl font-medium leading-relaxed">
-               <span className="playpen text-[#88b62c] text-3xl font-bold text-center">---Connecting Hearts---</span> <br/>AdoptBuddy was created to bring together pets in need of loving homes and people looking for loyal companions, because no one—human or animal—should have to face loneliness alone.
-<br/><br/><span className="playpen text-[#88b62c] text-3xl font-bold">---Reuniting Lost Families---</span><br/> We help lost pets find their way back home by connecting communities and pet owners, giving families hope and increasing the chances of joyful reunions.
-<br/><br/><span className="playpen text-[#88b62c] text-3xl font-bold">---Pet Care---</span> <br/>Beyond adoption, AdoptBuddy offers access to trusted veterinarians and pet healthcare support to ensure every pet enjoys a happy, healthy life.
-<br/><br/><span className="playpen text-[#88b62c] text-3xl font-bold">---Building a Caring Community---</span> <br/>We believe every pet deserves love, safety, and a family. Through compassion and responsible pet ownership, we're creating a community where animals are protected, cherished, and never forgotten.
+               <span className="playpen text-[#88b62c] text-4xl font-bold text-center">---Connecting Hearts---</span> <br/><br/>AdoptBuddy was created to bring together pets in need of loving homes and people looking for loyal companions, because no one—human or animal—should have to face loneliness alone.
+<br/><br/><span className="playpen text-[#88b62c] text-4xl font-bold">---Reuniting Lost Families---</span><br/> <br/>We help lost pets find their way back home by connecting communities and pet owners, giving families hope and increasing the chances of joyful reunions.
+<br/><br/><span className="playpen text-[#88b62c] text-4xl font-bold">---Pet Care---</span> <br/><br/>Beyond adoption, AdoptBuddy offers access to trusted veterinarians and pet healthcare support to ensure every pet enjoys a happy, healthy life.
+<br/><br/><span className="playpen text-[#88b62c] text-4xl font-bold">---Building a Caring Community---</span><br/> <br/>We believe every pet deserves love, safety, and a family. Through compassion and responsible pet ownership, we're creating a community where animals are protected, cherished, and never forgotten.
             </p>
           </div>
           </section>
-          <section className="px-20 py-15">
-      {/* Mission + Vision */}
-      <div className="grid md:grid-cols-2 gap-20 mt-30">
 
-       <div className="bg-white ml-10 p-8  pt-10 lg:ml-20 lg:pt-6 rounded-2xl  shadow-lg hover:-translate-y-2 transition duration-300">
-         <div className="flex">
-           <img
-            src={OurMission} 
-            alt="Mission Icon"
-             className="md:w-30 md:h-30 lg:-mt-5" /> 
-       <h3 className="playpen text-4xl lg:text-5xl lg:mt-4 font-bold lg:pl-10 md:pl-5 pl-30 text-[#144a36]">
-        Our Mission
-        </h3> 
-        </div>
-         <p className="inter mt-5 lg:mt-3 text-xl lg:text-2xl text-black"> 
-          To reduce the number of homeless pets by promoting adoption, 
-        responsible pet care and community awareness.
-        </p> 
-        </div> 
-        <div className="bg-white mr-10 p-8 pt-10  lg:mr-20 lg:pt-6 rounded-2xl shadow-lg hover:-translate-y-2 transition duration-300"> 
-          <div className="flex "> 
-            <img 
-            src={ourvision}
-             alt="Vision Icon" 
-             className="md:w-30 md:h-30 lg:-mt-5" /> 
-             <h3 className=" playpen text-4xl lg:text-5xl lg:mt-4 font-bold lg:pl-10 pl-30 md:pl-5 text-[#144a36] ">
-              Our Vision
-              </h3>
-               </div>
-                <p className="inter mt-5 lg:mt-3 text-xl lg:text-2xl text-black"> 
-                  To create a pet-first ecosystem that ensures happy pets,
-                   informed pet parents and stronger communities. 
+ {/* Who We Are */}
+ <section className="px-20 md:px-12 lg:px-20 py-20">
+ <div className="mt-16 space-y-16">
 
+    {/* Our Mission - image left, text right */}
+    <div className="grid rounded-2xl md:grid-cols-2 gap-2 lg:gap-2 items-start mr-20 lg:ml-20">
+      <img
+        src={dogImg}
+        alt="Our Mission"
+        className="w-100 h-72 ml-40 md:h-80 lg:h-96 object-cover rounded-2xl border-4 border-[#144a36]"
+      />
+      <div className=" lg:mr-40 mt-4">
+        <h3 className="playpen text-3xl md:text-5xl font-bold text-center text-[#88b62c]">
+          -----<span className="text-[#144a36]">Our Mission</span>-----
+        </h3>
+        <p className="inter mt-10 text-lg md:text-xl lg:text-3xl text-black leading-relaxed text-center">
+          To reduce the number of homeless and lost pets by promoting responsible adoption, accessible veterinary care, and compassionate pet ownership. We strive to build a supportive community where every pet receives the love, care, and safe home they deserve.
         </p>
-</div>
-
-
       </div>
+    </div>
 
+    {/* Our Vision - text left, image right */}
+    <div className="grid rounded-2xl md:grid-cols-2 gap-2 lg:gap-2 items-start mt-40  mr-20 lg:ml-20">
+      <div className="order-2 lg:ml-40 mt-4 md:order-1">
+        <h3 className="playpen text-3xl md:text-5xl font-bold text-center text-[#88b62c]">
+          -----<span className="text-[#144a36]">Our Vision</span>-----
+        </h3>
+        <p className="inter mt-10 text-lg md:text-xl lg:text-3xl text-black leading-relaxed text-center">
+          To create a pet-first ecosystem that connects pets with loving families, empowers pet parents with trusted resources, and builds stronger communities where every animal is safe, healthy, and valued.
+        </p>
+      </div>
+      <img
+        src={catImg}
+        alt="Our Vision"
+        className="order-1 md:order-2 mr-40 justify-self-end w-100 h-72 md:h-80 lg:h-96 object-cover rounded-2xl border-4 border-[#144a36]"
+      />
+    </div>
+
+  </div>
 </section>
 
       {/* TEAM */}

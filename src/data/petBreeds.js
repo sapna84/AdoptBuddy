@@ -7,6 +7,7 @@
     "Pug",
     "Shih Tzu",
     "Husky",
+    "Other",
   ],
 
   Cat: [
@@ -15,6 +16,8 @@
     "Maine Coon",
     "British Shorthair",
     "Bengal",
+    "Other",
+    
   ],
 
   Rabbit: [
@@ -22,6 +25,7 @@
     "Dutch",
     "Lionhead",
     "Mini Lop",
+    "Other",
   ],
 
   Bird: [
@@ -32,6 +36,7 @@
     "Canary",
     "Budgerigar",
     "Pigeon",
+    "Other",
   ],
 };
 

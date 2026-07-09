@@ -4,6 +4,8 @@ import AppointmentSuccess from "../components/appointmentpopup.jsx";
 export default function Appointmentform() {
   const [fileName, setFileName] = useState("");
   const [petName, setPetName] = useState("");
+  const [category, setCategory] = useState("");
+  const [customCategory, setCustomCategory] = useState("");
   const [age, setAge] = useState("");
   const [ageUnit, setAgeUnit] = useState("Years"); // Years | Months | Days
   const [description, setDescription] = useState("");
@@ -14,6 +16,8 @@ export default function Appointmentform() {
 
   const [errors, setErrors] = useState({
     petName: "",
+    category: "",
+    customCategory: "",
     age: "",
     description: "",
     ownerName: "",
@@ -45,21 +49,41 @@ export default function Appointmentform() {
     }));
   };
 
+  const handleCategoryChange = (value) => {
+    setCategory(value);
+    if (value !== "Other") setCustomCategory("");
+
+    setErrors((prev) => ({
+      ...prev,
+      category: "",
+      customCategory: "",
+    }));
+  };
+
+  const validateCustomCategory = (value) => {
+    setCustomCategory(value);
+
+    setErrors((prev) => ({
+      ...prev,
+      customCategory: value.trim() ? "" : "Please specify the category.",
+    }));
+  };
+
   const validatePhone = (value) => {
-  const hasInvalidChars = /[^0-9]/.test(value);
-  const digitsOnly = value.replace(/\D/g, "").slice(0, 10);
+    const hasInvalidChars = /[^0-9]/.test(value);
+    const digitsOnly = value.replace(/\D/g, "").slice(0, 10);
 
-  setPhone(digitsOnly);
+    setPhone(digitsOnly);
 
-  setErrors((prev) => ({
-    ...prev,
-    phone: hasInvalidChars
-      ? "enter valid digits only"
-      : digitsOnly === "" || digitsOnly.length === 10
-      ? ""
-      : "Phone number must be exactly 10 digits.",
-  }));
-};
+    setErrors((prev) => ({
+      ...prev,
+      phone: hasInvalidChars
+        ? "enter valid digits only"
+        : digitsOnly === "" || digitsOnly.length === 10
+        ? ""
+        : "Phone number must be exactly 10 digits.",
+    }));
+  };
 
   const validateEmail = (value) => {
     setEmail(value);
@@ -89,37 +113,50 @@ export default function Appointmentform() {
   };
 
   const getMaxForUnit = (unit) => {
-  if (unit === "Years") return 30;
-  if (unit === "Months") return 30 * 12;
-  if (unit === "Days") return 30 * 365;
-  return 30;
-};
+    if (unit === "Years") return 30;
+    if (unit === "Months") return 30 * 12;
+    if (unit === "Days") return 30 * 365;
+    return 30;
+  };
 
-const validateAge = (value, unit = ageUnit) => {
-  setAge(value);
+  const validateAge = (value, unit = ageUnit) => {
+    setAge(value);
 
-  const max = getMaxForUnit(unit);
+    const max = getMaxForUnit(unit);
 
-  setErrors((prev) => ({
-    ...prev,
-    age:
-      value === "" || value < 0 || value > max
-        ? `Age must be between 0 and ${max} ${unit.toLowerCase()}.`
-        : "",
-  }));
-};
+    setErrors((prev) => ({
+      ...prev,
+      age:
+        value === "" || value < 0 || value > max
+          ? `Age must be between 0 and ${max} ${unit.toLowerCase()}.`
+          : "",
+    }));
+  };
 
-const handleAgeUnitChange = (unit) => {
-  setAgeUnit(unit);
-  // re-validate existing value against the new unit's max
-  if (age !== "") validateAge(age, unit);
-};
+  const handleAgeUnitChange = (unit) => {
+    setAgeUnit(unit);
+    // re-validate existing value against the new unit's max
+    if (age !== "") validateAge(age, unit);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (!petName.trim() || !/^[A-Za-z\s]+$/.test(petName)) {
       setErrors((prev) => ({ ...prev, petName: "Enter valid name" }));
+      return;
+    }
+
+    if (!category) {
+      setErrors((prev) => ({ ...prev, category: "Select a category" }));
+      return;
+    }
+
+    if (category === "Other" && !customCategory.trim()) {
+      setErrors((prev) => ({
+        ...prev,
+        customCategory: "Please specify the category.",
+      }));
       return;
     }
 
@@ -131,14 +168,14 @@ const handleAgeUnitChange = (unit) => {
       return;
     }
 
-   const max = getMaxForUnit(ageUnit);
-if (age === "" || age < 0 || age > max) {
-  setErrors((prev) => ({
-    ...prev,
-    age: `Age must be between 0 and ${max} ${ageUnit.toLowerCase()}.`,
-  }));
-  return;
-}
+    const max = getMaxForUnit(ageUnit);
+    if (age === "" || age < 0 || age > max) {
+      setErrors((prev) => ({
+        ...prev,
+        age: `Age must be between 0 and ${max} ${ageUnit.toLowerCase()}.`,
+      }));
+      return;
+    }
 
     if (!ownerName.trim() || !/^[A-Za-z\s]+$/.test(ownerName)) {
       setErrors((prev) => ({ ...prev, ownerName: "Enter valid name" }));
@@ -157,6 +194,8 @@ if (age === "" || age < 0 || age > max) {
 
     if (
       errors.petName ||
+      errors.category ||
+      errors.customCategory ||
       errors.age ||
       errors.description ||
       errors.ownerName ||
@@ -166,11 +205,17 @@ if (age === "" || age < 0 || age > max) {
       return;
     }
 
+    // Final resolved category value you'd send to your backend
+    const finalCategory = category === "Other" ? customCategory : category;
+    // console.log({ finalCategory }); // wire this into your submit payload
+
     // Success popup
     setShowSuccess(true);
 
     // Clear form
     setPetName("");
+    setCategory("");
+    setCustomCategory("");
     setAge("");
     setDescription("");
     setOwnerName("");
@@ -180,6 +225,8 @@ if (age === "" || age < 0 || age > max) {
 
     setErrors({
       petName: "",
+      category: "",
+      customCategory: "",
       age: "",
       description: "",
       ownerName: "",
@@ -207,7 +254,7 @@ if (age === "" || age < 0 || age > max) {
               value={petName}
               onChange={(e) => validateName("petName", e.target.value)}
               placeholder="Enter your pet's name"
-              className="w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
+              className="w-full text-xl text-[#144a36] rounded-lg border-3 border-[#144a36] bg-white p-3 transition
   hover:border-[#88b62c]
   focus:border-[#88b62c]
   focus:ring-2 focus:ring-[#88b62c]/30
@@ -224,20 +271,48 @@ if (age === "" || age < 0 || age > max) {
               Pet Category
               <span className="text-red-500">*</span>
             </label>
-            <select className="w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
+            <select
+              value={category}
+              onChange={(e) => handleCategoryChange(e.target.value)}
+              className="w-full text-xl text-[#144a36] rounded-lg border-3 border-[#144a36] bg-white p-3 transition
   hover:border-[#88b62c]
   focus:border-[#88b62c]
   focus:ring-2 focus:ring-[#88b62c]/30
-  focus:outline-none" defaultValue="">
-              <option value="" disabled>
-                Select your pet's category
+  focus:outline-none"
+            >
+              <option value="" disabled hidden>
+                Select category of your pet
               </option>
-              <option>Dog</option>
-              <option>Cat</option>
-              <option>Bird</option>
-              <option>Rabbit</option>
-              <option>Hamster</option>
+              <option value="Dog">Dog</option>
+              <option value="Cat">Cat</option>
+              <option value="Bird">Bird</option>
+              <option value="Rabbit">Rabbit</option>
+              <option value="Hamster">Hamster</option>
+              <option value="Other">Other</option>
             </select>
+            {errors.category && (
+              <p className="text-red-600 mt-1">{errors.category}</p>
+            )}
+
+            {category === "Other" && (
+              <div className="mt-3">
+                <input
+                  type="text"
+                  value={customCategory}
+                  onChange={(e) => validateCustomCategory(e.target.value)}
+                  required
+                  placeholder="Enter pet category"
+                  className="w-full text-xl text-[#144a36] rounded-lg border-3 border-[#144a36] bg-white p-3 transition
+  hover:border-[#88b62c]
+  focus:border-[#88b62c]
+  focus:ring-2 focus:ring-[#88b62c]/30
+  focus:outline-none"
+                />
+                {errors.customCategory && (
+                  <p className="text-red-600 mt-1">{errors.customCategory}</p>
+                )}
+              </div>
+            )}
           </div>
         </div>
 
@@ -248,59 +323,65 @@ if (age === "" || age < 0 || age > max) {
               Pet Gender
               <span className="text-red-500">*</span>
             </label>
-            <select className="w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
-  hover:border-[#88b62c]
-  focus:border-[#88b62c]
-  focus:ring-2 focus:ring-[#88b62c]/30
-  focus:outline-none" required defaultValue=" Select gender of your pet">
-              <option value="" disabled>
+
+            <select
+              required
+              defaultValue=""
+              className="w-full text-xl text-[#144a36] rounded-lg border-3 border-[#144a36] bg-white p-3 transition
+    hover:border-[#88b62c]
+    focus:border-[#88b62c]
+    focus:ring-2 focus:ring-[#88b62c]/30
+    focus:outline-none"
+            >
+              <option value="" disabled hidden>
                 Select gender of your pet
               </option>
-              <option>Male</option>
-              <option>Female</option>
-              <option>Unknown</option>
+
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Unknown">Unknown</option>
             </select>
           </div>
 
           {/* pet age */}
-<div>
-  <label className="block font-bold text-xl mb-2 text-[#144a36]">
-    Pet Age
-    <span className="text-red-500">*</span>
-  </label>
+          <div>
+            <label className="block font-bold text-xl mb-2 text-[#144a36]">
+              Pet Age
+              <span className="text-red-500">*</span>
+            </label>
 
-  <div className="flex gap-2">
-    <input
-      type="number"
-      value={age}
-      onChange={(e) => validateAge(e.target.value)}
-      required
-      min="0"
-      placeholder="Enter age"
-      className="w-2/3 rounded-lg border-3 border-[#144a36] bg-white p-3 transition
+            <div className="flex gap-2">
+              <input
+                type="number"
+                value={age}
+                onChange={(e) => validateAge(e.target.value)}
+                required
+                min="0"
+                placeholder="Enter age"
+                className="w-2/3 text-xl text-[#144a36] rounded-lg border-3 border-[#144a36] bg-white p-3 transition
   hover:border-[#88b62c]
   focus:border-[#88b62c]
   focus:ring-2 focus:ring-[#88b62c]/30
   focus:outline-none"
-    />
+              />
 
-    <select
-      value={ageUnit}
-      onChange={(e) => handleAgeUnitChange(e.target.value)}
-      className="w-1/3 rounded-lg border-3 border-[#144a36] bg-white p-3 transition
+              <select
+                value={ageUnit}
+                onChange={(e) => handleAgeUnitChange(e.target.value)}
+                className="w-1/3 text-xl text-[#144a36] rounded-lg border-3 border-[#144a36] bg-white p-3 transition
   hover:border-[#88b62c]
   focus:border-[#88b62c]
   focus:ring-2 focus:ring-[#88b62c]/30
   focus:outline-none"
-    >
-      <option value="Days">Days</option>
-      <option value="Months">Months</option>
-      <option value="Years">Years</option>
-    </select>
-  </div>
+              >
+                <option value="Days">Days</option>
+                <option value="Months">Months</option>
+                <option value="Years">Years</option>
+              </select>
+            </div>
 
-  {errors.age && <p className="text-red-600 mt-1">{errors.age}</p>}
-</div>
+            {errors.age && <p className="text-red-600 mt-1">{errors.age}</p>}
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -313,7 +394,7 @@ if (age === "" || age < 0 || age > max) {
             <input
               type="date"
               required
-              className="w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
+              className="w-full text-xl text-[#144a36] rounded-lg border-3 border-[#144a36] bg-white p-3 transition
   hover:border-[#88b62c]
   focus:border-[#88b62c]
   focus:ring-2 focus:ring-[#88b62c]/30
@@ -330,7 +411,7 @@ if (age === "" || age < 0 || age > max) {
             <input
               type="time"
               required
-              className="w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
+              className="w-full text-xl text-[#144a36] rounded-lg border-3 border-[#144a36] bg-white p-3 transition
   hover:border-[#88b62c]
   focus:border-[#88b62c]
   focus:ring-2 focus:ring-[#88b62c]/30
@@ -351,7 +432,7 @@ if (age === "" || age < 0 || age > max) {
             rows="4"
             required
             placeholder="Type any other details..."
-            className="w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
+            className="w-full text-xl text-[#144a36] rounded-lg border-3 border-[#144a36] bg-white p-3 transition
   hover:border-[#88b62c]
   focus:border-[#88b62c]
   focus:ring-2 focus:ring-[#88b62c]/30
@@ -370,23 +451,21 @@ if (age === "" || age < 0 || age > max) {
           </label>
 
           <label
-            className="flex flex-col items-center justify-center w-full h-36 border-2 border-dashed rounded-xl bg-gray-200 cursor-pointer border-gray-500 hover:bg-gray-300"
+            className="flex flex-col items-center justify-center w-full h-36 border-2 border-dashed rounded-xl bg-gray-200 cursor-pointer border-gray-500 hover:bg-[#88b62c]/30"
             onDrop={handleDrop}
             onDragOver={handleDragOver}
           >
             <div className="flex item-center gap-4">
               <div>
-                <p className="font-medium">
-                  Drag & Drop file here &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <span className="text-black text-3xl">or</span>
+                <p className="text-lg font-semibold">
+                  Click &nbsp;
+                  <span className="text-2xl">or</span>&nbsp; Drag & Drop File
+                  Here
                 </p>
-                <p className="text-sm text-gray-500">
+                <p className="text-center text-md text-gray-500">
                   PDF, JPG, PNG (Max. 5MB)
                 </p>
               </div>
-              <span className="px-4 py-3 border-2 border-[#144a36] rounded-lg text-[#144a36] font-medium bg-white hover:bg-[#144a36] hover:text-white transition">
-                Choose File
-              </span>
             </div>
             {fileName && (
               <p className="mt-3 text-sm text-[#144a36] font-medium">
@@ -421,7 +500,7 @@ if (age === "" || age < 0 || age > max) {
               onChange={(e) => validateName("ownerName", e.target.value)}
               required
               placeholder="Enter your name"
-              className="w-full rounded-lg p-3 border-3 border-[#144a36] bg-white transition
+              className="w-full text-xl text-[#144a36] rounded-lg p-3 border-3 border-[#144a36] bg-white transition
   hover:border-[#88b62c]
   focus:border-[#88b62c]
   focus:ring-2 focus:ring-[#88b62c]/30
@@ -439,18 +518,18 @@ if (age === "" || age < 0 || age > max) {
               <span className="text-red-500">*</span>
             </label>
             <input
-  type="tel"
-  value={phone}
-  onChange={(e) => validatePhone(e.target.value)}
-  maxLength={10}
-  required
-  placeholder="Enter your phone number"
-  className="w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
+              type="tel"
+              value={phone}
+              onChange={(e) => validatePhone(e.target.value)}
+              maxLength={10}
+              required
+              placeholder="Enter your phone number"
+              className="w-full text-xl text-[#144a36] rounded-lg border-3 border-[#144a36] bg-white p-3 transition
   hover:border-[#88b62c]
   focus:border-[#88b62c]
   focus:ring-2 focus:ring-[#88b62c]/30
   focus:outline-none"
-/>
+            />
             {errors.phone && (
               <p className="text-red-600 mt-1">{errors.phone}</p>
             )}
@@ -468,7 +547,7 @@ if (age === "" || age < 0 || age > max) {
               onChange={(e) => validateEmail(e.target.value)}
               required
               placeholder="Enter your email address"
-              className="w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
+              className="w-full text-xl text-[#144a36] rounded-lg border-3 border-[#144a36] bg-white p-3 transition
   hover:border-[#88b62c]
   focus:border-[#88b62c]
   focus:ring-2 focus:ring-[#88b62c]/30

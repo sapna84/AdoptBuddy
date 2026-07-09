@@ -30,7 +30,7 @@ const [showContact, setShowContact] = useState(false);
        <img
   src={newBow}
   alt="New"
-  className="absolute top-2 -left-6 w-30 z-30 pointer-events-none"
+  className="absolute top-2 -left-6 z-30 pointer-events-none"
 />
       )}
       {/* Favourite Icon */}
@@ -66,8 +66,12 @@ const [showContact, setShowContact] = useState(false);
       </div>
 
       {/* Content */}
-      <div className="p-5">
+      
 
+<p className="text-lg pl-4 text-gray-500 mt-1">
+  Updated on: {pet.updatedOn}
+</p>
+<div className="p-3">
         <h3 className="playpen text-[#88b62c] pl-4 text-4xl font-extrabold">
           {pet.name}
         </h3>

@@ -62,7 +62,7 @@ const handleLogout = () => {
         </NavLink>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-12 xl:gap-24 text-3xl font-bold">
+        <nav className="hidden lg:flex text-[#144a36] items-center gap-12 xl:gap-24 text-3xl font-bold">
           <NavLink to="/" className={linkStyle}>
             Home
           </NavLink>
@@ -121,20 +121,13 @@ const handleLogout = () => {
       onClick={() => setShowDropdown(!showDropdown)}
       className="playpen text-2xl font-bold text-[#88B62C] cursor-pointer"
     >
-      Hello, {user?.name} ▼
+    Hello, {user?.name?.trim().split(/\s+/)[0]} ▼
     </button>
 
   )}
 
   {showDropdown && (
     <div className="absolute right-0 mt-4 w-52 bg-white rounded-xl shadow-xl overflow-hidden">
-
-      <button
-        onClick={() => navigate("/wishlist")}
-        className="w-full text-left px-5 py-3 hover:bg-[#88b62c]/20"
-      >
-         Wishlist
-      </button>
 
       <button
         onClick={handleLogout}

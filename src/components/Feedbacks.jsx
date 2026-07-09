@@ -225,7 +225,6 @@ export default function Feedbacks() {
             className="
               w-full
               h-full
-             
               cursor-pointer
               object-cover
 hover:scale-110

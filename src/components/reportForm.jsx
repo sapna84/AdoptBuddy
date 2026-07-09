@@ -5,6 +5,11 @@ import MsgSentSuccess from "../components/MsgSentPopUp.jsx";
 export default function Reportform() {
   const [fileName, setFileName] = useState("");
   const [category, setCategory] = useState("");
+  const [customCategory, setCustomCategory] = useState("");
+  const [breed, setBreed] = useState("");
+  const [customBreed, setCustomBreed] = useState("");
+  const [birdType, setBirdType] = useState("");
+  const [customBirdType, setCustomBirdType] = useState("");
   const [petName, setPetName] = useState("");
   const [petAge, setPetAge] = useState("");
   const [ageUnit, setAgeUnit] = useState("Years"); // Years | Months | Days
@@ -26,6 +31,9 @@ export default function Reportform() {
     phone: "",
     Email: "",
     image: "",
+    customCategory: "",
+    customBreed: "",
+    customBirdType: "",
   });
 
   const handleDrop = (e) => {
@@ -53,20 +61,20 @@ export default function Reportform() {
   };
 
   const validatePhone = (value) => {
-  const hasInvalidChars = /[^0-9]/.test(value);
-  const digitsOnly = value.replace(/\D/g, "").slice(0, 10);
+    const hasInvalidChars = /[^0-9]/.test(value);
+    const digitsOnly = value.replace(/\D/g, "").slice(0, 10);
 
-  setPhone(digitsOnly);
+    setPhone(digitsOnly);
 
-  setErrors((prev) => ({
-    ...prev,
-    phone: hasInvalidChars
-      ? "enter digits only"
-      : digitsOnly === "" || digitsOnly.length === 10
-      ? ""
-      : "Phone number must be exactly 10 digits.",
-  }));
-};
+    setErrors((prev) => ({
+      ...prev,
+      phone: hasInvalidChars
+        ? "enter digits only"
+        : digitsOnly === "" || digitsOnly.length === 10
+        ? ""
+        : "Phone number must be exactly 10 digits.",
+    }));
+  };
 
   const validateEmail = (value) => {
     setEmail(value);
@@ -114,8 +122,8 @@ export default function Reportform() {
       description:
         value.length === 0
           ? ""
-          : value.length < 3
-          ? "Description must be at least 3 characters."
+          : value.length < 10
+          ? "Description must be at least 10 characters."
           : value.length > 200
           ? "Description cannot exceed 200 characters."
           : "",
@@ -131,8 +139,79 @@ export default function Reportform() {
     }));
   };
 
+  const handleCategoryChange = (value) => {
+    setCategory(value);
+    // Reset dependent fields whenever category changes
+    setBreed("");
+    setCustomBreed("");
+    setBirdType("");
+    setCustomBirdType("");
+    if (value !== "Other") setCustomCategory("");
+
+    setErrors((prev) => ({
+      ...prev,
+      customCategory: "",
+      customBreed: "",
+      customBirdType: "",
+    }));
+  };
+
+  const handleBreedChange = (value) => {
+    setBreed(value);
+    if (value !== "Other") setCustomBreed("");
+    setErrors((prev) => ({ ...prev, customBreed: "" }));
+  };
+
+  const handleBirdTypeChange = (value) => {
+    setBirdType(value);
+    if (value !== "Other") setCustomBirdType("");
+    setErrors((prev) => ({ ...prev, customBirdType: "" }));
+  };
+
+  const validateCustomCategory = (value) => {
+    setCustomCategory(value);
+    setErrors((prev) => ({
+      ...prev,
+      customCategory: value.trim() ? "" : "Please specify the category.",
+    }));
+  };
+
+  const validateCustomBirdType = (value) => {
+    setCustomBirdType(value);
+    setErrors((prev) => ({
+      ...prev,
+      customBirdType: value.trim() ? "" : "Please specify the bird type.",
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Category
+    if (!category) {
+      return;
+    }
+
+    if (category === "Other" && !customCategory.trim()) {
+      setErrors((prev) => ({
+        ...prev,
+        customCategory: "Please specify the category.",
+      }));
+      return;
+    }
+
+    // Bird Type
+    if (category === "Bird" && !birdType) {
+      return;
+    }
+
+    if (category === "Bird" && birdType === "Other" && !customBirdType.trim()) {
+      setErrors((prev) => ({
+        ...prev,
+        customBirdType: "Please specify the bird type.",
+      }));
+      return;
+    }
 
     // Pet Age
     const max = getMaxForUnit(ageUnit);
@@ -207,15 +286,37 @@ export default function Reportform() {
       errors.ownerName ||
       errors.phone ||
       errors.Email ||
-      errors.image
+      errors.image ||
+      errors.customCategory ||
+      errors.customBreed ||
+      errors.customBirdType
     ) {
       return;
     }
+
+    // Final resolved values you'd send to your backend
+    const finalCategory = category === "Other" ? customCategory : category;
+    const finalBreed =
+      category === "Bird"
+        ? birdType === "Other"
+          ? customBirdType
+          : birdType
+        : breed === "Other"
+        ? customBreed
+        : breed;
+
+    // console.log({ finalCategory, finalBreed }); // wire these into your submit payload
 
     // Success popup
     setShowSuccess(true);
 
     // Clear form
+    setCategory("");
+    setCustomCategory("");
+    setBreed("");
+    setCustomBreed("");
+    setBirdType("");
+    setCustomBirdType("");
     setPetName("");
     setPetAge("");
     setDescription("");
@@ -223,7 +324,6 @@ export default function Reportform() {
     setOwnerName("");
     setPhone("");
     setEmail("");
-    setCategory("");
     setFileName("");
 
     setErrors({
@@ -235,6 +335,9 @@ export default function Reportform() {
       phone: "",
       Email: "",
       image: "",
+      customCategory: "",
+      customBreed: "",
+      customBirdType: "",
     });
   };
 
@@ -256,31 +359,70 @@ export default function Reportform() {
               className="w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition hover:border-[#88b62c] focus:border-[#88b62c] focus:ring-2 focus:ring-[#88b62c]/30 focus:outline-none"
               required
               value={category}
-              onChange={(e) => setCategory(e.target.value)}
+              onChange={(e) => handleCategoryChange(e.target.value)}
             >
-              <option value="">Select Pet Category</option>
+              <option value="" disabled hidden>
+      Select Pet Category
+    </option>
               <option value="Dog">Dog</option>
               <option value="Cat">Cat</option>
               <option value="Rabbit">Rabbit</option>
               <option value="Bird">Bird</option>
+              <option value="Other">Other</option>
             </select>
           </div>
 
-          {category && category !== "Bird" && (
+          {category === "Other" && (
+            <div>
+              <label className="inter block font-bold text-xl mb-2 text-[#144a36]">
+                Specify Category
+                <span className="text-red-500"> *</span>
+              </label>
+              <input
+                type="text"
+                value={customCategory}
+                onChange={(e) => validateCustomCategory(e.target.value)}
+                required
+                placeholder="Enter pet category"
+                className="w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition hover:border-[#88b62c] focus:border-[#88b62c] focus:ring-2 focus:ring-[#88b62c]/30 focus:outline-none"
+              />
+              {errors.customCategory && (
+                <p className="text-red-600 mt-1">{errors.customCategory}</p>
+              )}
+            </div>
+          )}
+
+          {category && category !== "Bird" && category !== "Other" && (
             <div>
               <label className="inter block font-bold text-xl mb-2 text-[#144a36]">
                 Pet Breed
                 <span className="text-gray-500"> (if known)</span>
               </label>
 
-              <select className="w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition hover:border-[#88b62c] focus:border-[#88b62c] focus:ring-2 focus:ring-[#88b62c]/30 focus:outline-none">
-                <option>Select Breed</option>
-                {(petbreeds[category] || []).map((breed) => (
-                  <option key={breed} value={breed}>
-                    {breed}
+              <select
+                value={breed}
+                onChange={(e) => handleBreedChange(e.target.value)}
+                className="w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition hover:border-[#88b62c] focus:border-[#88b62c] focus:ring-2 focus:ring-[#88b62c]/30 focus:outline-none"
+              >
+                <option value="" disabled hidden>Select Breed</option>
+                {(petbreeds[category] || []).map((b) => (
+                  <option key={b} value={b}>
+                    {b}
                   </option>
                 ))}
               </select>
+
+              {breed === "Other" && (
+                <div className="mt-3">
+                  <input
+                    type="text"
+                    value={customBreed}
+                    onChange={(e) => setCustomBreed(e.target.value)}
+                    placeholder="Enter breed (if known)"
+                    className="w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition hover:border-[#88b62c] focus:border-[#88b62c] focus:ring-2 focus:ring-[#88b62c]/30 focus:outline-none"
+                  />
+                </div>
+              )}
             </div>
           )}
 
@@ -292,16 +434,34 @@ export default function Reportform() {
               </label>
 
               <select
+                value={birdType}
+                onChange={(e) => handleBirdTypeChange(e.target.value)}
                 className="w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition hover:border-[#88b62c] focus:border-[#88b62c] focus:ring-2 focus:ring-[#88b62c]/30 focus:outline-none"
                 required
               >
-                <option>Select Bird Type</option>
+                <option value="" disabled hidden>Select Bird Type</option>
                 {(petbreeds.Bird || []).map((bird) => (
                   <option key={bird} value={bird}>
                     {bird}
                   </option>
                 ))}
               </select>
+
+              {birdType === "Other" && (
+                <div className="mt-3">
+                  <input
+                    type="text"
+                    value={customBirdType}
+                    onChange={(e) => validateCustomBirdType(e.target.value)}
+                    required
+                    placeholder="Enter bird type"
+                    className="w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition hover:border-[#88b62c] focus:border-[#88b62c] focus:ring-2 focus:ring-[#88b62c]/30 focus:outline-none"
+                  />
+                  {errors.customBirdType && (
+                    <p className="text-red-600 mt-1">{errors.customBirdType}</p>
+                  )}
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -317,7 +477,7 @@ export default function Reportform() {
               className="w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition hover:border-[#88b62c] focus:border-[#88b62c] focus:ring-2 focus:ring-[#88b62c]/30 focus:outline-none"
               required
             >
-              <option>Select gender of your pet</option>
+              <option value="" disabled hidden>Select gender of your pet</option>
               <option>Male</option>
               <option>Female</option>
               <option>Unknown</option>

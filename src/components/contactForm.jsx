@@ -130,7 +130,7 @@ setShowSuccess(true);
   value={name}
   onChange={(e) => validateName(e.target.value)}
   placeholder="Enter your full name"
-  className="inter w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
+  className="inter text-xl text-[#144a36] w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
   hover:border-[#88b62c]
   focus:border-[#88b62c]
   focus:ring-2 focus:ring-[#88b62c]/30
@@ -155,7 +155,7 @@ setShowSuccess(true);
   maxLength={10}
   required
   placeholder="Enter your phone number"
-  className="inter w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
+  className="inter w-full text-xl text-[#144a36] rounded-lg border-3 border-[#144a36] bg-white p-3 transition
   hover:border-[#88b62c]
   focus:border-[#88b62c]
   focus:ring-2 focus:ring-[#88b62c]/30
@@ -182,7 +182,7 @@ setShowSuccess(true);
             value={Email}
             onChange={(e) => validateEmail(e.target.value)}
             placeholder="Enter your email"
-            className="inter w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
+            className="inter w-full text-xl text-[#144a36] rounded-lg border-3 border-[#144a36] bg-white p-3 transition
             hover:border-[#88b62c]
             focus:border-[#88b62c]
             focus:ring-2 focus:ring-[#88b62c]/30
@@ -206,7 +206,7 @@ setShowSuccess(true);
   value={description}
   onChange={(e) => validateDescription(e.target.value)}
   placeholder="Type a message here..."
-  className="inter w-full rounded-lg border-3 border-[#144a36] bg-white p-3 transition
+  className="inter w-full text-xl text-[#144a36] rounded-lg border-3 border-[#144a36] bg-white p-3 transition
   hover:border-[#88b62c]
   focus:border-[#88b62c]
   focus:ring-2 focus:ring-[#88b62c]/30

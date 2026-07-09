@@ -13,7 +13,7 @@ export default function LostFoundCard({
   return (
     <>
       {/* Mobile + Tablet */}
-      <div className="lg:hidden bg-white rounded-3xl overflow-hidden shadow-xl hover:-translate-y-2 transition-all duration-300">
+      <div className="lg:hidden  border-4 md:border-6 border-[#88b62c] bg-[#f7f1e6] rounded-3xl overflow-hidden shadow-xl hover:-translate-y-2 transition-all duration-300">
 
         <img
           src={image}
@@ -21,7 +21,7 @@ export default function LostFoundCard({
           className="w-full h-64 sm:h-72 md:h-80 object-cover"
         />
 
-        <div className="bg-[#f7f1e6] border-4 md:border-6 border-[#88b62c] p-6 sm:p-8 text-center">
+        <div className="bg-[#f7f1e6] p-6 sm:p-8 text-center">
 
           <h3 className="playpen text-[#144a36] text-3xl sm:text-4xl font-bold">
             {title}

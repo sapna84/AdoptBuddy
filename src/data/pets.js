@@ -15,6 +15,7 @@ const pets = [
     image: pet1mimiImg,
     featured: true,
     isNew: true,
+    updatedOn: "2026-07-8",
 
       ownerName: "Rahul Sharma",
   ownerPhone: "9876543210",
@@ -30,6 +31,7 @@ const pets = [
     image: pet2maxImg,
     featured: true,
     isNew: false,
+    updatedOn: "2025-06-15",
 
       ownerName: "Rahul Sharma",
   ownerPhone: "9876543210",
@@ -45,6 +47,7 @@ const pets = [
     image: pet3binkyImg,
     featured: false,
     isNew: true,
+    updatedOn: "2026-06-20",
 
   ownerName: "Rahul Sharma",
   ownerPhone: "9876543210",
@@ -60,6 +63,7 @@ const pets = [
     image: pet4stellaImg,
     featured: true,
     isNew: false,
+    updatedOn: "2026-01-15",
 
       ownerName: "Rahul Sharma",
   ownerPhone: "9876543210",
@@ -75,6 +79,7 @@ const pets = [
     image: pet5mochiImg,
     featured: true,
     isNew: true,
+    updatedOn: "2026-06-29",
 
       ownerName: "Rahul Sharma",
   ownerPhone: "9876543210",
