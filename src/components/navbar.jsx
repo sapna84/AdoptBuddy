@@ -48,7 +48,7 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-lg">
+      <header className="fixed top-0 left-0 w-full z-50 lg:bg-white/80 lg:backdrop-blur-md lg:shadow-lg">
 
         <div className="w-full h-16 sm:h-18 md:h-24 lg:h-28 flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-10 lg:mt-4">
 
@@ -142,7 +142,7 @@ export default function Navbar() {
               className="lg:hidden text-[#144a36]"
               onClick={() => setMenuOpen(!menuOpen)}
             >
-              {menuOpen ? <X size={30} /> : <Menu size={30} />}
+              {menuOpen ? <X size={40} /> : <Menu size={40} />}
             </button>
 
           </div>
@@ -165,7 +165,7 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   `${linkStyle({
                     isActive,
-                  })} py-4 text-lg text-center border-b`
+                  })} py-4 text-3xl font-bold text-center border-b`
                 }
               >
                 Home
@@ -177,7 +177,7 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   `${linkStyle({
                     isActive,
-                  })} py-4 text-lg text-center border-b`
+                  })} py-4 text-3xl mt-4 font-bold text-center border-b`
                 }
               >
                 Adopt Pets
@@ -189,7 +189,7 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   `${linkStyle({
                     isActive,
-                  })} py-4 text-lg text-center border-b`
+                  })} py-4 text-3xl mt-4 font-bold text-center border-b`
                 }
               >
                 Veterinarian
@@ -201,7 +201,7 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   `${linkStyle({
                     isActive,
-                  })} py-4 text-lg text-center border-b`
+                  })} py-4 text-3xl mt-4 font-bold text-center border-b`
                 }
               >
                 About Us
@@ -213,7 +213,7 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   `${linkStyle({
                     isActive,
-                  })} py-4 text-lg text-center border-b`
+                  })} py-4 text-3xl mt-4 font-bold text-center border-b`
                 }
               >
                 Contact Us
@@ -223,27 +223,8 @@ export default function Navbar() {
 
             {/* Mobile Actions */}
 
-            <div className="flex justify-center gap-8 mt-6">
+            <div className="flex justify-center mt-10">
 
-              <button
-                onClick={() => {
-                  setMenuOpen(false);
-
-                  if (isLoggedIn) {
-                    navigate("/wishlist");
-                  } else {
-                    setLoginMessage(
-                      "Please login first to access your wishlist."
-                    );
-                    setShowLogin(true);
-                  }
-                }}
-              >
-                <FontAwesomeIcon
-                  icon={faHeart}
-                  className="text-3xl text-[#144a36]"
-                />
-              </button>
 
               {!isLoggedIn ? (
                 <button
@@ -255,7 +236,7 @@ export default function Navbar() {
                 >
                   <FontAwesomeIcon
                     icon={faUserPlus}
-                    className="text-3xl text-[#144a36]"
+                    className="text-5xl text-[#144a36]"
                   />
                 </button>
               ) : (
@@ -264,7 +245,7 @@ export default function Navbar() {
                     handleLogout();
                     setMenuOpen(false);
                   }}
-                  className="text-red-600 font-semibold"
+                  className="text-[#144e2a] font-semibold"
                 >
                   Logout
                 </button>

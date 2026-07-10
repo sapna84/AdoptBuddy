@@ -70,7 +70,7 @@ export default function Feedbacks() {
 
         <div className="text-center mb-12">
 
-          <div className="flex justify-center items-center gap-6 mb-4">
+          <div className="flex justify-center items-center lg:gap-6 mb-4">
 
             <img
               src={smile}
@@ -78,7 +78,7 @@ export default function Feedbacks() {
               className="w-20 h-20 -scale-x-100 origin-bottom animate-swing"
             />
 
-            <h2 className="playpen text-[#144a36] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
+            <h2 className="playpen text-[#144a36] text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
               Hear From Our Happy Pet Parents
             </h2>
 
@@ -90,7 +90,7 @@ export default function Feedbacks() {
 
           </div>
 
-          <p className="inter text-center text-base sm:text-xl md:text-3xl lg:text-3xl mt-4 mx-auto leading-relaxed">
+          <p className="inter lg:max-w-6xl text-center text-xl sm:text-lg md:text-xl lg:text-3xl mt-4 md:mt-5 mx-auto leading-relaxed">
             Discover real stories and experiences shared by pet owners who found
             their perfect companions through AdoptBuddy.
           </p>

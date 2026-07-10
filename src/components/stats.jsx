@@ -76,10 +76,10 @@ useEffect(() => {
   return (
     <section
   ref={sectionRef}
-  className="max-w-full bg-[#f7f2e8] py-8 shadow-lg"
+  className="max-w-full bg-[#f7f2e8] lg:py-8 py-6 shadow-lg"
 >
-      <div className="max-w-full mx-auto px-20">
-    <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 lg:gap-x-8 xl:gap-x-10">
+      <div className="max-w-full mx-auto lg:px-20">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-2 lg:gap-x-8 xl:gap-x-10 px-8">
         {stats.map((stat, index) => (
           <div
   key={stat.label}
@@ -93,14 +93,14 @@ useEffect(() => {
       className="w-12 h-12 md:w-18 md:h-18"
     />
 
-    <h3 className="text-[#144A36] font-bold text-[36px] md:text-[48px] leading-none">
+    <h3 className="text-[#144A36] font-bold text-4xl md:text-[48px] leading-none">
       {counts[index]}
       {stat.suffix}
     </h3>
   </div>
 
   {/* Label */}
-  <p className="mt-3 text-[#144A36] text-[20px] md:text-[24px] font-medium">
+  <p className="mt-3 text-[#144A36] text-lg md:text-[24px] font-medium">
     {stat.label}
   </p>
 </div>

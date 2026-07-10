@@ -14,11 +14,11 @@ export default function FormBanner({ BannerImage, title, description }) {
 
         {/* Center Text */}
         <div className="text-center lg:mb-40 md:mb-8">
-          <h1 className="playpen text-white font-extrabold text-3xl sm:text-5xl mb-10 lg:text-8xl">
+          <h1 className="playpen text-white font-extrabold text-6xl sm:text-5xl mb-10 lg:text-8xl">
             {title}
           </h1>
 
-          <p className="mt-4 lg:w-7xl w-2xl  text-[#88b62c] text-base sm:text-lg md:text-xl lg:text-4xl font-medium leading-loose ">
+          <p className="lg:mt-4 mb-15 lg:w-7xl w-2xl  text-white text-base sm:text-lg md:text-xl lg:text-4xl font-medium lg:leading-loose ">
             {description}
           </p>
         </div>

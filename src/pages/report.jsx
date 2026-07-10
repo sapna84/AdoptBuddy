@@ -16,7 +16,7 @@ const [reportType, setReportType] = useState(location.state?.reportType);
   <Navbar />
   
     {/*banner*/}
-        <section className="relative overflow-hidden pt-35">
+        <section className="relative overflow-hidden lg:pt-32">
       <Banner
       BannerImage = {bannerImg}
       title ="Report Lost or Found Pet"

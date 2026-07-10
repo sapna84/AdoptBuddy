@@ -9,7 +9,7 @@ export default function Adopt() {
   <Navbar />
 
   {/*banner*/}
-      <section className="relative overflow-hidden pt-35">
+      <section className="relative overflow-hidden lg:pt-32 pt-15">
     <Banner
     BannerImage = {bannerImg}
     title ="Adopt Pets"
@@ -19,7 +19,7 @@ export default function Adopt() {
     {/*pet cards*/}
   
   <section className="max-w-full lg:px-20 mx-auto py-20">
-     <div className="grid grid-cols-2 lg:grid-cols-3 gap-10 md:px-10 lg:gap-20 mt-6">
+     <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 px-10 lg:gap-20 mt-6">
         {pets.map((pet) => (
           <Petcard key={pet.id} pet={pet} />
         ))}

@@ -30,7 +30,7 @@ const [showContact, setShowContact] = useState(false);
        <img
   src={newBow}
   alt="New"
-  className="absolute top-2 -left-6 z-30 pointer-events-none"
+  className="absolute top-2 -left-6 w-30 z-30 pointer-events-none"
 />
       )}
       {/* Favourite Icon */}

@@ -14,7 +14,7 @@ export default function Contact() {
       <Navbar />
 
              {/* banner*/}
-             <section className="relative mt-35 overflow-hidden">
+             <section className="relative lg:mt-32 overflow-hidden">
                 <img
                   src={Contactbanner}
                   alt="About Hero"

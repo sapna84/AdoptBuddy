@@ -20,7 +20,7 @@ const tips = [
   <Navbar />
 
   {/*banner*/}
-          <section className="relative overflow-hidden pt-35">
+          <section className="relative overflow-hidden lg:pt-32">
         <Banner
         BannerImage = {bannerImg}
         title ="Book Appointment"

@@ -10,16 +10,16 @@ export default function LostFound() {
   return (
     <section className="max-w-full mx-auto bg-white/50 px-5 md:px-8 lg:px-[250px] py-16 lg:py-30"
    >
-      <h2 className="playpen text-[#144a36] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
+      <h2 className="playpen text-[#144a36] text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
         Reunite Pets With Their Families
       </h2>
 
-      <p className="inter text-center text-base sm:text-xl md:text-3xl lg:text-3xl mt-4 mx-auto leading-relaxed">
+     <p className="inter lg:max-w-6xl text-center text-xl sm:text-lg md:text-xl lg:text-3xl mt-4 md:mt-5 mx-auto leading-relaxed">
         Help lost pets find their way home or report a missing companion
         to connect with people in your area.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-18 mt-15">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-18 mt-10 px-8 lg:px-0">
 
         <LostFoundCard
           title="Found Pet?"
@@ -44,11 +44,11 @@ export default function LostFound() {
 <img
   src={PointingArrow}
   alt="Left Arrow"
-  className="w-12 md:w-40 lg:w-58 h-full float-arrow scale-x-[-1]"
+  className="w-23 md:w-40 lg:w-58 h-full float-arrow scale-x-[-1]"
 />
         <button
           onClick={() => navigate("/lostfound")}
-          className="px-10 py-4 lg:px-14 lg:py-5 text-lg md:text-xl lg:text-3xl font-bold rounded-2xl cursor-pointer border-4 bg-[#144a36] text-white border-[#144a36] shadow-lg transition-all duration-300 hover:-translate-x-2 hover:bg-[#88b62c] hover:text-[#144a36] hover:scale-105" 
+         className="inter px-3 py-4 lg:px-14 lg:py-5 text-lg md:text-xl lg:text-3xl font-bold rounded-2xl cursor-pointer border-4 bg-[#144a36] text-white border-[#144a36] shadow-lg transition-all duration-300 hover:-translate-x-2 hover:bg-[#88b62c] hover:text-[#144a36] hover:scale-105"
         >
           View Lost & Found Pets
         </button>
@@ -56,7 +56,7 @@ export default function LostFound() {
 <img
   src={PointingArrow}
   alt="Right Arrow"
-  className="w-12 md:w-40 lg:w-58 h-full float-arrow "
+  className="w-23 md:w-40 lg:w-58 h-full float-arrow "
 />
       </div>
 

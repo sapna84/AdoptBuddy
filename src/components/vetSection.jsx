@@ -15,13 +15,13 @@ export default function VetSection() {
 >
 <div className="flex justify-center items-center gap-6 mb-4">
 
-            <h2 className="playpen text-[#144a36] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
+            <h2 className="playpen text-[#144a36] text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
              Our Trusted Veterinarian
             </h2>
 
           </div>
 
-      <p className="inter text-center text-base sm:text-lg md:text-xl lg:text-3xl mt-4 lg:mt-6 text-black max-w-lg sm:max-w-xl md:max-w-3xl lg:max-w-6xl mx-auto leading-tight">
+      <p className="inter lg:max-w-6xl text-center text-xl sm:text-lg md:text-xl lg:text-3xl mt-4 md:mt-5 mx-auto leading-relaxed">
   Regular veterinary care ensures a healthier future for your loyal companion,
   so you can create more happy and healthy moments together.
 </p>
@@ -33,8 +33,9 @@ export default function VetSection() {
       grid-cols-1
       sm:grid-cols-2
       lg:grid-cols-3
-      gap-20
+      gap-10
       justify-items-center
+      
     "
   >
     {vets.slice(0, 3).map((vet) => (
@@ -47,11 +48,11 @@ export default function VetSection() {
            <img
              src={PointingArrow}
              alt="Left Arrow"
-             className="w-12 md:w-40 lg:w-58 h-full float-arrow scale-x-[-1]"
+             className="w-25 md:w-40 lg:w-58 h-full float-arrow scale-x-[-1]"
            />
                    <button
                      onClick={() => navigate("/book-appointment")}
-                     className="inter px-10 py-4 lg:px-14 lg:py-5 text-lg md:text-xl lg:text-3xl font-bold rounded-2xl cursor-pointer border-4 bg-[#144a36] text-white border-[#144a36] shadow-lg transition-all duration-300 hover:-translate-x-2 hover:bg-[#88b62c] hover:text-[#144a36] hover:scale-105" 
+                     className="inter px-3 py-4 lg:px-14 lg:py-5 text-lg md:text-xl lg:text-3xl font-bold rounded-2xl cursor-pointer border-4 bg-[#144a36] text-white border-[#144a36] shadow-lg transition-all duration-300 hover:-translate-x-2 hover:bg-[#88b62c] hover:text-[#144a36] hover:scale-105" 
                    >
                      Book an Appointment
                    </button>
@@ -59,7 +60,7 @@ export default function VetSection() {
            <img
              src={PointingArrow}
              alt="Right Arrow"
-             className="w-12 md:w-40 lg:w-58 h-full float-arrow "
+             className="w-25 md:w-40 lg:w-58 h-full float-arrow "
            />
                  </div>
     </section>

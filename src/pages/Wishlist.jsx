@@ -16,7 +16,7 @@ export default function Wishlist() {
     <>
       <Navbar />
 
-      <section className="relative mt-35 overflow-hidden">
+      <section className="relative lg:mt-32 overflow-hidden">
       {/* Banner */}
       <img
         src={BannerImg}
