@@ -111,8 +111,8 @@ setShowSuccess(true);
 
 };
   return (
-    <div className="bg-white/50 rounded-3xl shadow-lg p-10 relative rounded-3xl overflow-hidden hover:-translate-y-2 transition-all shadow-lg hover:shadow-xl duration-300">
-      <h2 className="playpen text-5xl font-bold text-[#144a36] mb-8">
+    <div className="bg-white/50 rounded-3xl shadow-lg lg:p-10 p-8 relative rounded-3xl overflow-hidden hover:-translate-y-2 transition-all shadow-lg hover:shadow-xl duration-300">
+      <h2 className="playpen text-4xl lg:text-5xl font-bold text-[#144a36] mb-8">
         Send Us A Message
       </h2>
 

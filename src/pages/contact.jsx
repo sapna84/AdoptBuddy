@@ -13,18 +13,6 @@ export default function Contact() {
     <>
       <Navbar />
 
-             {/* banner
-                     <img
-                       src={MobileBanner}
-                       alt="Hero Banner"
-                       className="block lg:hidden md:hidden w-full h-full sm:h-[600px] object-cover"
-                     />
-                       <img
-                         src={AboutBanner}
-                         alt="About Hero"
-                         className="hidden lg:block md:block w-full h-[300px] py:20 md:h-[400px] lg:h-full object-cover"
-                       />
-                   */}
              <section className="relative overflow-hidden lg:mt-32 mt-15"
                    >
                      <img
@@ -56,7 +44,7 @@ export default function Contact() {
 
       <ContactUsInfo />
 
-      <section className="max-w-auto mx-auto px-20 py-20">
+      <section className="max-w-auto mx-auto lg:px-20 px-10 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-30 ">
           <ContactForm />
 
@@ -89,14 +77,14 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="max-w-auto px-20 mx-auto py-20">
-        <div className="grid lg:grid-cols-2 gap-30">
+      <section className="max-w-auto lg:px-20 px-10 mx-auto py-10 lg:py-20">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-30">
           
 <section id="faq" className="relative rounded-3xl overflow-hidden hover:-translate-y-2 transition-all shadow-lg hover:shadow-xl duration-300">
   <FAQ />
 </section>
           {/*Address*/}
-<div className="relative bg-white rounded-3xl border-[#88b62c] border-6 shadow-lg overflow-hidden relative rounded-3xl overflow-hidden hover:-translate-y-2 transition-all shadow-lg hover:shadow-xl duration-300">
+<div className="relative bg-white rounded-3xl border-[#88b62c] lg:border-6 border-4 shadow-lg overflow-hidden relative rounded-3xl overflow-hidden hover:-translate-y-2 transition-all shadow-lg hover:shadow-xl duration-300">
   <iframe
     title="AdoptBuddy Location"
     src="https://maps.google.com/maps?q=Jaipur,Rajasthan&t=&z=13&ie=UTF8&iwloc=&output=embed"
@@ -104,8 +92,8 @@ export default function Contact() {
     loading="lazy"
   ></iframe>
   
-  <div className="absolute bottom-6 right-6 bg-white rounded-2xl shadow-lg p-4 max-w-[250px]">
-    <h3 className="playpen font-bold text-[#144a36] text-lg">
+  <div className="absolute lg:bottom-6 bottom-4 right-4 lg:right-6 bg-white rounded-2xl shadow-lg p-4 max-w-[250px]">
+    <h3 className="playpen font-bold text-[#144a36] lg:text-lg">
       AdoptBuddy Office
     </h3>
 
