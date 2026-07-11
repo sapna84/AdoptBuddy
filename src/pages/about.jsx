@@ -12,7 +12,7 @@ export default function About() {
       <>
        <Navbar />
        {/* banner*/}
-       <section className="relative overflow-hidden lg:mt-32"
+       <section className="relative overflow-hidden lg:mt-32 mt-15"
       >
           <img
             src={AboutBanner}

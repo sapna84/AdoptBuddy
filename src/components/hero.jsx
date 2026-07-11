@@ -9,17 +9,17 @@ export default function Hero() {
 <img
   src={heroMobile}
   alt="Hero Banner"
-  className="block lg:hidden w-full h-full sm:h-[600px] object-cover"
+  className="block lg:hidden md:hidden w-full h-full sm:h-[600px] object-cover"
 />
 
 {/* Desktop Banner */}
 <img
   src={heroBanner}
   alt="Hero Banner"
-  className="hidden lg:block w-full h-[1200px] object-cover"
+  className="hidden lg:block md:block w-full md:h-full lg:h-[1200px] object-cover"
 />
 
-      <div className="absolute top-24 md:top-40 lg:top-50 md:left-12 md:translate-x-0 lg:left-14">
+      <div className="absolute top-[12%] left-1/2 -translate-x-1/2 w-full px-6 md:top-40 md:left-12 md:translate-x-0 lg:top-50 lg:left-14">
         <h1 className="playpen text-[#144a36] font-extrabold text-center lg:text-left text-6xl md:ml-10 lg:ml-12 sm:text-4xl md:text-5xl lg:text-8xl leading-tight">
           Open Your Heart,
           <br />
@@ -32,7 +32,7 @@ export default function Hero() {
           Give a loving pet the chance to be part of your family and create unforgettable memories filled with joy and love.
         </p>
 
-        <div className="flex justify-center mt-4 lg:mt-20 md:-ml-12 lg:-ml-45">
+        <div className="flex mt-4 lg:mt-20 ml-40 md:ml-30 lg:ml-50">
   <button
     onClick={() => navigate("/adopt")}
     className="inter px-4 py-3 lg:px-8 lg:py-4 text-xl md:text-2xl lg:text-4xl rounded-xl font-bold cursor-pointer border-4 bg-[#144a36] text-white border-[#144a36] hover:bg-[#88b62c] transition hover:text-[#144a36]"

@@ -1,13 +1,22 @@
 
+import bannerMobile from "../assets/images/banners/banner3_mobile.png";
 export default function FormBanner({ BannerImage, title, description }) {
   return (
     <section className="relative overflow-hidden">
       {/* Banner */}
-      <img
-        src={BannerImage}
-        alt="Banner"
-        className="w-full h-[280px] sm:h-[350px] lg:h-full"
-      />
+      {/* Mobile Banner */}
+<img
+  src={bannerMobile}
+  alt="Banner"
+  className="block lg:hidden w-full sm:h-[350px] object-cover"
+/>
+
+{/* Desktop Banner */}
+<img
+  src={BannerImage}
+  alt="Banner"
+  className="hidden lg:block w-full h-full object-cover"
+/>
 
       {/* Content */}
       <div className="absolute inset-0 flex items-center justify-center px-6">
@@ -18,7 +27,7 @@ export default function FormBanner({ BannerImage, title, description }) {
             {title}
           </h1>
 
-          <p className="lg:mt-4 mb-15 lg:w-7xl w-2xl  text-white text-base sm:text-lg md:text-xl lg:text-4xl font-medium lg:leading-loose ">
+          <p className="lg:mt-4 mb-15 lg:w-7xl w-md  text-white text-base sm:text-lg md:text-xl lg:text-4xl font-medium lg:leading-loose ">
             {description}
           </p>
         </div>

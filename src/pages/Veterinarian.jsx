@@ -8,16 +8,16 @@ export default function VetBooking() {
   return (<>
   <Navbar />
        {/*banner*/}
-            <section className="relative overflow-hidden lg:pt-32">
+              <section className="relative overflow-hidden lg:pt-32 pt-15">
           <Banner
           BannerImage = {bannerImg}
-          title ="Our Trusted Veterinarians "
+          title ="Veterinarians "
           description ="Explore qualified veterinary specialists, compare their experience, and schedule an appointment for personalized pet healthcare."
           />
       </section>
       {/*vet cards*/}
   
-  <section className="max-w p-20 mx-auto py-20">
+  <section className="max-w p-20 mx-auto py-10">
       <div className=" mt-12
       grid
       grid-cols-1

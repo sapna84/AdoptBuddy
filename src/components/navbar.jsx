@@ -1,8 +1,7 @@
 import LoginPopup from "./LoginPopup";
 import RegisterPopup from "./RegisterPopup";
 import { getLoggedInUser, logoutUser } from "../data/loginUser";
-import { useState, useEffect } from "react";
-import { useNavigate, NavLink } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";import { useNavigate, NavLink } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -21,6 +20,7 @@ export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
   const [showDropdown, setShowDropdown] = useState(false);
+  const navbarRef = useRef(null);
 
   const linkStyle = ({ isActive }) =>
     isActive
@@ -46,9 +46,32 @@ export default function Navbar() {
     window.location.reload();
   };
 
+  useEffect(() => {
+  const handleClickOutside = (event) => {
+    if (
+      menuOpen &&
+      navbarRef.current &&
+      !navbarRef.current.contains(event.target)
+    ) {
+      setMenuOpen(false);
+    }
+  };
+
+  document.addEventListener("mousedown", handleClickOutside);
+  document.addEventListener("touchstart", handleClickOutside);
+
+  return () => {
+    document.removeEventListener("mousedown", handleClickOutside);
+    document.removeEventListener("touchstart", handleClickOutside);
+  };
+}, [menuOpen]);
+
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 lg:bg-white/80 lg:backdrop-blur-md lg:shadow-lg">
+      <header
+  ref={navbarRef}
+  className="fixed top-0 left-0 w-full z-50 lg:bg-white/80 bg-[#F7F1E6] lg:backdrop-blur-md lg:shadow-lg"
+>
 
         <div className="w-full h-16 sm:h-18 md:h-24 lg:h-28 flex items-center justify-between px-4 sm:px-6 md:px-8 lg:px-10 lg:mt-4">
 
@@ -92,7 +115,7 @@ export default function Navbar() {
             {/* Desktop Wishlist */}
             <FontAwesomeIcon
               icon={faHeart}
-              className="hidden lg:block text-[#144a36] text-4xl cursor-pointer hover:scale-105 transition"
+              className="hidden lg:block text-[#144a36] text-4xl hover:text-[#88b62c] cursor-pointer hover:scale-105 transition"
               onClick={() => {
                 if (isLoggedIn) {
                   navigate("/wishlist");
@@ -129,7 +152,7 @@ export default function Navbar() {
                 <div className="absolute right-0 mt-4 w-52 bg-white rounded-xl shadow-xl overflow-hidden">
                   <button
                     onClick={handleLogout}
-                    className="w-full text-left px-5 py-3 hover:bg-red-100 text-red-600"
+                    className="w-full text-left px-5 py-3 hover:bg-[#F7F1E6] text-[#144a36] font-semibold"
                   >
                     Logout
                   </button>
