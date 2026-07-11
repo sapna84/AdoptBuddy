@@ -2,7 +2,7 @@ import Navbar from "../components/navbar.jsx";
 import Footer from"../components/footer.jsx";
 import ContactNote from "../assets/images/background/background7.png";
 import MsgIcon from "../assets/images/icons/msg.svg";
-
+import MobileBanner from "../assets/images/banners/contactUs_mobile.png";
 import Contactbanner from "../assets/images/banners/contactUs_banner.png";
 import ContactUsInfo from "../components/contactInfo";
 import ContactForm from "../components/contactForm";
@@ -13,24 +13,41 @@ export default function Contact() {
     <>
       <Navbar />
 
-             {/* banner*/}
-             <section className="relative lg:mt-32 overflow-hidden">
+             {/* banner
+                     <img
+                       src={MobileBanner}
+                       alt="Hero Banner"
+                       className="block lg:hidden md:hidden w-full h-full sm:h-[600px] object-cover"
+                     />
+                       <img
+                         src={AboutBanner}
+                         alt="About Hero"
+                         className="hidden lg:block md:block w-full h-[300px] py:20 md:h-[400px] lg:h-full object-cover"
+                       />
+                   */}
+             <section className="relative overflow-hidden lg:mt-32 mt-15"
+                   >
+                     <img
+                       src={MobileBanner}
+                       alt="Hero Banner"
+                       className="block lg:hidden md:hidden w-full h-full sm:h-[600px] object-cover"
+                     />
                 <img
                   src={Contactbanner}
                   alt="About Hero"
-                  className="w-full h-[350px] py:20 md:h-[500px] lg:h-full object-cover"
+                  className="hidden lg:block md:block w-full h-[350px] py:20 md:h-[500px] lg:h-full object-cover"
                 />
             
         <div className="absolute inset-0 px-6 flex ">
           <div className=" mt-10 lg:mt-15 lg:max-w-8xl pl-6 md:pl-12 lg:pl-20">
-             <p className=" lg:w-4xl md:w-lg  text-white text-base sm:text-lg md:text-xl lg:text-4xl font-medium">
+            <p className=" lg:w-4xl md:w-lg  text-white text- sm:text-lg md:text-xl lg:text-4xl font-medium">
             Contact Us
           </p>
-         <h1 className=" lg:w-6xl playpen text-4xl md:text-6xl lg:text-8xl font-bold text-white leading-tight lg:leading-tight">
+         <h1 className=" lg:w-6xl playpen font-extrabold text-6xl sm:text-5xl md:text-6xl lg:text-8xl text-white leading-tight lg:leading-tight">
               Because Every Pet Deserves <span className="text-[#88b62c]">a Home </span>
               </h1>
 
-          <p className=" lg:w-4xl md:w-lg lg:mt-10 text-white text-base sm:text-lg md:text-xl lg:text-4xl font-medium leading-tight">
+          <p className=" lg:w-4xl md:w-lg mt-10 lg:mt-10 text-white text-base sm:text-lg md:text-xl lg:text-4xl font-medium leading-loose lg:leading-tight">
            Have questions, need support, or want to report a lost or found pet? We're here to help.
            </p>
         </div>
@@ -39,12 +56,12 @@ export default function Contact() {
 
       <ContactUsInfo />
 
-      <section className="max-w-auto  mx-auto px-20 py-20">
+      <section className="max-w-auto mx-auto px-20 py-20">
         <div className="grid lg:grid-cols-2 gap-30 ">
           <ContactForm />
 
 
-          <div className="relative rounded-3xl overflow-hidden hover:-translate-y-2 transition-all shadow-lg hover:shadow-xl duration-300">
+          <div className="hidden lg:block md:block relative rounded-3xl overflow-hidden hover:-translate-y-2 transition-all shadow-lg hover:shadow-xl duration-300">
   <img
     src={ContactNote}
     alt="Contact Message"

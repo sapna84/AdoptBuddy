@@ -1,6 +1,7 @@
 import Navbar from "../components/navbar.jsx";
 import Footer from"../components/footer.jsx";
 import AboutBanner from "../assets/images/banners/aboutUs_banner.png";
+import MobileBanner from "../assets/images/banners/aboutUs_mobile.png";
 import background from "../assets/images/background/background5.png";
 import background2 from "../assets/images/background/background6.png";
 import dogImg from "../assets/images/pets/dog.png";
@@ -14,10 +15,15 @@ export default function About() {
        {/* banner*/}
        <section className="relative overflow-hidden lg:mt-32 mt-15"
       >
+        <img
+          src={MobileBanner}
+          alt="Hero Banner"
+          className="block lg:hidden md:hidden w-full h-full sm:h-[600px] object-cover"
+        />
           <img
             src={AboutBanner}
             alt="About Hero"
-            className="w-full h-[300px] py:20 md:h-[400px] lg:h-full object-cover"
+            className="hidden lg:block md:block w-full h-[300px] py:20 md:h-[400px] lg:h-full object-cover"
           />
       
        

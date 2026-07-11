@@ -34,8 +34,8 @@ const contactInform = [
 
 export default function ContactInfo() {
   return (
-    <section className="max-w-auto px-20 py-25">
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 md:gap-4 lg:gap-18 ">
+    <section className="max-w-auto lg:px-20 px-10 py-15 lg:py-25">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-4 lg:gap-18 ">
         {contactInform.map((item, index) => (
           <div
             key={index}
