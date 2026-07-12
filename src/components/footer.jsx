@@ -15,10 +15,10 @@ function Footer() {
   }}
 >
 
-     <div className="max-w-full px-6 sm:px-10 md:px-12 lg:px-20 py-10 md:py-14 lg:py-20 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-14 lg:gap-15">
+     <div className="max-w-full px-6 sm:px-10 md:px-12 lg:px-20 py-10 md:py-14 lg:py-20 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-12 md:gap-14 lg:gap-15">
 
         {/* Logo Section */}
-        <div className="max-w-md mt-18 md:mt-12 lg:mt-48 text-center md:text-left">
+        <div className="max-w-md mt-18 md:mt-43 lg:mt-48 text-center md:text-left">
           <img
             src={logo}
             alt="AdoptBuddy Logo"
@@ -69,7 +69,7 @@ function Footer() {
         
 
         {/* Quick Links */}
-        <div className="inter mt-23 ml-10 lg:ml-0 md:mt-4 lg:mt-55 text-lg md:text-xl lg:text-2xl text-left">
+        <div className="inter mt-23 ml-10 lg:ml-0 md:mt-50 lg:mt-55 text-lg md:text-xl lg:text-2xl text-left">
           <h4 className="playpen text-2xl lg:text-3xl font-semibold mb-6 lg:mb-15">
             Quick Links
           </h4>
@@ -132,7 +132,7 @@ function Footer() {
         </div>
 
         {/* Support */}
-        <div className="inter mt-2 md:mt-4 lg:mt-55 text-lg md:text-xl lg:text-2xl text-left">
+        <div className="inter mt-2 md:mt-50 lg:mt-55 text-lg md:text-xl lg:text-2xl text-left">
           <h4 className="playpen text-2xl lg:text-3xl font-semibold mb-6 lg:mb-15">
             Support
           </h4>
@@ -162,7 +162,7 @@ function Footer() {
         </div>
 
         {/* Contact */}
-        <div className="inter mt-2 md:mt-4 lg:mt-55 text-lg md:text-xl lg:text-2xl text-center">
+        <div className="inter mt-2 md:mt-50 lg:mt-55 text-lg md:text-xl lg:text-2xl text-center">
           <h4 className="playpen text-2xl lg:text-3xl font-semibold mb-6 lg:mb-15">
             Contact
           </h4>
@@ -176,7 +176,7 @@ function Footer() {
 
       </div>
 
-      <div className="border-t border-white/20 py-4 md:py-5 text-center text-sm md:text-lg lg:text-2xl px-4">
+      <div className="border-t border-white/20 py-4 md:py-15 text-center text-sm md:text-lg lg:text-2xl px-4">
         © 2026 AdoptBuddy. All rights reserved.
       </div>
 
