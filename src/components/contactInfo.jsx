@@ -34,12 +34,12 @@ const contactInform = [
 
 export default function ContactInfo() {
   return (
-    <section className="max-w-auto lg:px-20 px-10 py-15 lg:py-25">
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-4 lg:gap-18 ">
+    <section className="max-w-auto lg:px-20 md:px-15 px-10 py-15 lg:py-25">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-15 lg:gap-18 ">
         {contactInform.map((item, index) => (
           <div
             key={index}
-            className="bg-white border-[#144a36] border-4 rounded-2xl shadow-lg p-4 flex items-center gap-2 hover:-translate-y-2 hover:shadow-lg transition-all duration-300"
+            className="bg-white border-[#144a36] border-4 rounded-2xl shadow-lg p-4 flex items-center gap-2 md:gap-10 hover:-translate-y-2 hover:shadow-lg transition-all duration-300"
           >
             <img
               src={item.icon}

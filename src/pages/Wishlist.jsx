@@ -19,17 +19,17 @@ export default function Wishlist() {
     <>
       <Navbar />
 
-      <section className="relative lg:mt-32 mt-15 overflow-hidden">
+      <section className="relative lg:mt-32 md:mt-25 mt-15 overflow-hidden">
       {/* Banner */}
       <img
         src={BannerImg}
         alt="Banner"
-        className="hidden lg:block w-full h-full object-cover"
+        className="hidden lg:block md:block w-full h-full object-cover"
       />
       <img
         src={bannerMobile}
         alt="Banner"
-        className="block lg:hidden w-full sm:h-[350px] object-cover"
+        className="block lg:hidden md:hidden w-full sm:h-[350px] object-cover"
       />
 
 
@@ -38,7 +38,7 @@ export default function Wishlist() {
 
         {/* Center Text */}
         <div className="text-center lg:mb-40 md:mb-8">
-          <h1 className="playpen text-white font-extrabold text-6xl sm:text-5xl mb-10 lg:text-8xl">
+          <h1 className="playpen text-white font-extrabold text-6xl sm:text-6xl md:text-6xl mb-10 lg:text-8xl">
             My Wishlist
           </h1>
         </div>

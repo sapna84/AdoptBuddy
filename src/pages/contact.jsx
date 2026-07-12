@@ -13,7 +13,7 @@ export default function Contact() {
     <>
       <Navbar />
 
-             <section className="relative overflow-hidden lg:mt-32 mt-15"
+             <section className="relative overflow-hidden md:mt-25 lg:mt-32 mt-15"
                    >
                      <img
                        src={MobileBanner}
@@ -31,11 +31,11 @@ export default function Contact() {
             <p className=" lg:w-4xl md:w-lg  text-white text- sm:text-lg md:text-xl lg:text-4xl font-medium">
             Contact Us
           </p>
-         <h1 className=" lg:w-6xl playpen font-extrabold text-6xl sm:text-5xl md:text-6xl lg:text-8xl text-white leading-tight lg:leading-tight">
+         <h1 className=" lg:w-6xl md:w-4xl playpen font-extrabold text-6xl sm:text-5xl md:text-6xl lg:text-8xl text-white leading-tight lg:leading-tight">
               Because Every Pet Deserves <span className="text-[#88b62c]">a Home </span>
               </h1>
 
-          <p className=" lg:w-4xl md:w-lg mt-10 lg:mt-10 text-white text-base sm:text-lg md:text-xl lg:text-4xl font-medium leading-loose lg:leading-tight">
+          <p className=" lg:w-4xl md:w-xl mt-10 lg:mt-10 text-white text-base sm:text-lg md:text-xl lg:text-4xl font-medium leading-loose lg:leading-tight">
            Have questions, need support, or want to report a lost or found pet? We're here to help.
            </p>
         </div>
@@ -44,8 +44,8 @@ export default function Contact() {
 
       <ContactUsInfo />
 
-      <section className="max-w-auto mx-auto lg:px-20 px-10 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-30 ">
+      <section className="max-w-auto mx-auto lg:px-20 md:px-15 md:py-15 px-10 lg:py-20">
+        <div className="grid lg:grid-cols-2 md:grid-cols-2 md:gap-10 lg:gap-30 ">
           <ContactForm />
 
 
@@ -57,9 +57,9 @@ export default function Contact() {
   />
 
   {/* Text on image */}
-  <div className="absolute px-30 inset-0 flex items-center justify-center ">
-    <h2 className=" text-4xl lg:ml-60 lg:text-7xl font-bold text-[#144a36] leading-loose">
-      We're Just <br />
+  <div className="absolute px-30  inset-0 flex items-center justify-center ">
+    <h2 className=" text-5xl lg:ml-60 lg:mt-0 md:mt-50 lg:text-7xl font-bold text-[#144a36] leading-loose">
+      We're Just <br className="hidden lg:block md:hidden"/>
       A Message
       Away!
     </h2>
@@ -69,7 +69,7 @@ export default function Contact() {
   <img
     src={MsgIcon}
     alt="Message"
-    className="absolute lg:left-[20px] top-50 lg:top-1/2 -translate-y-1/2 lg:w-80"
+    className="absolute lg:left-[20px] md:left-[60px] md:top-40 top-50 lg:top-1/2 -translate-y-1/2 lg:w-80"
   />
 </div>
 
@@ -78,7 +78,7 @@ export default function Contact() {
       </section>
 
       <section className="max-w-auto lg:px-20 px-10 mx-auto py-10 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-30">
+        <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-10 lg:gap-30">
           
 <section id="faq" className="relative rounded-3xl overflow-hidden hover:-translate-y-2 transition-all shadow-lg hover:shadow-xl duration-300">
   <FAQ />

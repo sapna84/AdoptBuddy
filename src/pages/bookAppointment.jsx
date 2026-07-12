@@ -20,7 +20,7 @@ const tips = [
   <Navbar />
 
   {/*banner*/}
-          <section className="relative overflow-hidden lg:pt-32">
+          <section className="relative overflow-hidden md:pt-25 pt-15 lg:pt-32">
         <Banner
         BannerImage = {bannerImg}
         title ="Book Appointment"
@@ -28,12 +28,12 @@ const tips = [
         />
     </section>
   
-  <section className="max-w-auto lg:p-20 mx-auto px-6 py-10">
+  <section className="max-w-auto lg:p-20 md:p-15 mx-auto px-10 py-10">
 
     {/*appointment form*/}
 
 
- <div className="grid lg:grid-cols-[2fr_1fr] gap-12">
+ <div className="grid md:grid-cols-[2fr_1fr] lg:grid-cols-[2fr_1fr] gap-12">
     <div >
 <Appointment/>
 
@@ -78,9 +78,9 @@ you have any questions.
 </p>
 
          {/*submit button*/}
-         <div className="mt-8 px-40">
+         <div className="mt-8 md:px-20 px-20 lg:px-40">
         <button onClick={() => navigate("/contact")} 
-          className=" bg-white border-4 border-[#144a36] text-[#144a36] py-3 px-6 rounded-xl  text-2xl font-semibold cursor-pointer hover:bg-[#144a36]/80 hover:text-white"
+          className=" bg-white border-4 border-[#144a36] text-[#144a36] py-3 lg:py-3 md:py-2 lg:px-6 md:px-4 px-6 rounded-xl  text-2xl font-semibold cursor-pointer hover:bg-[#144a36]/80 hover:text-white"
         >
           Contact Us
         </button>

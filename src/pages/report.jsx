@@ -25,7 +25,7 @@ const [reportType, setReportType] = useState(location.state?.reportType);
   </section>
 
 
- <section className=" lg:p-20 px-6 py-4">
+ <section className=" lg:p-20 md:p-15 px-6 py-4">
   <div className="mb-10">
   <label className="playpen text-5xl font-bold text-[#144a36]">
     I am reporting a <span className="text-red-500">*</span>
@@ -76,7 +76,7 @@ const [reportType, setReportType] = useState(location.state?.reportType);
 </div>
 </div>
 
-  <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-10 lg:gap-12">
+  <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] lg:grid-cols-[2fr_1fr] gap-10 lg:gap-12">
     <div >
 <Reportform />
 
@@ -142,9 +142,9 @@ you have any questions.
 </p>
 
          {/*submit button*/}
-         <div className="mt-8 lg:px-40 px-25">
+         <div className="mt-8 lg:px-40 md:px-20 px-25">
         <button onClick={() => navigate("/contact")} 
-          className=" bg-white border-4 border-[#144a36] text-[#144a36] py-3 px-6 rounded-xl  text-2xl font-semibold cursor-pointer hover:bg-[#144a36]/80 hover:text-white"
+          className=" bg-white border-4 border-[#144a36] text-[#144a36] py-3 lg:py-3 md:py-2 md:px-4 lg:px-6 px-6 rounded-xl  text-2xl font-semibold cursor-pointer hover:bg-[#144a36]/80 hover:text-white"
         >
           Contact Us
         </button>

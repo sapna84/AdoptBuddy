@@ -18,8 +18,8 @@ export default function Adopt() {
 </section>
     {/*pet cards*/}
   
-  <section className="max-w-full lg:px-20 mx-auto py-20">
-     <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 px-10 lg:gap-20 mt-6">
+  <section className="max-w-full lg:px-20 md:px-10 mx-auto py-20">
+     <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-10 px-10 md:gap-15 lg:gap-20 mt-6">
         {pets.map((pet) => (
           <Petcard key={pet.id} pet={pet} />
         ))}

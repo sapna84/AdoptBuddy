@@ -17,7 +17,7 @@ export default function PetSection() {
 
       {/* Pet Cards */}
        <section className="max-w-full lg:px-20 mx-auto py-10">
-     <div className="grid grid-cols-1 lg:grid-cols-4 gap-10 px-10 lg:gap-20 mt-6">
+     <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 gap-10 md:gap-15 px-10 lg:gap-20 mt-6">
         {pets
           .filter((pet) => pet.featured)
           .map((pet) => (
@@ -29,10 +29,3 @@ export default function PetSection() {
   );
 }
 
-{/*  <section className="max-w-full lg:px-20 mx-auto py-20">
-     <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 px-10 lg:gap-20 mt-6">
-        {pets.map((pet) => (
-          <Petcard key={pet.id} pet={pet} />
-        ))}
-      </div>
-    </section>>*/}

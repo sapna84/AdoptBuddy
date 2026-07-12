@@ -8,7 +8,7 @@ export default function VetBooking() {
   return (<>
   <Navbar />
        {/*banner*/}
-              <section className="relative overflow-hidden lg:pt-32 pt-15">
+              <section className="relative overflow-hidden md:pt-25 lg:pt-32 pt-15">
           <Banner
           BannerImage = {bannerImg}
           title ="Veterinarians "
@@ -21,6 +21,7 @@ export default function VetBooking() {
       <div className=" mt-12
       grid
       grid-cols-1
+      md:grid-cols-3
       sm:grid-cols-2
       lg:grid-cols-3
       gap-8

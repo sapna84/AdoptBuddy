@@ -22,7 +22,7 @@ export default function LostFoundList() {
       <Banner />
 
       {/* Stats */}
-      <section className="mx-auto lg:px-20 px-10 py-10 lg:py-20">
+      <section className="mx-auto lg:px-20 md:px-15 px-10 md:py-15 py-10 lg:py-20">
         <div className="grid grid-cols-3 sm:grid-cols-3 lg:gap-10 gap-4 text-center">
           <div className="rounded-xl bg-white p-6 shadow-lg hover:-translate-y-2 transition-all duration-300">
             <p className="text-4xl font-bold text-[#144a36]">
@@ -75,7 +75,7 @@ export default function LostFoundList() {
       </section>
 
       {/* Pet cards */}
-      <section className="mx-auto lg:px-20 px-10 py-10">
+      <section className="mx-auto lg:px-20 md:px-15 px-10 py-10">
        <div className=" grid grid-cols-1 lg:grid-cols-2 gap-10 justify-items-center">
           {activePets.length === 0 ? (
             <p className="text-center text-4xl text-gray-500">

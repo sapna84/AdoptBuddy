@@ -13,7 +13,7 @@ export default function About() {
       <>
        <Navbar />
        {/* banner*/}
-       <section className="relative overflow-hidden lg:mt-32 mt-15"
+       <section className="relative overflow-hidden md:mt-25 lg:mt-32 mt-15"
       >
         <img
           src={MobileBanner}
@@ -31,13 +31,13 @@ export default function About() {
         <div className="absolute inset-0 px-6 flex ">
           <div className=" mt-6 lg:mt-20 lg:max-w-8xl pl-6 md:pl-12 lg:pl-20">
              <div className="">
-          <h1 className=" playpen  lg:w-6xl font-extrabold text-5xl sm:text-5xl lg:mb-10 mb-4 lg:text-8xl text-[#144a36] leading-tight">
+          <h1 className=" playpen  lg:w-6xl font-extrabold text-5xl sm:text-5xl md:text-6xl lg:mb-10 mb-4 lg:text-8xl text-[#144a36] leading-tight">
            
             Connecting Pets 
-            With  <span className="text-[#88b62c]"><br className="block lg:hidden md:hidden"/>Loving Families</span>
+            With  <span className="text-[#88b62c]"><br className="block lg:hidden"/>Loving Families</span>
           </h1>
 
-          <p className=" inter lg:w-4xl md:w-lg  text-xl text-base sm:text-lg md:text-xl lg:text-4xl font-medium leading-loose">
+          <p className=" inter lg:w-4xl md:w-lg  text-xl text-base sm:text-lg md:text-2xl lg:text-4xl font-medium leading-loose">
             At AdoptBuddy, we believe every pet deserves a safe home every pet lover deserves the perfect companion.
           </p>
         </div>
@@ -46,7 +46,7 @@ export default function About() {
       </section>
       
 {/*content*/}
-       <section className="bg-white/40 lg:px-20 px-10 py-10 lg:py-30">
+       <section className="bg-white/40 lg:px-20 md:px-15 md:py-20 px-10 py-10 lg:py-30">
          <div
     className="hidden lg:block absolute inset-0 bg-cover bg-center -z-10"
     style={{
@@ -69,7 +69,7 @@ export default function About() {
           </section>
 
  {/* Who We Are */}
- <section className="px-10 md:px-12 lg:px-20 py-10 lg:py-20">
+ <section className="px-10 md:px-12 lg:px-20 md:py-15 md:px-15 py-10 lg:py-20">
  <div className="lg:mt-16 space-y-16">
 <h1 className="playpen text-4xl lg:text-5xl font-bold text-center text-[#88b62c]">
           -----<span className="text-[#144a36]">Who We Are</span>-----</h1>
@@ -78,7 +78,7 @@ export default function About() {
       <img
         src={dogImg}
         alt="Our Mission"
-        className="w-100 h-full lg:ml-40 md:h-80 lg:h-96 object-cover rounded-2xl border-4 border-[#144a36]"
+        className="w-100 h-full md:ml-20 lg:ml-40 md:h-80 lg:h-96 object-cover rounded-2xl border-4 border-[#144a36]"
       />
       <div className=" lg:mr-40 mt-4">
         <h3 className="playpen text-4xl lg:text-5xl font-bold text-center text-[#88b62c]">
@@ -103,7 +103,7 @@ export default function About() {
       <img
         src={catImg}
         alt="Our Vision"
-        className="order-1 md:order-2 lg:mr-40 justify-self-end w-100 h-full md:h-80 lg:h-96 object-cover rounded-2xl border-4 border-[#144a36]"
+        className="order-1 md:order-2 md:mr-20 lg:mr-40 justify-self-end w-100 h-full md:h-80 lg:h-96 object-cover rounded-2xl border-4 border-[#144a36]"
       />
     </div>
 
@@ -111,7 +111,7 @@ export default function About() {
 </section>
 
       {/* TEAM */}
-      <section className=" lg:py-15 py-10 px-10"
+      <section className=" lg:py-15 md:px-20 py-10 px-10"
       style={{
            backgroundImage: `url(${background2})`,
          }}
@@ -122,7 +122,7 @@ export default function About() {
       <span className="text-[#88b62c]">-----</span>Our Team<span className="text-[#88b62c]">-----</span>
     </h2>
 
-    <div className="inter grid md:grid-cols-2 lg:grid-cols-4 gap-15 mt-20">
+    <div className="inter grid md:grid-cols-2 lg:grid-cols-4 md:gap-20 gap-15 mt-20">
       {Team.map((member) => (
         <TeamCard
           key={member.id}

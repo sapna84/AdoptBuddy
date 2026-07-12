@@ -6,17 +6,17 @@ export default function Banner() {
   const navigate = useNavigate();
 
   return (
-    <section className="relative lg:mt-32 mt-15 overflow-hidden">
+    <section className="relative lg:mt-32 md:mt-25 mt-15 overflow-hidden">
   <img
     src={bannerImg}
     alt=""
-    className="hidden lg:block object-cover w-full h-auto"
+    className="hidden lg:block md:block object-cover w-full h-auto"
   />
         {/* Mobile Banner */}
   <img
     src={bannerMobile}
     alt="Banner"
-    className="block lg:hidden w-full sm:h-[350px] object-cover"
+    className="block lg:hidden md:hidden w-full sm:h-[350px] object-cover"
   />
 
       <div className="lg:mb-40 md:mb-20 mb-20 absolute inset-0 flex flex-col items-center justify-center">

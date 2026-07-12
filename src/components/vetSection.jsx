@@ -31,8 +31,9 @@ export default function VetSection() {
       mt-12
       grid
       grid-cols-1
-      sm:grid-cols-2
+      md:grid-cols-3
       lg:grid-cols-3
+      md:gap-5
       gap-10
       justify-items-center
       
