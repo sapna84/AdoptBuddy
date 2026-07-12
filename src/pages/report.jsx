@@ -16,7 +16,7 @@ const [reportType, setReportType] = useState(location.state?.reportType);
   <Navbar />
   
     {/*banner*/}
-        <section className="relative overflow-hidden lg:pt-32">
+        <section className="relative overflow-hidden lg:pt-32 pt-15">
       <Banner
       BannerImage = {bannerImg}
       title ="Report Lost or Found Pet"
@@ -76,7 +76,7 @@ const [reportType, setReportType] = useState(location.state?.reportType);
 </div>
 </div>
 
-  <div className="grid lg:grid-cols-[2fr_1fr] gap-12">
+  <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-10 lg:gap-12">
     <div >
 <Reportform />
 
@@ -142,7 +142,7 @@ you have any questions.
 </p>
 
          {/*submit button*/}
-         <div className="mt-8 px-40">
+         <div className="mt-8 lg:px-40 px-25">
         <button onClick={() => navigate("/contact")} 
           className=" bg-white border-4 border-[#144a36] text-[#144a36] py-3 px-6 rounded-xl  text-2xl font-semibold cursor-pointer hover:bg-[#144a36]/80 hover:text-white"
         >

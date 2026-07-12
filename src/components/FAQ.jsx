@@ -27,7 +27,7 @@ export default function FAQ() {
 
   return (
     <div className="inter bg-white rounded-3xl shadow-lg p-8">
-      <h2 className="playpen text-5xl font-bold text-[#144a36] mb-8">
+      <h2 className="playpen lg:text-5xl text-4xl font-bold text-[#144a36] mb-8">
         Frequently Asked Questions
       </h2>
 
@@ -44,14 +44,14 @@ export default function FAQ() {
     className="bg-[#f7f1e6] rounded-xl px-5 py-4 cursor-pointer"
   >
     <summary
-      className={`font-medium text-3xl transition-colors ${
+      className={`font-medium lg:text-3xl text-2xl transition-colors ${
         openItems[index] ? "text-[#88b62c]" : "text-[#144a36]"
       }`}
     >
       {faq.question}
     </summary>
 
-    <p className="mt-4 text-2xl text-black leading-relaxed">
+    <p className="mt-4 lg:text-2xl text-xl text-black leading-relaxed">
       {faq.answer}
     </p>
   </details>
