@@ -86,7 +86,7 @@ description:
 
 
     titleClass:
-      "text-white lg:text-[#144a36] md:text-[#144a36] font-extrabold text-center text-6xl lg:text-8xl lg:text-left md:text-left md:ml-30 lg:ml-50 sm:text-4xl md:text-6xl",
+      "text-white lg:text-[#144a36] md:text-[#144a36] font-extrabold text-center text-6xl lg:text-8xl lg:text-left md:text-left md:ml-30 lg:ml-45 sm:text-4xl md:text-6xl",
 
     descriptionClass:
       "text-white lg:text-[#144a36] md:text-[#144a36] text-center text-2xl font-semibold lg:text-3xl lg:ml-50 md:ml-30 md:mt-12 lg:mt-10 md:max-w-lg lg:max-w-4xl sm:text-lg md:text-2xl lg:text-4xl lg:leading-loose",
@@ -125,7 +125,7 @@ description:
       "flex mt-10 ml-20",
 
     buttonClass:
-      "bg-white text-[#88b62c] border-[#88b62c] px-6 py-3 ml-15 text-xl md:text-2xl lg:text-4xl lg:ml-100 md:ml-60 rounded-xl  lg:px-8 lg:py-4 font-bold cursor-pointer border-4 hover:bg-[#88b62c] hover:text-[#144a36] transition",
+      "bg-white text-[#144a36] border-[#144a36] px-6 py-3 ml-15 text-xl md:text-2xl lg:text-4xl lg:ml-100 md:ml-60 rounded-xl  lg:px-8 lg:py-4 font-bold cursor-pointer border-4 hover:bg-[#144a36] hover:text-white transition",
                                                                      
 buttons: [
   { text: "Report Found", path: "/report_",
@@ -142,7 +142,7 @@ const [currentSlide, setCurrentSlide] = useState(0);
 useEffect(() => {
   const timer = setInterval(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
-  }, 200000);
+  }, 1800);
 
   return () => clearInterval(timer);
 }, []);
@@ -177,7 +177,7 @@ const slide = slides[currentSlide];
 </p>
 
        <div className={slide.buttonContainerClass}>
-    {slide.buttons.map((button, index) => (
+    {slide.buttons.map((button) => (
 <button
   onClick={() => navigate(button.path)}
   className={`inter font-bold border-4 transition cursor-pointer ${slide.buttonClass}`}
