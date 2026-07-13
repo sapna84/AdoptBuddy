@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { getLoggedInUser } from "../data/loginUser";
+import LoginPopup from "./LoginPopup";
 import ContactPopup from "../components/lostfoundcontactPopup";
 
 export default function ReportedPetCard({ pet, type }) {
   const [activeImage, setActiveImage] = useState(0);
+  const [showLogin, setShowLogin] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
   return (
@@ -45,7 +48,12 @@ export default function ReportedPetCard({ pet, type }) {
           )}
           <div className="flex justify-center">
         <button
-          onClick={() => setShowPopup(true)}
+          onClick={() => {
+             if (!getLoggedInUser()) {
+                  setShowLogin(true);
+                  return;
+                }
+            setShowPopup(true)}}
           className="mt-8 text-2xl px-8 py-4 rounded-xl font-bold cursor-pointer border-4 bg-[#144a36] text-white border-[#144a36] hover:bg-[#88b62c] transition hover:text-[#144a36]"
         >
           {type === "lost" ? "Contact Owner" : "Contact Finder"}
@@ -123,6 +131,14 @@ export default function ReportedPetCard({ pet, type }) {
  </div>
 </div>
       </div>
+       
+            {showLogin && (
+        <LoginPopup
+          message="Please login or registor first."
+          onClose={() => setShowLogin(false)}
+          onRegister={() => {}}
+        />
+      )}
       {showPopup && (
         <ContactPopup
           title={
