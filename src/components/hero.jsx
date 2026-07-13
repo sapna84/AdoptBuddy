@@ -142,7 +142,7 @@ const [currentSlide, setCurrentSlide] = useState(0);
 useEffect(() => {
   const timer = setInterval(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
-  }, 280000);
+  }, 2800);
 
   return () => clearInterval(timer);
 }, []);
