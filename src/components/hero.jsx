@@ -24,13 +24,13 @@ export default function Hero() {
       "Give a loving pet the chance to be part of your family and create unforgettable memories filled with joy and love.",
 
     titleClass:
-      "playpen text-[#144a36] font-extrabold text-center lg:text-left text-6xl md:ml-10 lg:ml-20 sm:text-4xl md:text-6xl lg:text-8xl leading-tight",
+      "playpen text-[#144a36] font-extrabold text-center lg:text-left text-6xl md:text-left lg:ml-20 md:ml-10 sm:text-4xl md:text-6xl lg:text-8xl leading-tight",
 
     descriptionClass:
-      "inter text-center lg:ml-20 md:-ml-2 mt-6 md:mt-12 lg:mt-18 px-8 md:max-w-md lg:max-w-2xl text-xl sm:text-lg md:text-2xl lg:text-4xl font-medium leading-loose",
+      "inter text-center lg:ml-20 md:ml-2 mt-6 md:mt-10 lg:mt-18 px-8 md:max-w-lg lg:max-w-2xl text-xl sm:text-lg md:text-2xl lg:text-4xl font-medium leading-loose",
 
     buttonContainerClass:
-      "flex mt-4 lg:mt-10 ml-40 md:ml-30 lg:ml-68",
+      "flex mt-4 lg:mt-10 ml-40 md:ml-40 lg:ml-68",
 
     buttonClass:
       "px-6 py-3 lg:px-8 lg:py-4 text-xl md:text-2xl lg:text-4xl rounded-xl font-bold cursor-pointer border-4 bg-[#144a36] text-white border-[#144a36] hover:bg-[#88b62c] hover:text-[#144a36] transition",
@@ -54,16 +54,16 @@ description:
   "Lost your pet? Browse our lost and found listings—you might find your furry friend.",
 
     titleClass:
-      "playpen text-[#144a36] font-extrabold text-center lg:text-left text-6xl md:ml-10 lg:ml-50 sm:text-4xl md:text-6xl lg:text-8xl leading-tight",
+      "playpen text-[#144a36] font-extrabold text-center lg:text-left text-6xl md:text-left md:ml-30 lg:ml-50 sm:text-4xl md:text-6xl lg:text-8xl leading-tight",
 
     descriptionClass:
-      "text-[#144a36] text-center lg:ml-50 md:-ml-2 md:mt-12 lg:mt-20 text-2xl md:max-w-md lg:max-w-4xl font-semibold sm:text-lg md:text-2xl lg:text-4xl lg:leading-loose",
+      "text-[#144a36] text-center lg:ml-50 md:ml-30 md:mt-12 lg:mt-20 text-2xl md:max-w-lg lg:max-w-4xl font-semibold sm:text-lg md:text-2xl lg:text-4xl lg:leading-loose",
 
     buttonContainerClass:
       "flex mt-10 ml-20",
 
     buttonClass:
-      "bg-white text-[#144a36] border-[#144a36] px-6 py-3 ml-10  lg:ml-80 text-xl md:text-2xl lg:text-4xl rounded-xl  lg:px-8 lg:py-4 font-bold cursor-pointer border-4 hover:bg-[#144a36] hover:text-white transition",
+      "bg-white text-[#144a36] border-[#144a36] px-6 py-3 ml-10  lg:ml-80 md:ml-40 text-xl md:text-2xl lg:text-4xl rounded-xl  lg:px-8 lg:py-4 font-bold cursor-pointer border-4 hover:bg-[#144a36] hover:text-white transition",
 
 
     buttons: [
@@ -86,16 +86,16 @@ description:
 
 
     titleClass:
-      "text-white lg:text-[#144a36] font-extrabold text-center text-6xl lg:text-8xl lg:text-left md:ml-10 lg:ml-50 sm:text-4xl md:text-6xl",
+      "text-white lg:text-[#144a36] md:text-[#144a36] font-extrabold text-center text-6xl lg:text-8xl lg:text-left md:text-left md:ml-30 lg:ml-50 sm:text-4xl md:text-6xl",
 
     descriptionClass:
-      "text-white lg:text-[#144a36] text-center text-2xl font-semibold lg:text-3xl lg:ml-50 md:-ml-2 md:mt-12 lg:mt-10 md:max-w-md lg:max-w-4xl sm:text-lg md:text-2xl lg:text-4xl lg:leading-loose",
+      "text-white lg:text-[#144a36] md:text-[#144a36] text-center text-2xl font-semibold lg:text-3xl lg:ml-50 md:ml-30 md:mt-12 lg:mt-10 md:max-w-lg lg:max-w-4xl sm:text-lg md:text-2xl lg:text-4xl lg:leading-loose",
 
     buttonContainerClass:
       "flex mt-10 ml-20",
 
     buttonClass:
-      "bg-white text-[#88b62c] lg:text-[#144a36] lg:border-[#144a36] border-[#88b62c] px-6 py-3 ml-18 text-xl md:text-2xl lg:text-4xl  lg:ml-100 rounded-xl  lg:px-8 lg:py-4 font-bold cursor-pointer border-4 hover:bg-[#88b62c] hover:text-[#144a36] transition",
+      "bg-white text-[#88b62c] lg:text-[#144a36] lg:border-[#144a36] border-[#88b62c] px-6 py-3 ml-18 text-xl md:text-2xl lg:text-4xl md:ml-50 lg:ml-100 rounded-xl  lg:px-8 lg:py-4 font-bold cursor-pointer border-4 hover:bg-[#88b62c] hover:text-[#144a36] transition",
 
       
 buttons: [
@@ -116,16 +116,16 @@ description:
 
 
     titleClass:
-     "text-[#144a36] text-center font-extrabold text-6xl lg:text-8xl lg:text-left md:ml-10 lg:ml-50 sm:text-4xl md:text-6xl",
+     "text-[#144a36] text-center font-extrabold text-6xl lg:text-8xl lg:text-left md:text-left md:ml-40 lg:ml-50 sm:text-4xl md:text-6xl",
 
     descriptionClass:
-      "text-[#144a36] text-center text-2xl font-semibold lg:text-3xl lg:ml-50 md:-ml-2 md:mt-12 lg:mt-10 md:max-w-md lg:max-w-4xl sm:text-lg md:text-2xl lg:text-4xl lg:leading-loose",
+      "text-[#144a36] text-center text-2xl font-semibold lg:text-3xl lg:ml-50 md:ml-40 md:mt-12 lg:mt-10 md:max-w-lg lg:max-w-4xl sm:text-lg md:text-2xl lg:text-4xl lg:leading-loose",
 
     buttonContainerClass:
       "flex mt-10 ml-20",
 
     buttonClass:
-      "bg-white text-[#88b62c] border-[#88b62c] px-6 py-3 ml-15 text-xl md:text-2xl lg:text-4xl lg:ml-100  rounded-xl  lg:px-8 lg:py-4 font-bold cursor-pointer border-4 hover:bg-[#88b62c] hover:text-[#144a36] transition",
+      "bg-white text-[#88b62c] border-[#88b62c] px-6 py-3 ml-15 text-xl md:text-2xl lg:text-4xl lg:ml-100 md:ml-60 rounded-xl  lg:px-8 lg:py-4 font-bold cursor-pointer border-4 hover:bg-[#88b62c] hover:text-[#144a36] transition",
                                                                      
 buttons: [
   { text: "Report Found", path: "/report_",
@@ -142,7 +142,7 @@ const [currentSlide, setCurrentSlide] = useState(0);
 useEffect(() => {
   const timer = setInterval(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
-  }, 2000);
+  }, 200000);
 
   return () => clearInterval(timer);
 }, []);
@@ -150,7 +150,7 @@ useEffect(() => {
 const slide = slides[currentSlide];
 
   return (
-    <section className="relative overflow-hidden pt-15 lg:pt-32">
+    <section className="relative overflow-hidden pt-15 md:pt-25 lg:pt-32">
     {/* Mobile Banner */}
 <img
     src={slide.mobile}
@@ -194,11 +194,11 @@ const slide = slides[currentSlide];
     setCurrentSlide((prev) => (prev + 1) % slides.length)
   }
   className="absolute right-6 md:right-10 lg:right-16 top-1/2 -translate-y-1/2
-             w-10 h-10 lg:w-16 lg:h-16
+             w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16
              rounded-full
              bg-white/60 hover:bg-white
              text-[#144a36]
-             text-xl lg:text-4xl
+             text-xl md:text-2xl lg:text-4xl
              font-bold
              shadow-lg
              transition-all duration-300"
@@ -212,11 +212,11 @@ const slide = slides[currentSlide];
     )
   }
   className="absolute left-6 md:left-10 lg:left-16 top-1/2 -translate-y-1/2
-             w-10 h-10 lg:w-16 lg:h-16
+             w-10 h-10 md:w-14 md:h-14  lg:w-16 lg:h-16
              rounded-full
              bg-white/60 hover:bg-white
              text-[#144a36]
-             text-xl lg:text-4xl
+             text-xl md:text-2xl lg:text-4xl
              font-bold
              shadow-lg
              transition-all duration-300"
