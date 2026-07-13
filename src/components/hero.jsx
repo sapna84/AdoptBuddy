@@ -30,10 +30,10 @@ export default function Hero() {
       "inter text-center lg:ml-20 md:ml-2 mt-6 md:mt-10 lg:mt-18 px-8 md:max-w-lg lg:max-w-2xl text-xl sm:text-lg md:text-2xl lg:text-4xl font-medium leading-loose",
 
     buttonContainerClass:
-      "flex mt-4 lg:mt-10 ml-40 md:ml-40 lg:ml-68",
+      "flex justify-center mt-6 lg:mt-10 md:mr-100 lg:mr-200",
 
     buttonClass:
-      "px-6 py-3 lg:px-8 lg:py-4 text-xl md:text-2xl lg:text-4xl rounded-xl font-bold cursor-pointer border-4 bg-[#144a36] text-white border-[#144a36] hover:bg-[#88b62c] hover:text-[#144a36] transition",
+      "px-6 py-3 lg:mr-130 md:mr-80 lg:px-8 lg:py-4 text-xl md:text-2xl lg:text-4xl rounded-xl font-bold cursor-pointer border-4 bg-[#144a36] text-white border-[#144a36] hover:bg-[#88b62c] hover:text-[#144a36] transition",
 
     buttons: [
       {
@@ -60,10 +60,10 @@ description:
       "text-[#144a36] text-center lg:ml-50 md:ml-30 md:mt-12 lg:mt-20 text-2xl md:max-w-lg lg:max-w-4xl font-semibold sm:text-lg md:text-2xl lg:text-4xl lg:leading-loose",
 
     buttonContainerClass:
-      "flex mt-10 ml-20",
+      "flex justify-center mt-10 md:mr-100 lg:mr-200",
 
     buttonClass:
-      "bg-white text-[#144a36] border-[#144a36] px-6 py-3 ml-10  lg:ml-80 md:ml-40 text-xl md:text-2xl lg:text-4xl rounded-xl  lg:px-8 lg:py-4 font-bold cursor-pointer border-4 hover:bg-[#144a36] hover:text-white transition",
+      "bg-white text-[#144a36] lg:mr-115 md:mr-70 border-[#144a36] px-6 py-3 lg:ml-80 md:ml-40 text-xl md:text-2xl lg:text-4xl rounded-xl  lg:px-8 lg:py-4 font-bold cursor-pointer border-4 hover:bg-[#144a36] hover:text-white transition",
 
 
     buttons: [
@@ -92,10 +92,10 @@ description:
       "text-white lg:text-[#144a36] md:text-[#144a36] text-center text-2xl font-semibold lg:text-3xl lg:ml-50 md:ml-30 md:mt-12 lg:mt-10 md:max-w-lg lg:max-w-4xl sm:text-lg md:text-2xl lg:text-4xl lg:leading-loose",
 
     buttonContainerClass:
-      "flex mt-10 ml-20",
+      "flex justify-center mt-10 md:mr-100 lg:mr-200",
 
     buttonClass:
-      "bg-white text-[#88b62c] lg:text-[#144a36] lg:border-[#144a36] border-[#88b62c] px-6 py-3 ml-18 text-xl md:text-2xl lg:text-4xl md:ml-50 lg:ml-100 rounded-xl  lg:px-8 lg:py-4 font-bold cursor-pointer border-4 hover:bg-[#88b62c] hover:text-[#144a36] transition",
+      "bg-white text-[#88b62c] lg:mr-125 md:mr-80 lg:text-[#144a36] lg:border-[#144a36] border-[#88b62c] px-6 py-3 text-xl md:text-2xl lg:text-4xl md:ml-50 lg:ml-100 rounded-xl  lg:px-8 lg:py-4 font-bold cursor-pointer border-4 hover:bg-[#88b62c] hover:text-[#144a36] transition",
 
       
 buttons: [
@@ -122,10 +122,10 @@ description:
       "text-[#144a36] text-center text-2xl font-semibold lg:text-3xl lg:ml-50 md:ml-40 md:mt-12 lg:mt-10 md:max-w-lg lg:max-w-4xl sm:text-lg md:text-2xl lg:text-4xl lg:leading-loose",
 
     buttonContainerClass:
-      "flex mt-10 ml-20",
+      "flex justify-center mt-10 md:mr-100 lg:mr-200",
 
     buttonClass:
-      "bg-white text-[#144a36] border-[#144a36] px-6 py-3 ml-15 text-xl md:text-2xl lg:text-4xl lg:ml-100 md:ml-60 rounded-xl  lg:px-8 lg:py-4 font-bold cursor-pointer border-4 hover:bg-[#144a36] hover:text-white transition",
+      "bg-white text-[#144a36] lg:mr-110 md:mr-70 border-[#144a36] px-6 py-3 text-xl md:text-2xl lg:text-4xl lg:ml-100 md:ml-60 rounded-xl  lg:px-8 lg:py-4 font-bold cursor-pointer border-4 hover:bg-[#144a36] hover:text-white transition",
                                                                      
 buttons: [
   { text: "Report Found", path: "/report_",
@@ -142,7 +142,7 @@ const [currentSlide, setCurrentSlide] = useState(0);
 useEffect(() => {
   const timer = setInterval(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
-  }, 1800);
+  }, 280000);
 
   return () => clearInterval(timer);
 }, []);
@@ -165,7 +165,7 @@ const slide = slides[currentSlide];
     className="hidden lg:block md:block w-full md:h-full lg:h-full object-cover transition-all duration-700"
 />
 
-      <div className="absolute top-[12%] left-1/2 -translate-x-1/2 w-full px-6 md:top-40 md:left-12 md:translate-x-0 lg:top-50 lg:left-14">
+      <div className="absolute top-25 left-1/2 -translate-x-1/2 w-full px-5 md:top-40 md:left-12 md:translate-x-0 lg:top-50 lg:left-14">
        <h1 className={`playpen font-extrabold leading-tight ${slide.titleClass}`}>
   {slide.title}
   <br />
@@ -180,7 +180,7 @@ const slide = slides[currentSlide];
     {slide.buttons.map((button) => (
 <button
   onClick={() => navigate(button.path)}
-  className={`inter font-bold border-4 transition cursor-pointer ${slide.buttonClass}`}
+  className={`inter font-bold border-4 transition ${slide.buttonClass}`}
 >
   {button.text}
 </button>
@@ -203,7 +203,8 @@ const slide = slides[currentSlide];
              shadow-lg
              transition-all duration-300"
 >
-   ❮
+ ❯ 
+  
 </button>
 
 <button
@@ -221,7 +222,7 @@ const slide = slides[currentSlide];
              shadow-lg
              transition-all duration-300"
 >
-  ❯
+ ❮
 </button>
     </section>
   );
