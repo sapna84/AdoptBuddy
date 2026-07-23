@@ -24,16 +24,16 @@ export default function Hero() {
       "Give a loving pet the chance to be part of your family and create unforgettable memories filled with joy and love.",
 
     titleClass:
-      "playpen text-[#144a36] font-extrabold text-center lg:text-left text-6xl md:text-left lg:ml-20 md:ml-10 sm:text-4xl md:text-6xl lg:text-8xl leading-tight",
+      "playpen text-[#144a36] font-extrabold text-center lg:text-left text-6xl md:text-left md:ml-30 lg:ml-50 sm:text-4xl md:text-6xl lg:text-8xl leading-tight",
 
     descriptionClass:
-      "inter text-center lg:ml-20 md:ml-2 mt-6 md:mt-10 lg:mt-18 px-8 md:max-w-lg lg:max-w-2xl text-xl sm:text-lg md:text-2xl lg:text-4xl font-medium leading-loose",
+      "text-[#144a36] text-center lg:ml-50 md:ml-30 md:mt-12 lg:mt-20 text-2xl md:max-w-lg lg:max-w-4xl font-semibold sm:text-lg md:text-2xl lg:text-4xl lg:leading-loose",
 
     buttonContainerClass:
-      "flex justify-center mt-6 lg:mt-10 md:mr-100 lg:mr-200",
+     "flex justify-center mt-10 md:mr-100 lg:mr-200",
 
     buttonClass:
-      "px-6 py-3 lg:mr-130 md:mr-80 lg:px-8 lg:py-4 text-xl md:text-2xl lg:text-4xl rounded-xl font-bold cursor-pointer border-4 bg-[#144a36] text-white border-[#144a36] hover:bg-[#88b62c] hover:text-[#144a36] transition",
+      "bg-white text-[#144a36] lg:mr-115 md:mr-70 border-[#144a36] px-6 py-3 lg:ml-80 md:ml-40 text-xl md:text-2xl lg:text-4xl rounded-xl  lg:px-8 lg:py-4 font-bold cursor-pointer border-4 hover:bg-[#144a36] hover:text-white transition",
 
     buttons: [
       {
@@ -142,7 +142,7 @@ const [currentSlide, setCurrentSlide] = useState(0);
 useEffect(() => {
   const timer = setInterval(() => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
-  }, 2800);
+  }, 280000);
 
   return () => clearInterval(timer);
 }, []);
