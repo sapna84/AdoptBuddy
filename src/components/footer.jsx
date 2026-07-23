@@ -169,7 +169,7 @@ function Footer() {
 
          <ul className="space-y-4 lg:space-y-10">
             <li> conn@adoptbuddy.com</li>
-            <li> +91 8397828070</li>
+            <li> +91 5397728010</li>
             <li> Jaipur, Rajasthan</li>
           </ul>
         </div>

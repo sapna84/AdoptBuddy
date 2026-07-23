@@ -15,7 +15,7 @@ const contactInform = [
   {
     icon: PhoneIcon,
     title: "Phone",
-    line1: "+91 8397828079",
+    line1: "+91 5397728010",
     line2: "Mon-Sat, 9AM - 6PM",
   },
   {
